@@ -1,0 +1,10 @@
+# node/npm
+node_modules
+*.log
+
+# OS
+.DS_Store
+[t|T]humbs.db
+
+# IDE
+.idea
