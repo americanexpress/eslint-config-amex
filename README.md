@@ -1,7 +1,7 @@
 eslint-config-axp
 =================
 
-package AExp's .eslintrc as a shared config.
+This is One Amex's .eslintrc as a shared config.
 
 Use
 ---
@@ -9,12 +9,33 @@ Use
 Edit your `package.json` to include:
 
 ```json
-  "devDependencies": {
-    ...
-    "eslint": "^2.2.0",
-    "eslint-config-axp": "git+ssh:****.com/uie/eslint-config-axp.git#develop",
-    ...
-  }
+"devDependencies": {
+  ...
+  "eslint": "^3.0.0",
+  "eslint-config-axp": "^1.0.0",
+  "eslint-plugin-import": "^2.0.0",
+  "eslint-plugin-jsx-a11y": "^3.0.0",
+  "eslint-plugin-react": "^6.0.0",
+   ...
+}
+```
+
+Edit your `.eslintrc` to include:
+```
+{
+  "parser": "babel-eslint",
+  "extends": "axp",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "react"
+  ]
+}
 ```
 
 Alter Rules
