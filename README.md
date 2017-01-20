@@ -11,30 +11,15 @@ Edit your `package.json` to include:
 ```json
 "devDependencies": {
   ...
-  "eslint": "^3.0.0",
-  "eslint-config-axp": "^1.0.0",
-  "eslint-plugin-import": "^2.0.0",
-  "eslint-plugin-jsx-a11y": "^3.0.0",
-  "eslint-plugin-react": "^6.0.0",
-   ...
+  "eslint-config-axp": "^2.0.0",
+  ...
 }
 ```
 
-Edit your `.eslintrc` to include:
+Edit your `.eslintrc` to be:
 ```
 {
-  "parser": "babel-eslint",
-  "extends": "axp",
-  "env": {
-    "browser": true,
-    "jest": true,
-    "node": true
-  },
-  "plugins": [
-    "import",
-    "jsx-a11y",
-    "react"
-  ]
+  "extends": "axp"
 }
 ```
 

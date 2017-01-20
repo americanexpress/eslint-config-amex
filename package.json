@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-axp",
-  "version": "1.0.0",
-  "description": "AExp ESLint config",
+  "version": "2.0.0",
+  "description": "One Amex's ESLint config",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,8 @@
   },
   "author": "UI Engineering (****.com/stash/projects/UIE)",
   "contributors": [
-    "Nick Oliver <Nickolas.Oliver@aexp.com>"
+    "Nick Oliver <Nickolas.Oliver@aexp.com>",
+    "Jack Cross <jack.cross1@aexp.com>"
   ],
   "keywords": [
     "eslint",
@@ -20,12 +21,12 @@
   ],
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "eslint-config-airbnb": "^14.0.0"
-  },
-  "peerDependencies": {
+    "babel-eslint": "^5.0.4",
     "eslint": "^3.0.0",
+    "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-jsx-a11y": "^3.0.0",
-    "eslint-plugin-react": "^6.0.0"
+    "eslint-plugin-react": "^6.0.0",
+    "estraverse-fb": "^1.3.1"
   }
 }
