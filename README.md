@@ -1,7 +1,7 @@
 eslint-config-axp
 =================
 
-package AExp's .eslintrc as a shared config.
+This is One Amex's .eslintrc as a shared config.
 
 Use
 ---
@@ -9,12 +9,18 @@ Use
 Edit your `package.json` to include:
 
 ```json
-  "devDependencies": {
-    ...
-    "eslint": "^2.2.0",
-    "eslint-config-axp": "git+ssh:****.com/uie/eslint-config-axp.git#develop",
-    ...
-  }
+"devDependencies": {
+  ...
+  "eslint-config-axp": "^2.0.0",
+  ...
+}
+```
+
+Edit your `.eslintrc` to be:
+```
+{
+  "extends": "axp"
+}
 ```
 
 Alter Rules
