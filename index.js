@@ -6,15 +6,15 @@ module.exports = {
   env: {
     browser: true,
     jest: true,
-    node: true
+    node: true,
   },
   plugins: [
     'import',
     'jsx-a11y',
-    'react'
+    'react',
   ],
   rules: {
     // open a PR per rule change
     // ****.com/stash/projects/UIE/repos/eslint-config-axp/pull-requests?create
-  }
+  },
 };
