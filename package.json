@@ -6,7 +6,7 @@
   "scripts": {
     "test:lint": "eslint -c index.js ./",
     "test:unit": "jest",
-    "test": "npm run test:lint && npm run test:unit"
+    "test": "npm run test:unit && npm run test:lint"
   },
   "repository": {
     "type": "git",
