@@ -16,5 +16,7 @@ module.exports = {
   rules: {
     // open a PR per rule change
     // ****.com/stash/projects/UIE/repos/eslint-config-axp/pull-requests?create
+    // https://github.com/facebook/jsx/issues/23
+    'react/jsx-boolean-value': ['error', 'always'],
   },
 };
