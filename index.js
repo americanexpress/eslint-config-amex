@@ -16,7 +16,15 @@ module.exports = {
   rules: {
     // open a PR per rule change
     // ****.com/stash/projects/UIE/repos/eslint-config-axp/pull-requests?create
-    // https://github.com/facebook/jsx/issues/23
+    // PR #7: https://github.com/facebook/jsx/issues/23
     'react/jsx-boolean-value': ['error', 'always'],
+    // PR #8: don't require trailing commas for multi-line function calls
+    'comma-dangle': ['error', {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'never',
+    }],
   },
 };
