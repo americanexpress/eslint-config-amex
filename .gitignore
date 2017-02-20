@@ -6,5 +6,8 @@ node_modules
 .DS_Store
 [t|T]humbs.db
 
+# Testing
+test-results
+
 # IDE
 .idea
