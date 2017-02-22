@@ -4,12 +4,13 @@
   "description": "One Amex's ESLint config",
   "main": "index.js",
   "scripts": {
-    "test:lint": "eslint -c index.js ./",
+    "test:lint": "eslint ./",
     "test:unit": "jest",
     "test": "npm run test:unit && npm run test:lint"
   },
   "jest": {
-    "preset": "one-amex-jest-preset"
+    "preset": "one-amex-jest-preset",
+    "testPathIgnorePatterns": ["/node_modules/", "test.js"]
   },
   "repository": {
     "type": "git",
