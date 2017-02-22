@@ -1,5 +1,6 @@
 const path = require('path');
 const exec = require('child_process').exec;
+const packageJson = require('../package.json');
 
 describe('package.json', () => {
   it('should not have peer dep warnings', (done) => {
@@ -11,5 +12,9 @@ describe('package.json', () => {
       expect(stderr || '').not.toMatch('peer dep missing');
       done();
     });
+  });
+
+  it('should have the same eslint version in devDependencies as in peerDependencies', () => {
+    expect(packageJson.devDependencies.eslint).toEqual(packageJson.peerDependencies.eslint);
   });
 });
