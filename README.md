@@ -11,10 +11,17 @@ Run:
 npm install --save-dev eslint-config-one-amex
 ```
 
-Edit your `.eslintrc.json` to be:
+Edit your root `.eslintrc.json` to be:
 ```json
 {
   "extends": "one-amex"
+}
+```
+
+Edit the `.eslintrc.json` for your test directory to be:
+```json
+{
+  "extends": "one-amex/test"
 }
 ```
 
