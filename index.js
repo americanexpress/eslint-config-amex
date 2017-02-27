@@ -5,7 +5,6 @@ module.exports = {
   ].map(require.resolve),
   env: {
     browser: true,
-    jest: true,
     node: true,
   },
   plugins: [
