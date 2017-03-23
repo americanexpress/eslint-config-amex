@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh:****.com/uie/eslint-config-axp.git"
+    "url": "ssh:****.com/one/eslint-config-one-amex.git"
   },
-  "author": "UI Engineering (****.com/stash/projects/UIE)",
   "contributors": [
     "Nick Oliver <Nickolas.Oliver@aexp.com>",
-    "Jack Cross <jack.cross1@aexp.com>"
+    "Andres Escobar <Andres.Escobar@aexp.com>",
+    "Jimmy King <Jimmy.King@aexp.com>"
   ],
   "keywords": [
     "one-amex",
