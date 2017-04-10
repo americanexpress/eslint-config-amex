@@ -1,7 +1,7 @@
 {
-  "name": "eslint-config-one-amex",
+  "name": "eslint-config-amex",
   "version": "3.0.0",
-  "description": "One Amex's ESLint config",
+  "description": "American Express' ESLint config",
   "main": "index.js",
   "scripts": {
     "test:lint": "eslint ./",
@@ -9,27 +9,23 @@
     "test": "npm run test:unit && npm run test:lint"
   },
   "jest": {
-    "preset": "one-amex-jest-preset",
+    "preset": "amex-jest-preset",
     "testPathIgnorePatterns": [
       "/node_modules/",
       "test.js"
     ]
   },
+  "author": "Andres Escobar <andres.escobar@aexp.com> (https://github.com/anescobar1991)",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "ssh:****.com/one/eslint-config-one-amex.git"
+    "url": "https://github.com/americanexpress/eslint-config-amex.git"
   },
-  "contributors": [
-    "Nick Oliver <Nickolas.Oliver@aexp.com>",
-    "Andres Escobar <Andres.Escobar@aexp.com>",
-    "Jimmy King <Jimmy.King@aexp.com>"
-  ],
   "keywords": [
-    "one-amex",
+    "amex",
     "eslint",
     "eslintconfig"
   ],
-  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "babel-eslint": "^7.1.1",
     "eslint-config-airbnb": "^14.0.0",
@@ -44,7 +40,7 @@
   },
   "devDependencies": {
     "jest": "^18.1.0",
-    "one-amex-jest-preset": "^2.0.0",
+    "amex-jest-preset": "^2.0.0",
     "eslint": "^3.0.0"
   }
 }
