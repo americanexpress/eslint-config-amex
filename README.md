@@ -49,8 +49,8 @@ out the Agreement](http://goo.gl/forms/mIHWH1Dcuy).
 
 ## License
 Any contributions made under this project will be governed by the [Apache License
-2.0](https://github.com/americanexpress/babel-preset-amex/blob/master/LICENSE.txt).
+2.0](https://github.com/americanexpress/eslint-config-amex/blob/master/LICENSE.txt).
 
 ## Code of Conduct
-This project adheres to the [American Express Community Guidelines](https://github.com/americanexpress/babel-preset-amex/wiki/Code-of-Conduct).
+This project adheres to the [American Express Community Guidelines](https://github.com/americanexpress/eslint-config-amex/wiki/Code-of-Conduct).
 By participating, you are expected to honor these guidelines.
