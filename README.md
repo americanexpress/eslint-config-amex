@@ -16,12 +16,13 @@ npm install --save-dev eslint-config-amex
 }
 ```
 
-3. (Optionally) extend your test directory's `.eslintrc` for test specific configurations:
+3. (Optionally) Create an `.eslintrc` file at your test directory root and configure as follows:
 ```json
 {
     "extends": "amex/test"
 }
 ```
+This gives you the `jest` global and some `jest` specific rules.
 
 ## Alter Rules
 We extend [airbnb's eslint config](https://www.npmjs.com/package/eslint-config-airbnb). Each of their rules has [reasoning behind them](https://github.com/airbnb/javascript/blob/master/README.md).
@@ -34,7 +35,7 @@ If you feel that one or more of these rules affects code **beauty** < **readabil
 4. Commit the rule change, **with your objective, clear reasons** why the change is needed in the commit message
 5. Open a PR to merge your branch into our repo. Keep your reason(s) in the description, and (please) expound upon them
 
-A discussion will then ensue. Airbnb has reasons for why they chose the rule settings they did; be sure to address why they're not helpful for our purposes within the American Express ecosystem.
+A discussion will then ensue. Airbnb has reasons for why they chose the rule settings they did; be sure to address why they're not helpful.
 
 Unhelpful supporting arguments like "___ is dumb" will incline us to decline your PR. Styles can turn into Holy Wars too easily, please stay objective and meet the requirements for more than one developer for the goals stated above.
 
