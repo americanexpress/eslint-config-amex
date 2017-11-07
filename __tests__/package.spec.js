@@ -13,7 +13,7 @@
  */
 
 const path = require('path');
-const exec = require('child_process').exec;
+const { exec } = require('child_process');
 const packageJson = require('../package.json');
 
 describe('package.json', () => {
