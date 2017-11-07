@@ -8,6 +8,7 @@ node_modules
 
 # Testing
 test-results
+.jest-cache
 
 # IDE
 .idea
