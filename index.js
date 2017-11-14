@@ -51,5 +51,8 @@ module.exports = {
       exports: 'always-multiline',
       functions: 'never',
     }],
+
+    // airbnb defaults to a maximum cyclomatic complexity of 11
+    complexity: ['error'],
   },
 };
