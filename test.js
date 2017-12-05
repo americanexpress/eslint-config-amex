@@ -17,7 +17,7 @@ module.exports = {
     './index',
   ].map(require.resolve),
   env: {
-    jest: true,
+    'jest/globals': true,
   },
   plugins: [
     'jest',
@@ -33,5 +33,7 @@ module.exports = {
     'jest/no-focused-tests': 'error',
     // disallows having tests with identical name
     'jest/no-identical-title': 'error',
+    // disallows large snapshots (default 50 line threshold)
+    'jest/no-large-snapshots': 'error',
   },
 };
