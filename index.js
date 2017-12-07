@@ -54,5 +54,12 @@ module.exports = {
 
     // airbnb defaults to a maximum cyclomatic complexity of 11
     complexity: ['error'],
+
+    // this rule isn't ready yet
+    // arrow functions are forced to put the return values on a new line, rather than inline
+    // with the argument and fat arrow itself, which is awkward syntax
+    // this rule, when "fixing" code will then cause problems with the max-length rule
+    // https://github.com/airbnb/javascript/issues/1584#issuecomment-335676788
+    'function-paren-newline': 'off',
   },
 };
