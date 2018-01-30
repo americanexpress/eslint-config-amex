@@ -12,6 +12,7 @@
  * the License.
  */
 
+const forbiddenModules = ['create-react-class'];
 module.exports = {
   parser: 'babel-eslint',
   extends: [
@@ -61,5 +62,8 @@ module.exports = {
     // this rule, when "fixing" code will then cause problems with the max-length rule
     // https://github.com/airbnb/javascript/issues/1584#issuecomment-335676788
     'function-paren-newline': 'off',
+    // want to restrict create-react-class usage within our modules
+    'no-restricted-modules': ['error', { paths: forbiddenModules }],
+    'no-restricted-imports': ['error', { paths: forbiddenModules }],
   },
 };
