@@ -32,7 +32,7 @@
     "eslintconfig"
   ],
   "dependencies": {
-    "babel-eslint": "^8.0.2",
+    "babel-eslint": "^7.2.3",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.2.0",
