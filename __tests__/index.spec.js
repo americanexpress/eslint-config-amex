@@ -17,7 +17,7 @@ describe('index.js', () => {
     let configImportable = true;
     try {
       // require is part of the test
-      require('../index.js'); // eslint-disable-line global-require
+      require('..'); // eslint-disable-line global-require
     } catch (error) {
       configImportable = false;
     }
