@@ -60,6 +60,15 @@ module.exports = {
     // airbnb defaults to a maximum cyclomatic complexity of 11
     complexity: ['error'],
 
+    // This rule forces anchor tags to include an "href" attribute; however,
+    // the Link component uses the "to" attribute instead. To prevent this
+    // from causing linter errors, the below configuration specifies that
+    // for Link components, the "to" attribute is also acceptable.
+    'jsx-a11y/anchor-is-valid': ['error', {
+      components: ['Link'],
+      specialLink: ['to'],
+    }],
+
     // this rule isn't ready yet
     // arrow functions are forced to put the return values on a new line, rather than inline
     // with the argument and fat arrow itself, which is awkward syntax
