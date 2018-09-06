@@ -28,6 +28,7 @@ module.exports = {
   plugins: [
     'import',
     'jsx-a11y',
+    'markdown',
     'react',
     'unicorn',
   ],
@@ -88,4 +89,24 @@ module.exports = {
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
   },
+  overrides: [{
+    // Certain rules need to be disabled when we are linting markdown files,
+    // since they will often be snippets in documentation that cannot be run on
+    // their own.
+    files: ['**/*.md'],
+    rules: {
+      'no-unused-expressions': 0,
+      'no-unused-vars': 0,
+      'no-undef': 0,
+      'react/jsx-no-undef': 0,
+      'import/extensions': 0,
+      'import/no-unresolved': 0,
+      'import/prefer-default-export': 0,
+      'import/no-extraneous-dependencies': 0,
+      'react/react-in-jsx-scope': 0,
+      'react/jsx-filename-extension': 0,
+      'react/prop-types': 0,
+      'react/require-default-props': 0,
+    },
+  }],
 };
