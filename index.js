@@ -88,6 +88,11 @@ module.exports = {
     // Uses safe-regex to disallow potentially catastrophic exponential-time
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
+
+    // Functions that take many positional arguments can be difficult to work
+    // with and produce less maintainable APIs. When more than three arguments
+    // are needed, named arguments should be used.
+    'max-params': ['error', 3],
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
