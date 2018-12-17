@@ -12,7 +12,13 @@
  * the License.
  */
 
-const forbiddenModules = ['create-react-class'];
+const forbiddenModules = [
+  // want to restrict create-react-class usage within our modules
+  'create-react-class',
+  // want to prevent incorrect imports of moment
+  { name: 'moment/moment', message: "Import only from 'moment' instead." },
+];
+
 module.exports = {
   parser: 'babel-eslint',
   extends: [
@@ -78,7 +84,7 @@ module.exports = {
     // https://github.com/airbnb/javascript/issues/1584#issuecomment-335676788
     'function-paren-newline': 'off',
 
-    // want to restrict create-react-class usage within our modules
+    // restrict certain modules from being used
     'no-restricted-modules': ['error', { paths: forbiddenModules }],
     'no-restricted-imports': ['error', { paths: forbiddenModules }],
 
