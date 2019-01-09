@@ -93,6 +93,15 @@ module.exports = {
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
     'max-params': ['error', 3],
+
+    // When an anonymous function is the default export of a module, your stack traces
+    // and performance profiles become littered with Anoynmous functions which aren't
+    // helpful with debugging.
+    'import/no-anonymous-default-export': ['error', {
+      allowArray: true,
+      allowLiteral: true,
+      allowObject: true,
+    }],
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
