@@ -31,6 +31,7 @@ module.exports = {
     'markdown',
     'react',
     'unicorn',
+    'react-hooks',
   ],
   rules: {
     // open a PR per rule change
@@ -102,6 +103,13 @@ module.exports = {
       allowLiteral: true,
       allowObject: true,
     }],
+    // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
+    // with this rule:
+    // 1. Hooks must be called from React functions
+    // 2. Hooks can only be called from the top level and not within loops, conditions,
+    // or nested functions
+    // https://reactjs.org/docs/hooks-rules.html#eslint-plugin
+    'react-hooks/rules-of-hooks': 'error',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
