@@ -109,6 +109,7 @@ module.exports = {
       allowLiteral: true,
       allowObject: true,
     }],
+
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
     // with this rule:
     // 1. Hooks must be called from React functions
@@ -116,6 +117,38 @@ module.exports = {
     // or nested functions
     // https://reactjs.org/docs/hooks-rules.html#eslint-plugin
     'react-hooks/rules-of-hooks': 'error',
+
+    // Forbid the use of extraneous packages
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: [
+        // base list from airbnb config
+        'test/**', // tape, common npm pattern
+        'tests/**', // also common npm pattern
+        'spec/**', // mocha, rspec-like pattern
+        '**/__tests__/**', // jest pattern
+        '**/__mocks__/**', // jest pattern
+        'test.{js,jsx}', // repos with a single test file
+        'test-*.{js,jsx}', // repos with multiple top-level test files
+        '**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
+        '**/jest.config.js', // jest config
+        '**/jest.setup.js', // jest setup
+        '**/vue.config.js', // vue-cli config
+        '**/webpack.config.js', // webpack config
+        '**/webpack.config.*.js', // webpack config
+        '**/rollup.config.js', // rollup config
+        '**/rollup.config.*.js', // rollup config
+        '**/gulpfile.js', // gulp config
+        '**/gulpfile.*.js', // gulp config
+        '**/Gruntfile{,.js}', // grunt config
+        '**/protractor.conf.js', // protractor config
+        '**/protractor.conf.*.js', // protractor config
+
+        // additional paths used only in development
+        'dev.*.js', // developer config
+        'mock/**', // parrot mocks
+      ],
+      optionalDependencies: false,
+    }],
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
