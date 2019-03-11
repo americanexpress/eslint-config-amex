@@ -77,6 +77,12 @@ module.exports = {
       specialLink: ['to'],
     }],
 
+    // This rule has been deprecated by jsx-a11y as of version 6.1.0
+    // As we are past this version, and per the recommendations of the dev team,
+    // we should turn this rule off.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/455#issuecomment-403359963
+    'jsx-a11y/label-has-for': 'off',
+
     // this rule isn't ready yet
     // arrow functions are forced to put the return values on a new line, rather than inline
     // with the argument and fat arrow itself, which is awkward syntax
