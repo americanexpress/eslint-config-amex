@@ -3,6 +3,9 @@ eslint-config-amex
 
 This is American Express' eslint config.
 
+> Want to get paid for your contributions to `eslint-config-amex`?
+> Send your resume to oneamex.careers@aexp.com
+
 ## Usage
 1. Install:
 ```bash
