@@ -26,6 +26,8 @@ module.exports = {
   ].map(require.resolve).concat([
     // Some helpful rules that will prevent bugs
     'plugin:unicorn/recommended',
+    // Use native JS instead of lodash
+    'plugin:you-dont-need-lodash-underscore/compatible',
   ]),
   env: {
     browser: true,
@@ -38,6 +40,7 @@ module.exports = {
     'react',
     'unicorn',
     'react-hooks',
+    'you-dont-need-lodash-underscore',
   ],
   rules: {
     // open a PR per rule change
