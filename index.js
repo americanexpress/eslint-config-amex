@@ -158,6 +158,9 @@ module.exports = {
       ],
       optionalDependencies: false,
     }],
+
+    // React fragment syntax requires Babel 7.x but this preset needs to still support Babel 6.x
+    'react/jsx-fragments': 'off',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
