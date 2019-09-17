@@ -35,5 +35,8 @@ module.exports = {
     'jest/no-identical-title': 'error',
     // disallows large snapshots (default 50 line threshold)
     'jest/no-large-snapshots': 'error',
+    // prop spreading is very useful in tests for specs that including variations of the same
+    // props repeatedly
+    'react/jsx-props-no-spreading': 0,
   },
 };
