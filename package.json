@@ -6,13 +6,18 @@
   "scripts": {
     "test:lint": "eslint ./",
     "test:unit": "jest",
-    "test": "npm run test:unit && npm run test:lint"
+    "test": "npm run test:unit",
+    "test:git-history": "commitlint --from origin/master --to HEAD",
+    "posttest": "npm run test:git-history && npm run test:lint"
   },
   "jest": {
     "preset": "amex-jest-preset",
     "testPathIgnorePatterns": [
       "/node_modules/",
       "test.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/commitlint.config.js"
     ]
   },
   "contributors": [
@@ -48,9 +53,18 @@
     "eslint": "^6.2.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "ajv": "^6.5.2",
     "amex-jest-preset": "^5.0.0",
     "eslint": "^6.2.2",
+    "husky": "^3.1.0",
     "jest": "^23.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
