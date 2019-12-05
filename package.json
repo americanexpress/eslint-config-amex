@@ -8,7 +8,7 @@
     "test:unit": "jest",
     "test": "npm run test:unit",
     "test:git-history": "commitlint --from origin/master --to HEAD",
-    "posttest": "npm run test:git-history && npm run test:lint"
+    "posttest": "npm run test:lint && npm run test:git-history"
   },
   "jest": {
     "preset": "amex-jest-preset",
