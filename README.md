@@ -9,7 +9,7 @@
 [![npm version](https://badge.fury.io/js/eslint-config-amex.svg)](https://badge.fury.io/js/eslint-config-amex)
 [![Build Status](https://travis-ci.org/americanexpress/eslint-config-amex.svg?branch=master)](https://travis-ci.org/americanexpress/eslint-config-amex)
 
-> Don't Eslint without it.
+> American Express' eslint config.
 
 ## 👩‍💻 Hiring 👨‍💻
 
