@@ -1,13 +1,9 @@
-<h1>
-  <center>
-    <br />
-    <img src="./eslint-config-amex.png" alt="eslint-config-amex - Eslint Config Amex" width="50%" />
-    <br /><br />
-  </center>
+<h1 align="center">
+  <img src='https://github.com/americanexpress/eslint-config-amex/raw/master/eslint-config-amex.png' alt="Eslint Config Amex - One Amex" width='50%'/>
 </h1>
 
-[![npm version](https://badge.fury.io/js/eslint-config-amex.svg)](https://badge.fury.io/js/eslint-config-amex)
-[![Build Status](https://travis-ci.org/americanexpress/eslint-config-amex.svg?branch=master)](https://travis-ci.org/americanexpress/eslint-config-amex)
+[![npm](https://img.shields.io/npm/v/eslint-config-amex)](https://www.npmjs.com/package/eslint-config-amex)
+[![Travis (.org) branch](https://img.shields.io/travis/americanexpress/eslint-config-amex/master)](https://travis-ci.org/americanexpress/eslint-config-amex)
 
 > American Express' eslint config.
 
