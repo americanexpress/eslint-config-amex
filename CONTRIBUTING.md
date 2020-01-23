@@ -54,8 +54,6 @@ Verifies the format of all commit messages on the current branch.
 
 - `npm posttest`
 
-Runs linting on the current branch **and** verifies the format of all commit messages on the current branch.
-
 Runs linting on the current branch and checks that the commits follow [conventional commits](https://www.conventionalcommits.org/)
 
 ## Submitting a new feature
