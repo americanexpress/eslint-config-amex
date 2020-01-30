@@ -161,6 +161,9 @@ module.exports = {
 
     // React fragment syntax requires Babel 7.x but this preset needs to still support Babel 6.x
     'react/jsx-fragments': 'off',
+
+    // This rule restricts the use of parentheses to only where they are necessary.
+    'no-extra-parens': 'error',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
