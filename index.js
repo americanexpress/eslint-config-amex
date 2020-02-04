@@ -164,6 +164,10 @@ module.exports = {
 
     // This rule restricts the use of parentheses to only where they are necessary.
     'no-extra-parens': 'error',
+
+    // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
+    // at the moment the fix makes the code look messy and at times unreadable
+    'react/jsx-one-expression-per-line': 'off',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
