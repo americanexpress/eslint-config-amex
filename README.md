@@ -15,7 +15,6 @@ Want to get paid for your contributions to `eslint-config-amex`?
 ## 📖 Table of Contents
 
 * [Usage](#-usage)
-* [Available Scripts](#-available-scripts)
 * [Contributing](#-contributing)
 * [License](#-license)
 * [Code of Conduct](#-code-of-conduct)
@@ -46,24 +45,6 @@ npm install --save-dev eslint-config-amex
 
 This gives you the `jest` global and some `jest` specific rules.
 
-## 📜 Available Scripts
-
-**`npm run test:lint`**
-
-Verifies that your code matches the American Express code style defined in this config.
-
-**`npm test`**
-
-Runs unit tests.
-
-**`npm run test:git-history`**
-
-Verifies the format of all commit messages on the current branch.
-
-**`npm posttest`**
-
-Runs linting on the current branch **and** verifies the format of all commit messages on the current branch.
-
 ## 🏆 Contributing
 
 We welcome Your interest in the American Express Open Source Community on Github.
@@ -74,7 +55,7 @@ and to recipients of software distributed by American Express, You reserve all
 right, title, and interest, if any, in and to Your Contributions. Please [fill
 out the Agreement](https://cla-assistant.io/americanexpress/eslint-config-amex).
 
-Please feel free to open pull requests and see [CONTRIBUTING.md](./CONTRIBUTING.md) for commit formatting details.
+Please feel free to open pull requests and see [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to get started contributing.
 
 ## 🗝️ License
 
