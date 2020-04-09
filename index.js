@@ -28,6 +28,7 @@ module.exports = {
     'plugin:unicorn/recommended',
     // Use native JS instead of lodash
     'plugin:you-dont-need-lodash-underscore/compatible',
+    'prettier',
   ]),
   env: {
     browser: true,
@@ -41,6 +42,7 @@ module.exports = {
     'unicorn',
     'react-hooks',
     'you-dont-need-lodash-underscore',
+    'prettier',
   ],
   rules: {
     // open a PR per rule change
