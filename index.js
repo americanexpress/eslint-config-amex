@@ -120,7 +120,7 @@ module.exports = {
     // are needed, named arguments should be used.
     'max-params': ['error', 3],
 
-    // Bitwise use is rare, but it has its usesand people who don't know how to use it never will anyway
+    // Bitwise use is rare, but it has its uses and people who don't know how to use it never will anyway
     // So this rule is not necessary
     'no-bitwise': 'off',
 
