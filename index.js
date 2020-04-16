@@ -99,6 +99,9 @@ module.exports = {
     // airbnb defaults to a maximum cyclomatic complexity of 11
     complexity: ['error'],
 
+    // Not all arrow functions need to return
+    'consistent-return': 'off',
+
     // this rule isn't ready yet
     // arrow functions are forced to put the return values on a new line, rather than inline
     // with the argument and fat arrow itself, which is awkward syntax
@@ -116,6 +119,10 @@ module.exports = {
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
     'max-params': ['error', 3],
+
+    // Bitwise use is rare, but it has its usesand people who don't know how to use it never will anyway
+    // So this rule is not necessary
+    'no-bitwise': 'off',
 
     // Simplifies code
     'no-lonely-if': ['error'],
@@ -153,6 +160,10 @@ module.exports = {
         rule: '^((is|has|can|show|hide)[A-Z]([A-Za-z0-9]?)+|(show|hide))',
       },
     ],
+
+    // This is too onerous - 'style' is just one example of a prop that is
+    // an object with unknown keys
+    'react/forbid-prop-types': 'off',
 
     // https://github.com/facebook/jsx/issues/23
     // The future is that props given with no value will work like object shorthand
@@ -214,6 +225,10 @@ module.exports = {
     'jsx-a11y/label-has-for': 'off',
 
     // Unicorn overrides
+
+    // This is onerous in React functional components
+    'unicorn/consistent-function-scoping': 'off',
+
     // We shouldn't enforce filename casing to always be the same.  e.g. We may
     // prefer kebab-case for bin files, PascalCase for React components, etc.
     'unicorn/filename-case': 'off',
