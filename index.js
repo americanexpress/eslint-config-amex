@@ -41,7 +41,11 @@ module.exports = {
     Promise: true,
   },
   settings: {
-    'import/resolver': 'node',
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
   },
   extends: ['eslint-config-airbnb']
     .map(require.resolve)
@@ -240,6 +244,9 @@ module.exports = {
         allowObject: true,
       },
     ],
+
+    // Order is handled elsewhere
+    'import/order': 'off',
 
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
     // with this rule:
