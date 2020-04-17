@@ -150,6 +150,9 @@ module.exports = {
       },
     ],
 
+    // This is problematic in JSX
+    'spaced-comment': 'off',
+
     // React overrides
 
     // This expands the acceptable boolean names to include "canX", "show" and "hide"
