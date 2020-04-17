@@ -96,8 +96,10 @@ module.exports = {
       },
     ],
 
-    // airbnb defaults to a maximum cyclomatic complexity of 11
-    complexity: ['error'],
+    // I know this seems like a good idea, but Functional components in React
+    // can easily cause this to trigger, especially with hooks.
+    // Complexity of functions should probably be handled in code reviews.
+    complexity: 'off',
 
     // Not all arrow functions need to return
     'consistent-return': 'off',
@@ -206,6 +208,15 @@ module.exports = {
     // This is managed by another rule
     'react/function-component-definition': 'off',
 
+    // Props should be sorted alphabetically
+    'react/jsx-sort-props': [
+      'error',
+      {
+        ignoreCase: true,
+        reservedFirst: true,
+      },
+    ],
+
     // This rule forces anchor tags to include an "href" attribute; however,
     // the Link component uses the "to" attribute instead. To prevent this
     // from causing linter errors, the below configuration specifies that
@@ -262,6 +273,11 @@ module.exports = {
 
     // Order is handled elsewhere
     'import/order': 'off',
+
+    // Disruptive to development and also can be problematic with Redux
+    // Also, some people prefer named exports over default ones and there's
+    // nothing better or worse about each choice that should be forced
+    'import/prefer-default-export': 'off',
 
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
     // with this rule:
