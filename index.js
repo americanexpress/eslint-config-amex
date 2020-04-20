@@ -30,17 +30,21 @@ module.exports = {
   },
   env: {
     browser: true,
+    // we are using optional chainig and nullish coalescing
     es2020: true,
+    // do not warn about "it", "describe", "assert", etc. from showing as undefined globals
     jest: true,
     'jest/globals': true,
   },
   globals: {
+    // these globals help IDEs from displaying these as undefined
     jest: true,
     localStorage: true,
     process: false,
     Promise: true,
   },
   settings: {
+    // the src folder can be used as the resource root for imports
     'import/resolver': {
       node: {
         paths: ['src'],
@@ -76,8 +80,8 @@ module.exports = {
   rules: {
     // open a PR per rule change
 
-    // don't require trailing commas for multi-line function calls
-    // airbnb config assumes you're transpiling with https://npmjs.com/babel-preset-airbnb
+    // Don't require trailing commas for multi-line function calls
+    // Airbnb config assumes you're transpiling with https://npmjs.com/babel-preset-airbnb
     // which includes trailing function commas.
     // https://github.com/eslint/eslint/issues/7571#issuecomment-259538272
     // This makes life harder if you're linting bin files that aren't transpiled
@@ -94,54 +98,67 @@ module.exports = {
       },
     ],
 
-    // I know this seems like a good idea, but Functional components in React
-    // can easily cause this to trigger, especially with hooks.
-    // Complexity of functions should probably be handled in code reviews.
+    // Stateless Functional components in React can easily cause this to trigger false positives
+    // especially with hooks. Complexity of functions can be handled in code reviews.
+    // https://eslint.org/docs/rules/complexity
     complexity: 'off',
 
     // Not all arrow functions need to return
+    // https://eslint.org/docs/rules/consistent-return
     'consistent-return': 'off',
 
-    // this rule isn't ready yet
-    // arrow functions are forced to put the return values on a new line, rather than inline
+    // This rule isn't ready yet
+    // Arrow functions are forced to put the return values on a new line, rather than inline
     // with the argument and fat arrow itself, which is awkward syntax
-    // this rule, whenfixing" code will then cause problems with the max-length rule
+    // This rule, when fixing code will then cause problems with the max-length rule
     // https://github.com/airbnb/javascript/issues/1584#issuecomment-335676788
     'function-paren-newline': 'off',
 
     // Prettier handles this
-    'implicit-arrow-newline': 'off',
+    // https://eslint.org/docs/rules/implicit-arrow-linebreak
+    'implicit-arrow-linebreak': 'off',
 
-    // Prettier handles this
+    // Prettier handles indent
+    // https://eslint.org/docs/rules/indent
     indent: 'off',
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
+    'react/jsx-indent': 'off',
 
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
     'max-params': ['error', 3],
 
-    // Bitwise use is rare, but it has its uses and people who don't know how to use it never will anyway
-    // So this rule is not necessary
+    // Knowing how to use bitwise operators is rare and people who don't know how never will
+    // For the few instances where they are useful, this rule is a nuisance, so it's unnecessary
+    // https://eslint.org/docs/rules/no-bitwise
     'no-bitwise': 'off',
 
     // Simplifies code
+    // https://eslint.org/docs/rules/no-lonely-if
     'no-lonely-if': ['error'],
 
-    // restrict certain modules from being used
+    // Restrict certain modules from being used
     'no-restricted-modules': ['error', {paths: forbiddenModules}],
     'no-restricted-imports': ['error', {paths: forbiddenModules}],
 
+    // Reduces careless typo mistakes
+    // https://eslint.org/docs/rules/no-return-assign
     'no-return-assign': ['error'],
 
     // Prettier handles this
+    // https://eslint.org/docs/rules/object-curly-spacing
     'object-curly-spacing': 'off',
 
-    // Spreading is better
+    // Spreading is better than complex Object.assign
+    // https://eslint.org/docs/rules/prefer-object-spread
     'prefer-object-spread': ['error'],
 
     // Alphabetical sorting is the most reliable way to make code consistently readable
     // This goes for imports, props, objects, etc.
-    // Warn because it should not prevent compilation during development
+
+    // This one is warn so it isn't disruptive during development
+    // https://eslint.org/docs/rules/sort-imports
     'sort-imports': [
       'warn',
       {
@@ -150,12 +167,32 @@ module.exports = {
       },
     ],
 
-    // This is problematic in JSX
+    // This enforces props are alphabetical on <Components />
+    // Reserved props should be sorted first (key, ref, etc.)
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
+    'react/jsx-sort-props': [
+      'error',
+      {
+        ignoreCase: true,
+        reservedFirst: true,
+      },
+    ],
+
+    // This ensures deconstructed props/state, etc. are alphabetical
+    // https://github.com/mthadley/eslint-plugin-sort-destructure-keys
+    'sort-destructure-keys/sort-destructure-keys': 'error',
+
+    // Use the sort-imports rule
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
+    'import/order': 'off',
+
+    // This rule is problematic in JSX
+    // https://eslint.org/docs/rules/spaced-comment
     'spaced-comment': 'off',
 
-    // React overrides
-
-    // This expands the acceptable boolean names to include "canX", "show" and "hide"
+    // This expands the acceptable boolean names to include:
+    // "is", "has", "can", "show" and "hide", as well as "show" and "hide" on their own
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md
     'react/boolean-prop-naming': [
       'error',
       {
@@ -164,8 +201,10 @@ module.exports = {
       },
     ],
 
-    // This is too onerous - 'style' is just one example of a prop that is
-    // an object with unknown keys
+    // In theory this is a good idea, but as a rule it is too onerous
+    // 'style' is just one example of a prop that is an object with unknown keys
+    // Prefer handling this in code reviews on a case-by-case basis
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
     'react/forbid-prop-types': 'off',
 
     // https://github.com/facebook/jsx/issues/23
@@ -177,12 +216,11 @@ module.exports = {
     'react/jsx-boolean-value': ['error', 'always'],
 
     // React fragment syntax requires Babel 7.x but this preset needs to still support Babel 6.x
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md
     'react/jsx-fragments': 'off',
 
-    // Prettier handles indentations
-    'react/jsx-indent': 'off',
-
-    // It's common practice to use .js for React components now
+    // It is common practice to use .js for React
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
     'react/jsx-filename-extension': 'off',
 
     // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
@@ -191,37 +229,29 @@ module.exports = {
 
     // AirBnB uses 'error' but it's too disruptive during development
     // and we shouldn't prevent compilation because of it
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
     'react/no-unused-prop-types': ['warn'],
 
-    // HEAR ME OUT!
-    // With React heading towards concurrent mode and hooks being the preferred
-    // way of building React now, we should avoid using class components
+    // THIS IS A CONTROVERSIAL RULE THAT WE SHOULD DISCUSS
+    // With React heading towards concurrent mode and hooks becoming the preferred
+    // way of building React apps now, we should try to avoid using class components
     // People can always disable the eslint rule inline case-by-case
-    // or in an .eslintrc if they have a good reason
+    // or at the project level in an .eslintrc if they need to
     'react/prefer-stateless-function': ['error'],
 
-    // The only thing these rules do is increase boilerplate.
-    // undefined is fine as an implied prop value
-    // just like it is in vanilla javascript
+    // The only thing these AirBnB-enabled rules do is create unnecessary boilerplate
     'react/require-default-props': 'off',
     'react/default-props-match-prop-types': 'off',
 
-    // This is managed by another rule
+    // This is better managed by other rules
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
     'react/function-component-definition': 'off',
-
-    // Props should be sorted alphabetically
-    'react/jsx-sort-props': [
-      'error',
-      {
-        ignoreCase: true,
-        reservedFirst: true,
-      },
-    ],
 
     // This rule forces anchor tags to include an "href" attribute; however,
     // the Link component uses the "to" attribute instead. To prevent this
     // from causing linter errors, the below configuration specifies that
     // for Link components, the "to" attribute is also acceptable.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
@@ -236,33 +266,39 @@ module.exports = {
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/455#issuecomment-403359963
     'jsx-a11y/label-has-for': 'off',
 
-    // Unicorn overrides
-
-    // This is onerous in React functional components
+    // This rule is onerous in React functional components and has been debated
+    // by the community and proven as an unnecessary premature optimization
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
     'unicorn/consistent-function-scoping': 'off',
 
     // We shouldn't enforce filename casing to always be the same.  e.g. We may
     // prefer kebab-case for bin files, PascalCase for React components, etc.
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/filename-case.md
     'unicorn/filename-case': 'off',
 
-    // Nested ternaries are formatted well with Prettier
-    // and are commonly used in JSX
+    // Nested ternaries are formatted well with Prettier and are commonly used in JSX
+    // https://eslint.org/docs/rules/no-nested-ternary
     'no-nested-ternary': 'off',
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-nested-ternary.md
     'unicorn/no-nested-ternary': 'off',
 
-    // Using null is fine, especially in React
+    // This rule is incompatible with React
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
     'unicorn/no-null': 'off',
 
-    // Preventing abbreviations is too opinionated and is not
+    // Preventing abbreviations is too opinionated for linting and is not
     // particularly compatible with React development
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prevent-abbreviations.md
     'unicorn/prevent-abbreviations': 'off',
 
-    // This rule is overly burdensome and is premature optimization
+    // This rule is overly burdensome in and is premature optimization, at best
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-set-has.md
     'unicorn/prefer-set-has': 'off',
 
     // When an anonymous function is the default export of a module, your stack traces
     // and performance profiles become littered with anonymous functions which aren't
     // helpful with debugging.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-anonymous-default-export.md
     'import/no-anonymous-default-export': [
       'error',
       {
@@ -272,12 +308,10 @@ module.exports = {
       },
     ],
 
-    // Order is handled elsewhere
-    'import/order': 'off',
-
-    // Disruptive to development and also can be problematic with Redux
+    // Disruptive to development and can be problematic with Redux
     // Also, some people prefer named exports over default ones and there's
     // nothing better or worse about each choice that should be forced
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
     'import/prefer-default-export': 'off',
 
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
@@ -324,9 +358,6 @@ module.exports = {
     ],
 
     'prettier/prettier': ['error'],
-
-    // This enforces alphabetical props
-    'sort-destructure-keys/sort-destructure-keys': 'error',
   },
   overrides: [
     {
