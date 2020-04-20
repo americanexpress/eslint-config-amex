@@ -98,10 +98,9 @@ module.exports = {
       },
     ],
 
-    // Stateless Functional components in React can easily cause this to trigger false positives
-    // especially with hooks. Complexity of functions can be handled in code reviews.
+    // airbnb defaults to a maximum cyclomatic complexity of 11
     // https://eslint.org/docs/rules/complexity
-    complexity: 'off',
+    complexity: ['error'],
 
     // Not all arrow functions need to return
     // https://eslint.org/docs/rules/consistent-return
