@@ -314,6 +314,7 @@ module.exports = {
     // or nested functions
     // https://reactjs.org/docs/hooks-rules.html#eslint-plugin
     'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
 
     // Forbid the use of extraneous packages
     'import/no-extraneous-dependencies': [
