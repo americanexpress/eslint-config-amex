@@ -133,7 +133,7 @@ module.exports = {
     // https://eslint.org/docs/rules/no-bitwise
     'no-bitwise': 'off',
 
-    // Simplifies code
+    // Simplifies code and reduces bugs
     // https://eslint.org/docs/rules/no-lonely-if
     'no-lonely-if': ['error'],
 
@@ -199,12 +199,6 @@ module.exports = {
         rule: '^((is|has|can|show|hide)[A-Z]([A-Za-z0-9]?)+|(show|hide))',
       },
     ],
-
-    // In theory this is a good idea, but as a rule it is too onerous
-    // 'style' is just one example of a prop that is an object with unknown keys
-    // Prefer handling this in code reviews on a case-by-case basis
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
-    'react/forbid-prop-types': 'off',
 
     // https://github.com/facebook/jsx/issues/23
     // The future is that props given with no value will work like object shorthand
