@@ -13,15 +13,11 @@
  */
 
 module.exports = {
-  extends: [
-    './index',
-  ].map(require.resolve),
+  extends: ['./index'].map(require.resolve),
   env: {
     'jest/globals': true,
   },
-  plugins: [
-    'jest',
-  ],
+  plugins: ['jest'],
   rules: {
     // open a PR per rule change
 

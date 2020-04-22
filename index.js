@@ -21,13 +21,14 @@ const forbiddenModules = [
 
 module.exports = {
   parser: 'babel-eslint',
-  extends: [
-    'eslint-config-airbnb',
-  ].map(require.resolve).concat([
+  extends: ['eslint-config-airbnb'].map(require.resolve).concat([
     // Some helpful rules that will prevent bugs
     'plugin:unicorn/recommended',
     // Use native JS instead of lodash
     'plugin:you-dont-need-lodash-underscore/compatible',
+    'prettier',
+    'prettier/react',
+    'prettier/unicorn',
   ]),
   env: {
     browser: true,
@@ -41,6 +42,7 @@ module.exports = {
     'unicorn',
     'react-hooks',
     'you-dont-need-lodash-underscore',
+    'prettier',
   ],
   rules: {
     // open a PR per rule change
@@ -71,13 +73,16 @@ module.exports = {
     // This makes life harder if you're linting bin files that aren't transpiled
     // or have the trailing function (ES2017 proposal) config set.
     // This is bad as that adds friction to linting all files, which is desired.
-    'comma-dangle': ['error', {
-      arrays: 'always-multiline',
-      objects: 'always-multiline',
-      imports: 'always-multiline',
-      exports: 'always-multiline',
-      functions: 'never',
-    }],
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'never',
+      },
+    ],
 
     // airbnb defaults to a maximum cyclomatic complexity of 11
     complexity: ['error'],
@@ -86,10 +91,13 @@ module.exports = {
     // the Link component uses the "to" attribute instead. To prevent this
     // from causing linter errors, the below configuration specifies that
     // for Link components, the "to" attribute is also acceptable.
-    'jsx-a11y/anchor-is-valid': ['error', {
-      components: ['Link'],
-      specialLink: ['to'],
-    }],
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['to'],
+      },
+    ],
 
     // This rule has been deprecated by jsx-a11y as of version 6.1.0
     // As we are past this version, and per the recommendations of the dev team,
@@ -124,11 +132,14 @@ module.exports = {
     // When an anonymous function is the default export of a module, your stack traces
     // and performance profiles become littered with Anoynmous functions which aren't
     // helpful with debugging.
-    'import/no-anonymous-default-export': ['error', {
-      allowArray: true,
-      allowLiteral: true,
-      allowObject: true,
-    }],
+    'import/no-anonymous-default-export': [
+      'error',
+      {
+        allowArray: true,
+        allowLiteral: true,
+        allowObject: true,
+      },
+    ],
 
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
     // with this rule:
@@ -139,36 +150,39 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
 
     // Forbid the use of extraneous packages
-    'import/no-extraneous-dependencies': ['error', {
-      devDependencies: [
-        // base list from airbnb config
-        'test/**', // tape, common npm pattern
-        'tests/**', // also common npm pattern
-        'spec/**', // mocha, rspec-like pattern
-        '**/__tests__/**', // jest pattern
-        '**/__mocks__/**', // jest pattern
-        'test.{js,jsx}', // repos with a single test file
-        'test-*.{js,jsx}', // repos with multiple top-level test files
-        '**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
-        '**/jest.config.js', // jest config
-        '**/jest.setup.js', // jest setup
-        '**/vue.config.js', // vue-cli config
-        '**/webpack.config.js', // webpack config
-        '**/webpack.config.*.js', // webpack config
-        '**/rollup.config.js', // rollup config
-        '**/rollup.config.*.js', // rollup config
-        '**/gulpfile.js', // gulp config
-        '**/gulpfile.*.js', // gulp config
-        '**/Gruntfile{,.js}', // grunt config
-        '**/protractor.conf.js', // protractor config
-        '**/protractor.conf.*.js', // protractor config
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          // base list from airbnb config
+          'test/**', // tape, common npm pattern
+          'tests/**', // also common npm pattern
+          'spec/**', // mocha, rspec-like pattern
+          '**/__tests__/**', // jest pattern
+          '**/__mocks__/**', // jest pattern
+          'test.{js,jsx}', // repos with a single test file
+          'test-*.{js,jsx}', // repos with multiple top-level test files
+          '**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
+          '**/jest.config.js', // jest config
+          '**/jest.setup.js', // jest setup
+          '**/vue.config.js', // vue-cli config
+          '**/webpack.config.js', // webpack config
+          '**/webpack.config.*.js', // webpack config
+          '**/rollup.config.js', // rollup config
+          '**/rollup.config.*.js', // rollup config
+          '**/gulpfile.js', // gulp config
+          '**/gulpfile.*.js', // gulp config
+          '**/Gruntfile{,.js}', // grunt config
+          '**/protractor.conf.js', // protractor config
+          '**/protractor.conf.*.js', // protractor config
 
-        // additional paths used only in development
-        'dev.*.js', // developer config
-        'mock/**', // parrot mocks
-      ],
-      optionalDependencies: false,
-    }],
+          // additional paths used only in development
+          'dev.*.js', // developer config
+          'mock/**', // parrot mocks
+        ],
+        optionalDependencies: false,
+      },
+    ],
 
     // React fragment syntax requires Babel 7.x but this preset needs to still support Babel 6.x
     'react/jsx-fragments': 'off',
@@ -179,25 +193,43 @@ module.exports = {
     // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
+
+    // Prettier handles this
+    // https://eslint.org/docs/rules/implicit-arrow-linebreak
+    'implicit-arrow-linebreak': 'off',
+
+    // Prettier handles indent
+    // https://eslint.org/docs/rules/indent
+    indent: 'off',
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
+    'react/jsx-indent': 'off',
+
+    // Prettier handles this
+    // https://eslint.org/docs/rules/object-curly-spacing
+    'object-curly-spacing': 'off',
+
+    'prettier/prettier': ['error'],
   },
-  overrides: [{
-    // Certain rules need to be disabled when we are linting markdown files,
-    // since they will often be snippets in documentation that cannot be run on
-    // their own.
-    files: ['**/*.md'],
-    rules: {
-      'no-unused-expressions': 0,
-      'no-unused-vars': 0,
-      'no-undef': 0,
-      'react/jsx-no-undef': 0,
-      'import/extensions': 0,
-      'import/no-unresolved': 0,
-      'import/prefer-default-export': 0,
-      'import/no-extraneous-dependencies': 0,
-      'react/react-in-jsx-scope': 0,
-      'react/jsx-filename-extension': 0,
-      'react/prop-types': 0,
-      'react/require-default-props': 0,
+  overrides: [
+    {
+      // Certain rules need to be disabled when we are linting markdown files,
+      // since they will often be snippets in documentation that cannot be run on
+      // their own.
+      files: ['**/*.md'],
+      rules: {
+        'no-unused-expressions': 0,
+        'no-unused-vars': 0,
+        'no-undef': 0,
+        'react/jsx-no-undef': 0,
+        'import/extensions': 0,
+        'import/no-unresolved': 0,
+        'import/prefer-default-export': 0,
+        'import/no-extraneous-dependencies': 0,
+        'react/react-in-jsx-scope': 0,
+        'react/jsx-filename-extension': 0,
+        'react/prop-types': 0,
+        'react/require-default-props': 0,
+      },
     },
-  }],
+  ],
 };
