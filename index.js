@@ -104,6 +104,7 @@ module.exports = {
 
     // Uses safe-regex to disallow potentially catastrophic exponential-time
     // regular expressions.
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unsafe-regex.md
     'unicorn/no-unsafe-regex': 'error',
 
     // This rule is onerous in React functional components, has been debated
