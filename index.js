@@ -61,10 +61,10 @@ module.exports = {
     // https://eslint.org/docs/rules/consistent-return
     'consistent-return': 'off',
 
-    // Knowing how to use bitwise operators is rare and people who don't know how never will
-    // For the few instances where they are useful, this rule is a nuisance, so it's unnecessary
+    // This catches typos that end up being bitwise operator
+    // However, some operators are common and should be allowed
     // https://eslint.org/docs/rules/no-bitwise
-    'no-bitwise': 'off',
+    'no-bitwise': ['error', { allow: ['~'] }],
 
     // AirBnB has this as an error but that's disruptive during development
     'no-unused-vars': 'warn',
