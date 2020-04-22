@@ -168,6 +168,10 @@ module.exports = {
     // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
+
+    // The only thing these AirBnB-enabled rules do is create unnecessary boilerplate
+    'react/require-default-props': 'off',
+    'react/default-props-match-prop-types': 'off',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
