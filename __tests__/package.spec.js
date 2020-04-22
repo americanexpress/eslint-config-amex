@@ -12,6 +12,8 @@
  * the License.
  */
 
+/* eslint-disable jest/no-test-callback */
+
 const path = require('path');
 const { exec } = require('child_process');
 const packageJson = require('../package.json');
