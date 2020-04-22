@@ -41,6 +41,7 @@ module.exports = {
     'unicorn',
     'react-hooks',
     'you-dont-need-lodash-underscore',
+    'sort-destructure-keys',
   ],
   rules: {
     // open a PR per rule change
@@ -126,6 +127,37 @@ module.exports = {
     // or nested functions
     // https://reactjs.org/docs/hooks-rules.html#eslint-plugin
     'react-hooks/rules-of-hooks': 'error',
+
+    // Alphabetical sorting is the most reliable way to make code consistently readable
+    // This goes for imports, props, objects, etc.
+    // https://eslint.org/docs/rules/sort-imports
+    'sort-imports': [
+      // This one is warn so it isn't disruptive during development
+      'warn',
+      {
+        ignoreCase: true,
+        memberSyntaxSortOrder: ['multiple', 'single', 'all', 'none'],
+      },
+    ],
+
+    // This enforces props are alphabetical on <Components />
+    // Reserved props should be sorted first (key, ref, etc.)
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
+    'react/jsx-sort-props': [
+      'error',
+      {
+        ignoreCase: true,
+        reservedFirst: true,
+      },
+    ],
+
+    // This ensures deconstructed props/state, etc. are alphabetical
+    // https://github.com/mthadley/eslint-plugin-sort-destructure-keys
+    'sort-destructure-keys/sort-destructure-keys': 'error',
+
+    // Use the sort-imports rule instead
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
+    'import/order': 'off',
 
     // Forbid the use of extraneous packages
     'import/no-extraneous-dependencies': ['error', {
