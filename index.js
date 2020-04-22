@@ -21,6 +21,13 @@ const forbiddenModules = [
 
 module.exports = {
   parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 11,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   extends: [
     'eslint-config-airbnb',
   ].map(require.resolve).concat([
@@ -32,6 +39,22 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    // we are using optional chaining and nullish coalescing
+    es2020: true,
+  },
+  globals: {
+    // these globals help IDEs from displaying these as undefined
+    localStorage: true,
+    process: false,
+    Promise: true,
+  },
+  settings: {
+    // the src folder can be used as the resource root for imports
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
   },
   plugins: [
     'import',
