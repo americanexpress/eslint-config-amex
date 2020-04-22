@@ -99,11 +99,30 @@ module.exports = {
 
     // We shouldn't enforce filename casing to always be the same.  e.g. We may
     // prefer kebab-case for bin files, PascalCase for React components, etc.
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/filename-case.md
     'unicorn/filename-case': 'off',
 
     // Uses safe-regex to disallow potentially catastrophic exponential-time
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
+
+    // This rule is onerous in React functional components, has been debated
+    // by the community and proven as an unnecessary optimization
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
+    'unicorn/consistent-function-scoping': 'off',
+
+    // This rule is incompatible with React
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
+    'unicorn/no-null': 'off',
+
+    // Preventing abbreviations is too opinionated for linting and is not
+    // particularly compatible with React development (props, ref, etc.)
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prevent-abbreviations.md
+    'unicorn/prevent-abbreviations': 'off',
+
+    // This rule is overly burdensome and is premature optimization, at best
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-set-has.md
+    'unicorn/prefer-set-has': 'off',
 
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
