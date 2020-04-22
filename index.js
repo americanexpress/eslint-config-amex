@@ -168,6 +168,13 @@ module.exports = {
     // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
+
+    // With React heading towards concurrent mode and hooks becoming the preferred
+    // way of building React apps now, we should try to avoid using class components
+    // People can always disable the eslint rule inline case-by-case
+    // or at the project level in an .eslintrc if they need to
+    'react/prefer-stateless-function': ['error'],
+
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
