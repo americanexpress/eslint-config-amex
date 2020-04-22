@@ -45,6 +45,27 @@ module.exports = {
   rules: {
     // open a PR per rule change
 
+    // Simplifies code and reduces bugs
+    // https://eslint.org/docs/rules/no-lonely-if
+    'no-lonely-if': ['error'],
+
+    // Reduces careless typo mistakes
+    // https://eslint.org/docs/rules/no-return-assign
+    'no-return-assign': ['error'],
+
+    // Spreading is better than complex Object.assign
+    // https://eslint.org/docs/rules/prefer-object-spread
+    'prefer-object-spread': ['error'],
+
+    // Not all arrow functions need to return
+    // https://eslint.org/docs/rules/consistent-return
+    'consistent-return': 'off',
+
+    // Knowing how to use bitwise operators is rare and people who don't know how never will
+    // For the few instances where they are useful, this rule is a nuisance, so it's unnecessary
+    // https://eslint.org/docs/rules/no-bitwise
+    'no-bitwise': 'off',
+
     // https://github.com/facebook/jsx/issues/23
     // The future is that props given with no value will work like object shorthand
     // notation instead of evaluating to true.
