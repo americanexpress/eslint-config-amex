@@ -24,6 +24,8 @@ module.exports = {
   extends: [
     'eslint-config-airbnb',
   ].map(require.resolve).concat([
+    // Helpful rules for writing React
+    'plugin:react/recommended',
     // Some helpful rules that will prevent bugs
     'plugin:unicorn/recommended',
     // Use native JS instead of lodash
@@ -119,6 +121,23 @@ module.exports = {
       allowObject: true,
     }],
 
+    // This rule is problematic in JSX
+    // https://eslint.org/docs/rules/spaced-comment
+    'spaced-comment': 'off',
+
+    // This is better managed by other rules
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+    'react/function-component-definition': 'off',
+
+    // It is common practice to use .js for React
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    'react/jsx-filename-extension': 'off',
+
+    // AirBnB uses 'error' but it's too disruptive during development
+    // and we shouldn't prevent compilation because of it
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
+    'react/no-unused-prop-types': ['warn'],
+
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
     // with this rule:
     // 1. Hooks must be called from React functions
@@ -126,6 +145,7 @@ module.exports = {
     // or nested functions
     // https://reactjs.org/docs/hooks-rules.html#eslint-plugin
     'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
 
     // Forbid the use of extraneous packages
     'import/no-extraneous-dependencies': ['error', {
