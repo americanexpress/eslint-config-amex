@@ -66,6 +66,9 @@ module.exports = {
     // https://eslint.org/docs/rules/no-bitwise
     'no-bitwise': 'off',
 
+    // AirBnB has this as an error but that's disruptive during development
+    'no-unused-vars': 'warn',
+
     // https://github.com/facebook/jsx/issues/23
     // The future is that props given with no value will work like object shorthand
     // notation instead of evaluating to true.
