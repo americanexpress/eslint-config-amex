@@ -105,6 +105,12 @@ module.exports = {
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
 
+    // Nested ternaries are commonly used in JSX
+    // https://eslint.org/docs/rules/no-nested-ternary
+    'no-nested-ternary': 'off',
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-nested-ternary.md
+    'unicorn/no-nested-ternary': 'off',
+
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
