@@ -15,13 +15,20 @@
 module.exports = {
   extends: [
     './index',
-  ].map(require.resolve),
+  ].map(require.resolve).concat([
+    'plugin:jest/recommended',
+    'plugin:jest-dom/recommended',
+  ]),
   env: {
     'jest/globals': true,
   },
   plugins: [
     'jest',
+    'jest-dom',
   ],
+  globals: {
+    jest: true,
+  },
   rules: {
     // open a PR per rule change
 

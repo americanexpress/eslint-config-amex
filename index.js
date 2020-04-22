@@ -24,8 +24,6 @@ module.exports = {
   extends: [
     'eslint-config-airbnb',
   ].map(require.resolve).concat([
-    'plugin:jest/recommended',
-    'plugin:jest-dom/recommended',
     // Some helpful rules that will prevent bugs
     'plugin:unicorn/recommended',
     // Use native JS instead of lodash
@@ -34,21 +32,12 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    // do not warn about "it", "describe", "assert", etc. from showing as undefined globals
-    jest: true,
-    'jest/globals': true,
-  },
-  globals: {
-    // these globals help IDEs from displaying these as undefined
-    jest: true,
   },
   plugins: [
     'import',
     'jsx-a11y',
     'markdown',
     'react',
-    'jest',
-    'jest-dom',
     'unicorn',
     'react-hooks',
     'you-dont-need-lodash-underscore',
