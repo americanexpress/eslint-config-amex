@@ -169,9 +169,8 @@ module.exports = {
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
 
-    // The only thing these AirBnB-enabled rules do is create unnecessary boilerplate
+    // Disabling this AirBnB-enabled rule because it creates unnecessary boilerplate
     'react/require-default-props': 'off',
-    'react/default-props-match-prop-types': 'off',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
