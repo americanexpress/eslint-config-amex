@@ -1,9 +1,5 @@
 .prettierignore
-package.json
 package-lock.json
-README.md
 .editorconfig
-*.yml
 .gitignore
 test-results
-node_modules
