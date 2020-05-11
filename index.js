@@ -116,6 +116,10 @@ module.exports = {
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
 
+    // This rule is incompatible with React where null must be returned
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
+    'unicorn/no-null': 'off',
+
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
