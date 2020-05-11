@@ -61,13 +61,9 @@ module.exports = {
     // https://eslint.org/docs/rules/consistent-return
     'consistent-return': 'off',
 
-    // This catches typos that end up being bitwise operator
-    // However, some operators are common and should be allowed
+    // This catches typos that end up being bitwise operators
     // https://eslint.org/docs/rules/no-bitwise
-    'no-bitwise': ['error', { allow: ['~'] }],
-
-    // AirBnB has this as an error but that's disruptive during development
-    'no-unused-vars': 'warn',
+    'no-bitwise': ['error'],
 
     // https://github.com/facebook/jsx/issues/23
     // The future is that props given with no value will work like object shorthand
