@@ -168,6 +168,11 @@ module.exports = {
     // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
+
+    // Unfortunately, the parameters for spaced-comments do not allow for JSX exclusions
+    // It is common to comment JSX during normal development, so 'warn' is a good compromise
+    // https://eslint.org/docs/rules/spaced-comment
+    'spaced-comment': 'warn',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
