@@ -180,7 +180,7 @@ module.exports = {
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
 
-    // tests are more reliable, reduce unnecessary boilerplate explicitly setting props to `undefined`, 
+    // reduces the unnecessary boilerplate of explicitly setting props to `undefined`
     // prevent false-confidence for those less experienced with how default props work
     'react/require-default-props': 'off',
   },
