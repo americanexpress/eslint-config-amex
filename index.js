@@ -53,6 +53,17 @@ module.exports = {
     // Requiring true to be set as the value will help future-proof our code.
     'react/jsx-boolean-value': ['error', 'always'],
 
+    // Expand the acceptable boolean names to include
+    // "is", "has", "can", "show" and "hide", as well as "show" and "hide" on their own
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md
+    'react/boolean-prop-naming': [
+      'error',
+      {
+        propTypeNames: ['bool', 'mutuallyExclusiveTrueProps'],
+        rule: '^((is|has|can|show|hide)[A-Z]([A-Za-z0-9]?)+|(show|hide))',
+      },
+    ],
+
     // don't require trailing commas for multi-line function calls
     // airbnb config assumes you're transpiling with https://npmjs.com/babel-preset-airbnb
     // which includes trailing function commas.

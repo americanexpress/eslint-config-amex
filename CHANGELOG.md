@@ -1,3 +1,10 @@
+## [12.0.1](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.0...v12.0.1) (2020-05-07)
+
+
+### Bug Fixes
+
+* **eslint:** boolean prop naming ([#23](https://github.com/americanexpress/eslint-config-amex/issues/23)) ([a1f672c](https://github.com/americanexpress/eslint-config-amex/commit/a1f672cfc71c91385efcf88783f63f1d5a272a2e))
+
 # [12.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v11.2.0...v12.0.0) (2020-03-30)
 
 
