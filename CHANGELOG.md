@@ -1,3 +1,10 @@
+## [12.0.2](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.1...v12.0.2) (2020-05-11)
+
+
+### Bug Fixes
+
+* **eslint:** react requires use of null ([#32](https://github.com/americanexpress/eslint-config-amex/issues/32)) ([bdf6800](https://github.com/americanexpress/eslint-config-amex/commit/bdf680074530eb4f1ae451f9ff57f1517adab44b))
+
 ## [12.0.1](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.0...v12.0.1) (2020-05-07)
 
 
