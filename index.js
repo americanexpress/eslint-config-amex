@@ -105,6 +105,10 @@ module.exports = {
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
 
+    // This is a common pattern in React, and has been proven to be a premature optimization
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
+    'unicorn/consistent-function-scoping': 'off',
+
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
