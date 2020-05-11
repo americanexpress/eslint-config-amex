@@ -168,6 +168,10 @@ module.exports = {
     // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
+
+    // It is common practice to use .js for React. You can use .jsx if you like.
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    'react/jsx-filename-extension': 'off',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
