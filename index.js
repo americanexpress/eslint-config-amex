@@ -105,6 +105,11 @@ module.exports = {
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
 
+    // Preventing abbreviations is incompatible with React standards (props, ref, etc.)
+    // Additionally, there are many scenarios where abbreviations are acceptable
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prevent-abbreviations.md
+    'unicorn/prevent-abbreviations': 'off',
+
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
