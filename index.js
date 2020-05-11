@@ -108,6 +108,10 @@ module.exports = {
     'no-restricted-modules': ['error', { paths: forbiddenModules }],
     'no-restricted-imports': ['error', { paths: forbiddenModules }],
 
+    // AirBnB has this as an error but error is disruptive during development
+    // and some React builders halt a build when an eslint error occurs
+    'no-unused-vars': 'warn',
+
     // We shouldn't enforce filename casing to always be the same.  e.g. We may
     // prefer kebab-case for bin files, PascalCase for React components, etc.
     'unicorn/filename-case': 'off',
