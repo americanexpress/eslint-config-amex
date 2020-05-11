@@ -121,17 +121,9 @@ module.exports = {
       allowObject: true,
     }],
 
-    // This rule is problematic in JSX
-    // https://eslint.org/docs/rules/spaced-comment
-    'spaced-comment': 'off',
-
     // This is better managed by other rules
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
     'react/function-component-definition': 'off',
-
-    // It is common practice to use .js for React
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
-    'react/jsx-filename-extension': 'off',
 
     // AirBnB uses 'error' but it's too disruptive during development
     // and we shouldn't prevent compilation because of it
