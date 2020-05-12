@@ -73,6 +73,17 @@ module.exports = {
     // Requiring true to be set as the value will help future-proof our code.
     'react/jsx-boolean-value': ['error', 'always'],
 
+    // Expand the acceptable boolean names to include
+    // "is", "has", "can", "show" and "hide", as well as "show" and "hide" on their own
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md
+    'react/boolean-prop-naming': [
+      'error',
+      {
+        propTypeNames: ['bool', 'mutuallyExclusiveTrueProps'],
+        rule: '^((is|has|can|show|hide)[A-Z]([A-Za-z0-9]?)+|(show|hide))',
+      },
+    ],
+
     // don't require trailing commas for multi-line function calls
     // airbnb config assumes you're transpiling with https://npmjs.com/babel-preset-airbnb
     // which includes trailing function commas.
@@ -124,6 +135,10 @@ module.exports = {
     // Uses safe-regex to disallow potentially catastrophic exponential-time
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
+
+    // This rule is incompatible with React where null must be returned
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
+    'unicorn/no-null': 'off',
 
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
