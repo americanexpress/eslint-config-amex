@@ -22,7 +22,7 @@ const forbiddenModules = [
 module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 11,
+    ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
