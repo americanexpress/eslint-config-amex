@@ -117,7 +117,8 @@ module.exports = {
     'unicorn/no-unsafe-regex': 'error',
 
     // Preventing abbreviations is incompatible with React standards (props, ref, etc.)
-    // Additionally, there are many scenarios where abbreviations are acceptable
+    // Additionally, there are many popular libraries that have abbreviations
+    // as their standard practice and this rule prevents that consistency
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prevent-abbreviations.md
     'unicorn/prevent-abbreviations': 'off',
 
