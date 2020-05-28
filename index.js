@@ -117,7 +117,9 @@ module.exports = {
     'unicorn/no-unsafe-regex': 'error',
 
     // Array.includes() is consistent with String.includes()
-    // Whatever minor performance increase this might have is a premature optimization, at best
+    // the rule's performance claim is unsubstantiated and appears to be premature optimization
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/495 and
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/604
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-set-has.md
     'unicorn/prefer-set-has': 'off',
 
