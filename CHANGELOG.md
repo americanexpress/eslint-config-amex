@@ -1,3 +1,10 @@
+## [12.0.3](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.2...v12.0.3) (2020-06-02)
+
+
+### Bug Fixes
+
+* **eslint:** disable airbnb default props rules ([#27](https://github.com/americanexpress/eslint-config-amex/issues/27)) ([70936b8](https://github.com/americanexpress/eslint-config-amex/commit/70936b839e0c5779719e4436e4c1f431d1d01a48))
+
 ## [12.0.2](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.1...v12.0.2) (2020-05-11)
 
 
