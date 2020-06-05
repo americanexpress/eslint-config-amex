@@ -211,5 +211,12 @@ module.exports = {
       'react/prop-types': 0,
       'react/require-default-props': 0,
     },
+  }, {
+    files: ['**/*.jsx'],
+    rules: {
+      // It is common to comment JSX during normal development, so 'warn' is least disruptive
+      // https://eslint.org/docs/rules/spaced-comment
+      'spaced-comment': 'warn',
+    },
   }],
 };

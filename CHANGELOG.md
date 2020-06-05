@@ -1,3 +1,10 @@
+# [12.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.3...v12.1.0) (2020-06-05)
+
+
+### Features
+
+* **eslint:** spaced comment warn instead of error ([#37](https://github.com/americanexpress/eslint-config-amex/issues/37)) ([51c539d](https://github.com/americanexpress/eslint-config-amex/commit/51c539d56c23360ba5349fd56ad00fcb33ccb4ad))
+
 ## [12.0.3](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.2...v12.0.3) (2020-06-02)
 
 
