@@ -1,3 +1,24 @@
+# [12.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.3...v12.1.0) (2020-06-05)
+
+
+### Features
+
+* **eslint:** spaced comment warn instead of error ([#37](https://github.com/americanexpress/eslint-config-amex/issues/37)) ([51c539d](https://github.com/americanexpress/eslint-config-amex/commit/51c539d56c23360ba5349fd56ad00fcb33ccb4ad))
+
+## [12.0.3](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.2...v12.0.3) (2020-06-02)
+
+
+### Bug Fixes
+
+* **eslint:** disable airbnb default props rules ([#27](https://github.com/americanexpress/eslint-config-amex/issues/27)) ([70936b8](https://github.com/americanexpress/eslint-config-amex/commit/70936b839e0c5779719e4436e4c1f431d1d01a48))
+
+## [12.0.2](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.1...v12.0.2) (2020-05-11)
+
+
+### Bug Fixes
+
+* **eslint:** react requires use of null ([#32](https://github.com/americanexpress/eslint-config-amex/issues/32)) ([bdf6800](https://github.com/americanexpress/eslint-config-amex/commit/bdf680074530eb4f1ae451f9ff57f1517adab44b))
+
 ## [12.0.1](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.0...v12.0.1) (2020-05-07)
 
 
