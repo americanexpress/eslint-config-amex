@@ -120,6 +120,17 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
     'unicorn/consistent-function-scoping': 'off',
 
+    // Array.includes() is consistent with String.includes()
+    // the rule's performance claim is unsubstantiated and appears to be premature optimization
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/495 and
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/604
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-set-has.md
+    'unicorn/prefer-set-has': 'off',
+
+    // This rule is incompatible with React where null must be returned
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
+    'unicorn/no-null': 'off',
+
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
     // are needed, named arguments should be used.
@@ -183,6 +194,10 @@ module.exports = {
     // Disabling this rule until this is resolved https://github.com/yannickcr/eslint-plugin-react/issues/1848
     // at the moment the fix makes the code look messy and at times unreadable
     'react/jsx-one-expression-per-line': 'off',
+
+    // reduces the unnecessary boilerplate of explicitly setting props to `undefined`
+    // prevent false-confidence for those less experienced with how default props work
+    'react/require-default-props': 'off',
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
@@ -202,6 +217,13 @@ module.exports = {
       'react/jsx-filename-extension': 0,
       'react/prop-types': 0,
       'react/require-default-props': 0,
+    },
+  }, {
+    files: ['**/*.jsx'],
+    rules: {
+      // It is common to comment JSX during normal development, so 'warn' is least disruptive
+      // https://eslint.org/docs/rules/spaced-comment
+      'spaced-comment': 'warn',
     },
   }],
 };
