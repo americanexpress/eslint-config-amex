@@ -120,6 +120,12 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
     'unicorn/consistent-function-scoping': 'off',
 
+    // Preventing abbreviations is incompatible with React standards (props, ref, etc.)
+    // Additionally, there are many popular libraries that have abbreviations
+    // as their standard practice and this rule prevents that consistency
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prevent-abbreviations.md
+    'unicorn/prevent-abbreviations': 'off',
+
     // Array.includes() is consistent with String.includes()
     // the rule's performance claim is unsubstantiated and appears to be premature optimization
     // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/495 and
