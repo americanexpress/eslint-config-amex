@@ -147,10 +147,6 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
     'react/function-component-definition': 'off',
 
-    // AirBnB uses 'error' but it's too disruptive during development
-    // and we shouldn't prevent compilation because of it
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
-    'react/no-unused-prop-types': ['warn'],
 
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
     // with this rule:
