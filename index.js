@@ -181,9 +181,8 @@ module.exports = {
       optionalDependencies: false,
     }],
 
-    // Disruptive to development and can be problematic with Redux
-    // Also, some people prefer named exports over default ones and there's
-    // nothing better or worse about each choice that should be forced
+    // File with one export should be no different than a file 
+    // with two  exports from the consumer side
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
     'import/prefer-default-export': 'off',
 
