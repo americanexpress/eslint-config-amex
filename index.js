@@ -57,10 +57,6 @@ module.exports = {
     // https://eslint.org/docs/rules/prefer-object-spread
     'prefer-object-spread': ['error'],
 
-    // Not all arrow functions need to return
-    // https://eslint.org/docs/rules/consistent-return
-    'consistent-return': 'off',
-
     // This catches typos that end up being bitwise operators
     // https://eslint.org/docs/rules/no-bitwise
     'no-bitwise': ['error'],
