@@ -147,7 +147,6 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
     'react/function-component-definition': 'off',
 
-
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
     // with this rule:
     // 1. Hooks must be called from React functions
