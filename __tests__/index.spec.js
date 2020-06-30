@@ -24,4 +24,41 @@ describe('index.js', () => {
 
     expect(configImportable).toBe(true);
   });
+
+  describe('rules which differ per NODE_ENV', () => {
+    let eslintConfig;
+    const { NODE_ENV } = process.env;
+
+    describe('when production', () => {
+      beforeAll(() => {
+        jest.resetModules();
+        process.env.NODE_ENV = 'production';
+        eslintConfig = require('..');// eslint-disable-line global-require
+      });
+
+      afterAll(() => {
+        process.env.NODE_ENV = NODE_ENV;
+      });
+
+      it('returns error for no-unused-vars', () => {
+        expect(eslintConfig.rules['no-unused-vars']).toEqual('error');
+      });
+    });
+
+    describe('when development', () => {
+      beforeAll(() => {
+        jest.resetModules();
+        process.env.NODE_ENV = 'development';
+        eslintConfig = require('..');// eslint-disable-line global-require
+      });
+
+      afterAll(() => {
+        process.env.NODE_ENV = NODE_ENV;
+      });
+
+      it('returns warn for no-unused-vars', () => {
+        expect(eslintConfig.rules['no-unused-vars']).toEqual('warn');
+      });
+    });
+  });
 });

@@ -19,6 +19,8 @@ const forbiddenModules = [
   { name: 'moment/moment', message: "Import only from 'moment' instead." },
 ];
 
+const warnOnlyInDevelopment = process.env.NODE_ENV === 'development' ? 'warn' : 'error';
+
 module.exports = {
   parser: 'babel-eslint',
   extends: [
@@ -110,7 +112,7 @@ module.exports = {
 
     // AirBnB has this as an error but error is disruptive during development
     // and some React builders halt a build when an eslint error occurs
-    'no-unused-vars': 'warn',
+    'no-unused-vars': warnOnlyInDevelopment,
 
     // We shouldn't enforce filename casing to always be the same.  e.g. We may
     // prefer kebab-case for bin files, PascalCase for React components, etc.
