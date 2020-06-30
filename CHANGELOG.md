@@ -1,3 +1,10 @@
+# [12.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v12.1.0...v12.2.0) (2020-06-06)
+
+
+### Features
+
+* **eslint:** array includes is acceptable ([#34](https://github.com/americanexpress/eslint-config-amex/issues/34)) ([bdf92f1](https://github.com/americanexpress/eslint-config-amex/commit/bdf92f189a85521dd4a9d2eb869fed73ace37542))
+
 # [12.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v12.0.3...v12.1.0) (2020-06-05)
 
 

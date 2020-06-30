@@ -122,6 +122,13 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prevent-abbreviations.md
     'unicorn/prevent-abbreviations': 'off',
 
+    // Array.includes() is consistent with String.includes()
+    // the rule's performance claim is unsubstantiated and appears to be premature optimization
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/495 and
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/604
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-set-has.md
+    'unicorn/prefer-set-has': 'off',
+
     // This rule is incompatible with React where null must be returned
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
     'unicorn/no-null': 'off',
