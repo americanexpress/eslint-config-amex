@@ -13,19 +13,21 @@
  */
 
 const path = require('path');
-const { exec } = require('child_process');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 const packageJson = require('../package.json');
 
 describe('package.json', () => {
-  it('should not have peer dep warnings', (done) => {
+  it('should not have peer dep warnings', async () => {
+    expect.assertions(2);
     // ex:
     // npm ERR! peer dep missing: eslint@<2.3.0, required by babel-eslint@5.0.4
-    exec('npm ls', { cwd: path.resolve(__dirname, '../') }, (stdout, stderr) => {
-      // if there are no complaints from npm, stdout is null
-      expect(stdout || '').not.toMatch('peer dep missing');
-      expect(stderr || '').not.toMatch('peer dep missing');
-      done();
+    const { stdout, stderr } = exec('npm ls', {
+      cwd: path.resolve(__dirname, '../'),
     });
+    // if there are no complaints from npm, stdout is null
+    expect(stdout || '').not.toMatch('peer dep missing');
+    expect(stderr || '').not.toMatch('peer dep missing');
   });
 
   it('should have the same eslint version in devDependencies as in peerDependencies', () => {
