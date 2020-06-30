@@ -143,7 +143,7 @@ module.exports = {
       allowObject: true,
     }],
 
-    // This is better managed by other rules
+    // Don't enforce specific function type for components
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
     'react/function-component-definition': 'off',
 
