@@ -44,9 +44,9 @@ module.exports = {
   },
   globals: {
     // these globals help IDEs from displaying these as undefined
-    localStorage: true,
-    process: false,
-    Promise: true,
+    localStorage: 'writable',
+    process: 'readonly',
+    Promise: 'writable',
   },
   settings: {
     // the src folder can be used as the resource root for imports
