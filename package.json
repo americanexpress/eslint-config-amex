@@ -61,7 +61,7 @@
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
-    "ajv": "^6.12.0",
+    "ajv": "^6.12.2",
     "amex-jest-preset": "^6.1.0",
     "eslint": "^6.2.2",
     "husky": "^4.2.3",
