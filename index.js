@@ -211,6 +211,11 @@ module.exports = {
       optionalDependencies: false,
     }],
 
+    // File with one export should be no different than a file
+    // with two  exports from the consumer side
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
+    'import/prefer-default-export': 'off',
+
     // React fragment syntax requires Babel 7.x but this preset needs to still support Babel 6.x
     'react/jsx-fragments': 'off',
 
