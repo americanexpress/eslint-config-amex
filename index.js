@@ -134,6 +134,9 @@ module.exports = {
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
 
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
+    'unicorn/consistent-function-scoping': 'warn',
+
     // Preventing abbreviations is incompatible with React standards (props, ref, etc.)
     // Additionally, there are many popular libraries that have abbreviations
     // as their standard practice and this rule prevents that consistency
