@@ -134,8 +134,11 @@ module.exports = {
     // regular expressions.
     'unicorn/no-unsafe-regex': 'error',
 
+    // Impacts common pattern of returning anonymous function
+    // Performance claim based off single stackoverflow thread
+    // https://stackoverflow.com/questions/80802/does-use-of-anonymous-functions-affect-performance/81329#81329
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
-    'unicorn/consistent-function-scoping': 'warn',
+    'unicorn/consistent-function-scoping': 'off',
 
     // Preventing abbreviations is incompatible with React standards (props, ref, etc.)
     // Additionally, there are many popular libraries that have abbreviations
