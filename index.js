@@ -42,12 +42,6 @@ module.exports = {
     // we are using optional chaining and nullish coalescing
     es2020: true,
   },
-  globals: {
-    // these globals help IDEs from displaying these as undefined
-    localStorage: 'writable',
-    process: 'readonly',
-    Promise: 'writable',
-  },
   settings: {
     // the src folder can be used as the resource root for imports
     'import/resolver': {
