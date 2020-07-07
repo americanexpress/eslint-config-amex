@@ -21,10 +21,6 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/better-regex.md
     'unicorn/better-regex': 'error',
 
-    // ****** Enforce a specific parameter name in catch clauses
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/catch-error-name.md
-    'unicorn/catch-error-name': 'error',
-
     // Enforce passing a message value when throwing a built-in error
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/error-message.md
     'unicorn/error-message': 'error',
@@ -88,10 +84,6 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-process-exit.md
     'unicorn/no-process-exit': 'error',
 
-    // Disallow unreadable array destructuring
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unreadable-array-destructuring.md
-    'unicorn/no-unreadable-array-destructuring': 'error',
-
     // Uses safe-regex to disallow potentially catastrophic exponential-time
     // regular expressions.
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unsafe-regex.md
@@ -135,11 +127,11 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-negative-index.md
     'unicorn/prefer-negative-index': 'error',
 
-    // ****** Prefer Node#append() over Node#appendChild()
+    // Prefer Node#append() over Node#appendChild()
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-node-append.md
     'unicorn/prefer-node-append': 'error',
 
-    // ****** Prefer childNode.remove() over parentNode.removeChild(childNode)
+    // Prefer childNode.remove() over parentNode.removeChild(childNode)
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-node-remove.md
     'unicorn/prefer-node-remove': 'error',
 
