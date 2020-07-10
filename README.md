@@ -52,6 +52,14 @@ To use the Prettier compatible config:
 }
 ```
 
+If you are using Prettier use the `prettier/test` config:
+
+```json
+{
+    "extends": "amex/prettier/test"
+}
+```
+
 This gives you the `jest` global and some `jest` specific rules.
 
 ## 🏆 Contributing
