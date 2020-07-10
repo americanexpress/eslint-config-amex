@@ -30,11 +30,10 @@ module.exports = {
   },
   extends: [
     'eslint-config-airbnb',
+    './unicorn',
   ].map(require.resolve).concat([
     // Helpful rules for writing React
     'plugin:react/recommended',
-    // Some helpful rules that will prevent bugs
-    'plugin:unicorn/recommended',
     // Use native JS instead of lodash
     'plugin:you-dont-need-lodash-underscore/compatible',
   ]),
@@ -57,7 +56,6 @@ module.exports = {
     'jsx-a11y',
     'markdown',
     'react',
-    'unicorn',
     'react-hooks',
     'you-dont-need-lodash-underscore',
   ],
@@ -142,37 +140,6 @@ module.exports = {
     // restrict certain modules from being used
     'no-restricted-modules': ['error', { paths: forbiddenModules }],
     'no-restricted-imports': ['error', { paths: forbiddenModules }],
-
-    // We shouldn't enforce filename casing to always be the same.  e.g. We may
-    // prefer kebab-case for bin files, PascalCase for React components, etc.
-    'unicorn/filename-case': 'off',
-
-    // Uses safe-regex to disallow potentially catastrophic exponential-time
-    // regular expressions.
-    'unicorn/no-unsafe-regex': 'error',
-
-    // Impacts common pattern of returning anonymous function
-    // Performance claim based off single stackoverflow thread
-    // https://stackoverflow.com/questions/80802/does-use-of-anonymous-functions-affect-performance/81329#81329
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/consistent-function-scoping.md
-    'unicorn/consistent-function-scoping': 'off',
-
-    // Preventing abbreviations is incompatible with React standards (props, ref, etc.)
-    // Additionally, there are many popular libraries that have abbreviations
-    // as their standard practice and this rule prevents that consistency
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prevent-abbreviations.md
-    'unicorn/prevent-abbreviations': 'off',
-
-    // Array.includes() is consistent with String.includes()
-    // the rule's performance claim is unsubstantiated and appears to be premature optimization
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/495 and
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/604
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-set-has.md
-    'unicorn/prefer-set-has': 'off',
-
-    // This rule is incompatible with React where null must be returned
-    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-null.md
-    'unicorn/no-null': 'off',
 
     // Functions that take many positional arguments can be difficult to work
     // with and produce less maintainable APIs. When more than three arguments
