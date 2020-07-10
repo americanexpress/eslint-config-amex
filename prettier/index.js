@@ -23,22 +23,4 @@ module.exports = {
   plugins: [
     'prettier',
   ],
-  rules: {
-    'prettier/prettier': ['error'],
-
-    // Let Prettier handle this
-    // https://eslint.org/docs/rules/implicit-arrow-linebreak
-    'implicit-arrow-linebreak': 'off',
-
-    // Let Prettier handle indent
-    // https://eslint.org/docs/rules/indent
-    indent: 'off',
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
-    'react/jsx-indent': 'off',
-
-    // Let Prettier handle this
-    // https://eslint.org/docs/rules/object-curly-spacing
-    'object-curly-spacing': 'off',
-
-  },
 };
