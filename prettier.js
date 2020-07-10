@@ -15,7 +15,7 @@
 module.exports = {
   extends: [
     './index',
-    'prettier',
+    'plugin:prettier/recommended',
     'prettier/react',
     'prettier/unicorn',
   ],
