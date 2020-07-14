@@ -29,17 +29,34 @@ npm install --save-dev eslint-config-amex
 
 ### Extend your `.eslintrc`
 
+To use the base config:
+
 ```json
 {
     "extends": "amex"
 }
 ```
 
+To use the Prettier compatible config:
+
+```json
+{
+    "extends": "amex/prettier"
+}
+
 ### (Optionally) Create an `.eslintrc` file in your test directory
 
 ```json
 {
     "extends": "amex/test"
+}
+```
+
+If you are using Prettier use the `prettier/test` config:
+
+```json
+{
+    "extends": "amex/prettier/test"
 }
 ```
 
