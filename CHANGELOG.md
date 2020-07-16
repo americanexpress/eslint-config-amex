@@ -1,3 +1,32 @@
+# [13.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v12.2.0...v13.0.0) (2020-07-16)
+
+
+### Bug Fixes
+
+* **eslint:** disable prevent abbreviations ([#33](https://github.com/americanexpress/eslint-config-amex/issues/33)) ([6647bef](https://github.com/americanexpress/eslint-config-amex/commit/6647bef8268ad912102757bf428f63167fc3464e))
+
+
+### Features
+
+* **eslint:** configuration ([#30](https://github.com/americanexpress/eslint-config-amex/issues/30)) ([6229d4a](https://github.com/americanexpress/eslint-config-amex/commit/6229d4ac96badf1d4b487b7e5a5b6b58341e8567))
+* **eslint:** disable function scoping ([#35](https://github.com/americanexpress/eslint-config-amex/issues/35)) ([0a0c5bb](https://github.com/americanexpress/eslint-config-amex/commit/0a0c5bbccd87b615367093baa9cc70b26588609a))
+* **eslint:** disable prefer default export ([#26](https://github.com/americanexpress/eslint-config-amex/issues/26)) ([45b88d3](https://github.com/americanexpress/eslint-config-amex/commit/45b88d38a86c456080c116c52d6989e68a2051cf))
+* **eslint:** enable jest rules ([#29](https://github.com/americanexpress/eslint-config-amex/issues/29)) ([846bbf7](https://github.com/americanexpress/eslint-config-amex/commit/846bbf74a961db89dc8fc01a26091b4ad4845279))
+* **eslint:** react/jsx quality of life rules ([#24](https://github.com/americanexpress/eslint-config-amex/issues/24)) ([facff92](https://github.com/americanexpress/eslint-config-amex/commit/facff92f00dca9a448ecec4c4769b1276ff73c55))
+* **js:** additional js rules ([58df834](https://github.com/americanexpress/eslint-config-amex/commit/58df83406d01a391ae0b8e3f3ba98b99df68e9d9))
+* **prettier:** add ([#45](https://github.com/americanexpress/eslint-config-amex/issues/45)) ([00cecaf](https://github.com/americanexpress/eslint-config-amex/commit/00cecafde5421f14db228f95eab7a9fb6985ba23))
+* **unicorn:** update and seperate rules ([#43](https://github.com/americanexpress/eslint-config-amex/issues/43)) ([940eb66](https://github.com/americanexpress/eslint-config-amex/commit/940eb66bbf6d0e08d40a09b6c735f3c21c086f35))
+* **unicorn/consistent-function-scoping:** disable ([#42](https://github.com/americanexpress/eslint-config-amex/issues/42)) ([54dd5a3](https://github.com/americanexpress/eslint-config-amex/commit/54dd5a3f8bb818db044b46cf5a43e6bbb1513b7c))
+
+
+### BREAKING CHANGES
+
+* **unicorn:** major update to unicorn
+* **js:** no-lonely-if errors
+* **js:** no-return-assign, errors
+* **js:** prefer-object-spread, errors
+* **js:** no-bitwise, errors
+
 # [12.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v12.1.0...v12.2.0) (2020-06-06)
 
 
