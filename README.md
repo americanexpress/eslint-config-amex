@@ -43,6 +43,7 @@ To use the Prettier compatible config:
 {
     "extends": "amex/prettier"
 }
+```
 
 ### (Optionally) Create an `.eslintrc` file in your test directory
 
