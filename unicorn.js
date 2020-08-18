@@ -114,9 +114,10 @@ module.exports = {
     // TODO: Enable this by default when targeting Node.js 12.
     'unicorn/prefer-flat-map': 'off',
 
-    // Prefer .includes() over .indexOf() when checking for existence or non-existence
+    // Don't prefer .includes() over .indexOf() when checking for existence or non-existence.
+    // Internet Explorer does not support .includes()
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-includes.md
-    'unicorn/prefer-includes': 'error',
+    'unicorn/prefer-includes': 'off',
 
     // Prefer modern DOM APIs
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/prefer-modern-dom-apis.md
