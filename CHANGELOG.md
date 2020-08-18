@@ -1,3 +1,10 @@
+# [13.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v13.0.0...v13.1.0) (2020-08-18)
+
+
+### Features
+
+* **unicorn/prefer-includes:** disable ([#50](https://github.com/americanexpress/eslint-config-amex/issues/50)) ([d526530](https://github.com/americanexpress/eslint-config-amex/commit/d526530ba525d8174f7fab4f3d274f38d423d0de))
+
 # [13.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v12.2.0...v13.0.0) (2020-07-16)
 
 
