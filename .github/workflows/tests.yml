@@ -29,19 +29,15 @@ jobs:
       run: npm run test:unit
       env:
         NODE_ENV: production
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Git History Test
       run: npm run test:git-history
       env:
         NODE_ENV: production
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Lockfile Lint Test
       run: npm run test:lockfile
       env:
         NODE_ENV: production
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Lint
       run: npm run test:lint
       env:
         NODE_ENV: production
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
