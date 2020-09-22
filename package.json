@@ -7,7 +7,7 @@
     "test:lint": "eslint ./",
     "test:unit": "jest",
     "test": "npm run test:unit",
-    "test:git-history": "commitlint --from origin/master --to HEAD",
+    "test:git-history": "commitlint --from origin/main --to HEAD",
     "test:lockfile": "lockfile-lint -p package-lock.json -t npm -a npm -o https: -c -i",
     "posttest": "npm run test:lint && npm run test:git-history && npm run test:lockfile"
   },
@@ -79,6 +79,20 @@
     }
   },
   "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main",
+      "next",
+      "next-major",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -86,7 +100,6 @@
       "@semantic-release/npm",
       "@semantic-release/git",
       "@semantic-release/github"
-    ],
-    "branch": "master"
+    ]
   }
 }

@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img src='https://github.com/americanexpress/eslint-config-amex/raw/master/eslint-config-amex.png' alt="Eslint Config Amex - One Amex" width='50%'/>
+  <img src='https://github.com/americanexpress/eslint-config-amex/raw/main/eslint-config-amex.png' alt="Eslint Config Amex - One Amex" width='50%'/>
 </h1>
 
 [![npm](https://img.shields.io/npm/v/eslint-config-amex)](https://www.npmjs.com/package/eslint-config-amex)
-[![Travis (.org) branch](https://img.shields.io/travis/americanexpress/eslint-config-amex/master)](https://travis-ci.org/americanexpress/eslint-config-amex)
+![Health Check](https://github.com/americanexpress/eslint-config-amex/workflows/Health%20Check/badge.svg)
 
 > American Express' eslint config.
 
