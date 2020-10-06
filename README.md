@@ -24,7 +24,7 @@ Want to get paid for your contributions to `eslint-config-amex`?
 ### Installation
 
 ```bash
-npm install --save-dev eslint-config-amex
+npm install -D eslint-config-amex
 ```
 
 ### Extend your `.eslintrc`
