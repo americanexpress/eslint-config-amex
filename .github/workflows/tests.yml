@@ -30,7 +30,10 @@ jobs:
       env:
         NODE_ENV: production
     - name: Git History Test
-      run: npm run test:git-history
+      run: |
+        git remote set-branches --add origin main
+        git fetch
+        npm run test:git-history
       env:
         NODE_ENV: production
     - name: Lockfile Lint Test
