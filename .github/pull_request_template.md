@@ -16,8 +16,6 @@ Please make sure that the PR fulfills these requirements
 <!--- Please describe in detail how you tested your changes. -->
 <!--- Include details of your testing environment, tests ran to see how -->
 <!--- your change affects other areas of the code, etc. -->
-- Does your submission pass tests?
-- Have you successfully ran tests with your changes locally?
 
 ## Types of changes
 <!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
@@ -26,5 +24,4 @@ Please make sure that the PR fulfills these requirements
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Documentation (adding or updating documentation)
 - [ ] Dependency update
-
 
