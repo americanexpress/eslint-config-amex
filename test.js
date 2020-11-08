@@ -47,5 +47,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     // this conflicts with co-located tests
     'unicorn/import-index': 'off',
+    // the word "props" has a distinct meaning in React, beyond being shorthand for "properties"
+    'unicorn/prevent-abbreviations': ['error', { whitelist: { props: true, Props: true } }],
   },
 };
