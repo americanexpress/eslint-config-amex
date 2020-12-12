@@ -22,7 +22,7 @@ describe('package.json', () => {
     expect.assertions(2);
     // ex:
     // npm ERR! peer dep missing: eslint@<2.3.0, required by babel-eslint@5.0.4
-    const { stdout, stderr } = exec('npm ls', {
+    const { stdout, stderr } = await exec('npm ls', {
       cwd: path.resolve(__dirname, '../'),
     });
     // if there are no complaints from npm, stdout is null
