@@ -14,6 +14,8 @@
 
 const packageJson = require('../package.json');
 
+jest.setTimeout(10000);
+
 describe('package.json', () => {
   it('should have the same eslint version in devDependencies as in peerDependencies', () => {
     expect(packageJson.devDependencies.eslint).toEqual(packageJson.peerDependencies.eslint);
