@@ -17,6 +17,8 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const packageJson = require('../package.json');
 
+jest.setTimeout(10000);
+
 describe('package.json', () => {
   it('should not have peer dep warnings', async () => {
     expect.assertions(2);

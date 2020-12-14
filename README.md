@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/v/eslint-config-amex)](https://www.npmjs.com/package/eslint-config-amex)
 ![Health Check](https://github.com/americanexpress/eslint-config-amex/workflows/Health%20Check/badge.svg)
 
-> American Express' eslint config.
+> ESLint configurations used at American Express.
 
 ## 👩‍💻 Hiring 👨‍💻
 
@@ -16,15 +16,35 @@ Want to get paid for your contributions to `eslint-config-amex`?
 
 * [Usage](#-usage)
 * [Contributing](#-contributing)
-* [License](#-license)
-* [Code of Conduct](#-code-of-conduct)
+* [License](#️-license)
+* [Code of Conduct](#️-code-of-conduct)
 
 ## 🤹‍ Usage
 
 ### Installation
 
+
 ```bash
-npm install --save-dev eslint-config-amex
+npm install --save-dev eslint eslint-config-amex
+```
+
+The default config provides support for React applications. ESLint configs are also provided for:
+
+* Jest
+* Prettier
+
+Install required peer dependencies before [extending your ESLint config](#extend-your-eslintrc):
+
+Jest:
+
+```bash
+npm install --save-dev typescript eslint-plugin-jest eslint-plugin-jest-dom
+```
+
+Prettier:
+
+```bash
+npm install --save-dev prettier eslint-plugin-prettier
 ```
 
 ### Extend your `.eslintrc`
