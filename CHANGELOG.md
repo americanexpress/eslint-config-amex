@@ -1,3 +1,23 @@
+# [14.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v13.1.0...v14.0.0) (2021-03-03)
+
+
+### Features
+
+* fix the peer dep test; update all deps to latest ([51d1864](https://github.com/americanexpress/eslint-config-amex/commit/51d18646c8eb49cb4752233dbea8ac41beac75f8))
+* move optional tools and plugins to optional peerDependencies ([4aebd5e](https://github.com/americanexpress/eslint-config-amex/commit/4aebd5eb8260e7eaf7adf5eb000f29f8c3e72654))
+
+
+### BREAKING CHANGES
+
+* Moved TypeScript and Prettier dependencies to peer
+dependencies and made them optional. Consumers of this package must
+install them separately. Moved ESLint plugins required by `amex/test`
+and `amex/prettier/*` to become optional peer dependencies.
+* - Several ESLint plugins received major updates.
+- ESLint versions below v7.15.0 are no longer supported.
+* - Several ESLint plugins received major updates.
+- ESLint versions below v7.15.0 are no longer supported.
+
 # [13.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v13.0.0...v13.1.0) (2020-08-18)
 
 
