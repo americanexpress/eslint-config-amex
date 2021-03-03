@@ -48,6 +48,7 @@ module.exports = {
     'import/resolver': {
       node: {
         paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
@@ -58,6 +59,7 @@ module.exports = {
     'react',
     'react-hooks',
     'you-dont-need-lodash-underscore',
+    '@typescript-eslint/eslint-plugin',
   ],
   rules: {
     // open a PR per rule change
@@ -219,6 +221,28 @@ module.exports = {
     // reduces the unnecessary boilerplate of explicitly setting props to `undefined`
     // prevent false-confidence for those less experienced with how default props work
     'react/require-default-props': 'off',
+
+    // the default settings for these rules get confused when encountering ts|tsx files
+    'import/extensions': [
+      'error',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: [
+          '.js',
+          '.jsx',
+          '.ts',
+          '.tsx',
+        ],
+      },
+    ],
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
@@ -245,6 +269,12 @@ module.exports = {
       // It is common to comment JSX during normal development, so 'warn' is least disruptive
       // https://eslint.org/docs/rules/spaced-comment
       'spaced-comment': 'warn',
+    },
+  }, {
+    files: ['**/*.tsx', '**/*.ts'],
+    rules: {
+      // After all, Typescript is basically prop-types with teeth
+      'react/prop-types': 'off',
     },
   }],
 };
