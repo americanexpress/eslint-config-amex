@@ -17,12 +17,14 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const packageJson = require('../package.json');
 
+jest.setTimeout(10000);
+
 describe('package.json', () => {
   it('should not have peer dep warnings', async () => {
     expect.assertions(2);
     // ex:
     // npm ERR! peer dep missing: eslint@<2.3.0, required by babel-eslint@5.0.4
-    const { stdout, stderr } = exec('npm ls', {
+    const { stdout, stderr } = await exec('npm ls', {
       cwd: path.resolve(__dirname, '../'),
     });
     // if there are no complaints from npm, stdout is null
