@@ -93,7 +93,7 @@ module.exports = {
       'error',
       {
         propTypeNames: ['bool', 'mutuallyExclusiveTrueProps'],
-        rule: '^((is|has|can|show|hide)[A-Z]([A-Za-z0-9]?)+|(show|hide))',
+        rule: '^((is|has|can|show|hide|should)[A-Z]([A-Za-z0-9]?)+|(show|hide))',
       },
     ],
 
