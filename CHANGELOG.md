@@ -1,3 +1,10 @@
+# [14.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v14.0.0...v14.1.0) (2021-03-16)
+
+
+### Features
+
+* **react/boolean-prop-naming:** extend to allow 'should' in boolean names ([#67](https://github.com/americanexpress/eslint-config-amex/issues/67)) ([6787d35](https://github.com/americanexpress/eslint-config-amex/commit/6787d3592853063c3c1912aab459f5b6077abc62))
+
 # [14.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v13.1.0...v14.0.0) (2021-03-03)
 
 
