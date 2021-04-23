@@ -88,7 +88,7 @@ module.exports = {
 
     // Expand the acceptable boolean names to include
     // "is", "has", "can", "show" and "hide", as well as "show" and "hide" on their own
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md
+    // https://github.com/yannickcr/eslint-plugin-react/blob/v7.19.0/docs/rules/boolean-prop-naming.md
     'react/boolean-prop-naming': [
       'error',
       {
@@ -156,7 +156,7 @@ module.exports = {
     }],
 
     // Don't enforce specific function type for components
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+    // https://github.com/yannickcr/eslint-plugin-react/blob/v7.19.0/docs/rules/function-component-definition.md
     'react/function-component-definition': 'off',
 
     // React hooks were introduced in 16.8.0 and have two restrictions that are addressed
@@ -203,7 +203,7 @@ module.exports = {
 
     // File with one export should be no different than a file
     // with two  exports from the consumer side
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
+    // https://github.com/benmosher/eslint-plugin-import/blob/v2.20.1/docs/rules/prefer-default-export.md
     'import/prefer-default-export': 'off',
 
     // React fragment syntax requires Babel 7.x but this preset needs to still support Babel 6.x
