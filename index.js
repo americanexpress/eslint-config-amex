@@ -1,3 +1,4 @@
+/* eslint-disable inclusive-language/use-inclusive-words */
 /*
  * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
  *
@@ -58,6 +59,7 @@ module.exports = {
     'react',
     'react-hooks',
     'you-dont-need-lodash-underscore',
+    'inclusive-language',
   ],
   rules: {
     // open a PR per rule change
@@ -219,6 +221,32 @@ module.exports = {
     // reduces the unnecessary boilerplate of explicitly setting props to `undefined`
     // prevent false-confidence for those less experienced with how default props work
     'react/require-default-props': 'off',
+
+    // encourage the use of inclusive language
+    'inclusive-language/use-inclusive-words': [
+      'warn',
+      {
+        words: [
+          {
+            word: 'blacklist',
+            suggestions: ['blocklist', 'denylist', 'deny', 'block', 'unapproved'],
+          },
+          {
+            word: 'whitelist',
+            suggestions: ['allowlist', 'passlist', 'allow', 'permit', 'approved'],
+          },
+          {
+            word: 'master',
+            suggestions: ['main', 'primary', 'host', 'leader'],
+          },
+          {
+            word: 'slave',
+            suggestions: ['secondary', 'replica', 'client', 'follower'],
+          },
+        ],
+        lintStrings: true,
+      },
+    ],
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
