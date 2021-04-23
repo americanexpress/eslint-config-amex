@@ -1,3 +1,10 @@
+## [14.1.1](https://github.com/americanexpress/eslint-config-amex/compare/v14.1.0...v14.1.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* **comments:** link to tagged releases instead of master ([#70](https://github.com/americanexpress/eslint-config-amex/issues/70)) ([e997489](https://github.com/americanexpress/eslint-config-amex/commit/e9974894fdb3efd4b31bafdb5ed2ef1ae2718c61))
+
 # [14.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v14.0.0...v14.1.0) (2021-03-16)
 
 
