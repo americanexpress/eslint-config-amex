@@ -33,6 +33,8 @@ module.exports = {
     'eslint-config-airbnb',
     './unicorn',
   ].map(require.resolve).concat([
+    // aid maintainability of eslint directives (usually overrides)
+    'plugin:eslint-comments/recommended',
     // Helpful rules for writing React
     'plugin:react/recommended',
     // Use native JS instead of lodash
@@ -53,6 +55,7 @@ module.exports = {
     },
   },
   plugins: [
+    'eslint-comments',
     'import',
     'inclusive-language',
     'jsx-a11y',
@@ -63,6 +66,11 @@ module.exports = {
   ],
   rules: {
     // open a PR per rule change
+
+    // record why the directive is seen to be justified
+    'eslint-comments/require-description': ['error'],
+    // remove out of date directives, ensure the directive is used where it should be
+    'eslint-comments/no-unused-disable': ['error'],
 
     // Simplifies code and reduces bugs
     // https://eslint.org/docs/rules/no-lonely-if
