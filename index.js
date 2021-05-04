@@ -54,12 +54,12 @@ module.exports = {
   },
   plugins: [
     'import',
+    'inclusive-language',
     'jsx-a11y',
     'markdown',
     'react',
     'react-hooks',
     'you-dont-need-lodash-underscore',
-    'inclusive-language',
   ],
   rules: {
     // open a PR per rule change
