@@ -1,3 +1,10 @@
+# [14.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v14.1.1...v14.2.0) (2021-05-25)
+
+
+### Features
+
+* **eslint:** add inclusive-language rule ([#71](https://github.com/americanexpress/eslint-config-amex/issues/71)) ([5a1cf81](https://github.com/americanexpress/eslint-config-amex/commit/5a1cf811f9526714b4bc50f462d51e810c15c450))
+
 ## [14.1.1](https://github.com/americanexpress/eslint-config-amex/compare/v14.1.0...v14.1.1) (2021-04-23)
 
 
