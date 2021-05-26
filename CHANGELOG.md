@@ -1,3 +1,10 @@
+## [14.2.1](https://github.com/americanexpress/eslint-config-amex/compare/v14.2.0...v14.2.1) (2021-05-26)
+
+
+### Bug Fixes
+
+* **index:** switch inclusive language to warning ([#77](https://github.com/americanexpress/eslint-config-amex/issues/77)) ([b76f28d](https://github.com/americanexpress/eslint-config-amex/commit/b76f28d6d64ac904598b1e55dd35236a12e55068))
+
 # [14.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v14.1.1...v14.2.0) (2021-05-25)
 
 
