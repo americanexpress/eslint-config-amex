@@ -224,7 +224,7 @@ module.exports = {
 
     // encourage the use of inclusive language
     'inclusive-language/use-inclusive-words': [
-      'error',
+      'warn',
       {
         words: [
           {
