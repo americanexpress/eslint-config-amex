@@ -1,1 +1,25 @@
 
+name: Commit Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+      - nellyk-patch-1
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Node ${{ matrix.node }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        git remote set-branches --add origin main
+        git fetch
+    - name: Setup Node
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: 12.x
+    - name: Git History Test
+      run: npm run test:git-history
+      env:
+        NODE_ENV: production
