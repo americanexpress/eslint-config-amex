@@ -1,4 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
 /*
  * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
  *
@@ -231,6 +230,8 @@ module.exports = {
     'react/require-default-props': 'off',
 
     // encourage the use of inclusive language
+    /* eslint-disable inclusive-language/use-inclusive-words
+    -- The following config lists noninclusive words: */
     'inclusive-language/use-inclusive-words': [
       'warn',
       {
@@ -255,6 +256,7 @@ module.exports = {
         lintStrings: true,
       },
     ],
+    /* eslint-enable inclusive-language/use-inclusive-words -- Check for noninclusive words */
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
