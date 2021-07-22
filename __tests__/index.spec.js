@@ -16,8 +16,8 @@ describe('index.js', () => {
   it('should be import/require-able', () => {
     let configImportable = true;
     try {
-      // require is part of the test
-      require('..'); // eslint-disable-line global-require
+      // eslint-disable-next-line global-require -- require is part of the test
+      require('..');
     } catch (error) {
       configImportable = false;
     }

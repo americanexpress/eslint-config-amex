@@ -103,7 +103,7 @@ Provide the system information which is not limited to the below:
 
 - OS: [e.g. macOS, Windows]
 - Version of eslint-config-amex: [e.g. 5.0.0]
-- Node version:[e.g 10.15.1]
+- Node version:[e.g 14.17.0]
 
 ### Security Bugs
 
