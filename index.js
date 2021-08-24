@@ -132,6 +132,12 @@ module.exports = {
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/455#issuecomment-403359963
     'jsx-a11y/label-has-for': 'off',
 
+    // Nesting controls inside of label has poor support in assistive technologies,
+    // instead enforce separate tags with an htmlFor on the label.
+    'jsx-a11y/label-has-associated-control': ['error', {
+      assert: 'htmlFor',
+    }],
+
     // this rule isn't ready yet
     // arrow functions are forced to put the return values on a new line, rather than inline
     // with the argument and fat arrow itself, which is awkward syntax
