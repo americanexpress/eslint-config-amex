@@ -134,6 +134,7 @@ module.exports = {
 
     // Nesting controls inside of label has poor support in assistive technologies,
     // instead enforce separate tags with an htmlFor on the label.
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
     'jsx-a11y/label-has-associated-control': ['error', {
       assert: 'htmlFor',
     }],
