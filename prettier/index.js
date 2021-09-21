@@ -13,13 +13,13 @@
  */
 
 module.exports = {
-  extends: [
+  extends: [...[
     '../index',
-  ].map(require.resolve).concat([
-    'plugin:prettier/recommended',
-    'prettier/react',
-    'prettier/unicorn',
-  ]),
+  ].map(require.resolve),
+  'plugin:prettier/recommended',
+  'prettier/react',
+  'prettier/unicorn',
+  ],
   plugins: [
     'prettier',
   ],

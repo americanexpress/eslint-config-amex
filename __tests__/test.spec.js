@@ -17,7 +17,7 @@ describe('test.js', () => {
     let configImportable = true;
     try {
       // require is part of the test
-      require('../test.js'); // eslint-disable-line global-require
+      require('../test'); // eslint-disable-line global-require
     } catch (error) {
       configImportable = false;
     }

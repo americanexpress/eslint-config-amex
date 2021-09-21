@@ -29,15 +29,15 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: [
+  extends: [...[
     'eslint-config-airbnb',
     './unicorn',
-  ].map(require.resolve).concat([
-    // Helpful rules for writing React
-    'plugin:react/recommended',
-    // Use native JS instead of lodash
-    'plugin:you-dont-need-lodash-underscore/compatible',
-  ]),
+  ].map(require.resolve),
+  // Helpful rules for writing React
+  'plugin:react/recommended',
+  // Use native JS instead of lodash
+  'plugin:you-dont-need-lodash-underscore/compatible',
+  ],
   env: {
     browser: true,
     node: true,
