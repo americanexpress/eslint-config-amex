@@ -1,4 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
 /*
  * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
  *
@@ -33,6 +32,8 @@ module.exports = {
     'eslint-config-airbnb',
     './unicorn',
   ].map(require.resolve),
+  // aid maintainability of eslint directives (usually overrides)
+  'plugin:eslint-comments/recommended',
   // Helpful rules for writing React
   'plugin:react/recommended',
   // Use native JS instead of lodash
@@ -53,6 +54,7 @@ module.exports = {
     },
   },
   plugins: [
+    'eslint-comments',
     'import',
     'inclusive-language',
     'jsx-a11y',
@@ -63,6 +65,11 @@ module.exports = {
   ],
   rules: {
     // open a PR per rule change
+
+    // record why the directive is seen to be justified
+    'eslint-comments/require-description': ['error'],
+    // remove out of date directives, ensure the directive is used where it should be
+    'eslint-comments/no-unused-disable': ['error'],
 
     // Simplifies code and reduces bugs
     // https://eslint.org/docs/rules/no-lonely-if
@@ -223,6 +230,8 @@ module.exports = {
     'react/require-default-props': 'off',
 
     // encourage the use of inclusive language
+    /* eslint-disable inclusive-language/use-inclusive-words
+    -- The following config lists noninclusive words: */
     'inclusive-language/use-inclusive-words': [
       'warn',
       {
@@ -247,6 +256,7 @@ module.exports = {
         lintStrings: true,
       },
     ],
+    /* eslint-enable inclusive-language/use-inclusive-words -- Check for noninclusive words */
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,
