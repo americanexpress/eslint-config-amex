@@ -28,17 +28,17 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: [
+  extends: [...[
     'eslint-config-airbnb',
     './unicorn',
-  ].map(require.resolve).concat([
-    // aid maintainability of eslint directives (usually overrides)
-    'plugin:eslint-comments/recommended',
-    // Helpful rules for writing React
-    'plugin:react/recommended',
-    // Use native JS instead of lodash
-    'plugin:you-dont-need-lodash-underscore/compatible',
-  ]),
+  ].map(require.resolve),
+  // aid maintainability of eslint directives (usually overrides)
+  'plugin:eslint-comments/recommended',
+  // Helpful rules for writing React
+  'plugin:react/recommended',
+  // Use native JS instead of lodash
+  'plugin:you-dont-need-lodash-underscore/compatible',
+  ],
   env: {
     browser: true,
     node: true,

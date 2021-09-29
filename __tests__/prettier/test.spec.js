@@ -17,7 +17,7 @@ describe('prettier.js', () => {
     let configImportable = true;
     try {
       // eslint-disable-next-line global-require -- require is part of the test
-      require('../../prettier/test.js');
+      require('../../prettier/test');
     } catch {
       configImportable = false;
     }
