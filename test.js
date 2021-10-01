@@ -13,12 +13,12 @@
  */
 
 module.exports = {
-  extends: [
+  extends: [...[
     './index',
-  ].map(require.resolve).concat([
-    'plugin:jest/recommended',
-    'plugin:jest-dom/recommended',
-  ]),
+  ].map(require.resolve),
+  'plugin:jest/recommended',
+  'plugin:jest-dom/recommended',
+  ],
   env: {
     'jest/globals': true,
   },
