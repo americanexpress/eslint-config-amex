@@ -1,4 +1,3 @@
-/* eslint-disable inclusive-language/use-inclusive-words */
 /*
  * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
  *
@@ -29,15 +28,17 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: [
+  extends: [...[
     'eslint-config-airbnb',
     './unicorn',
-  ].map(require.resolve).concat([
-    // Helpful rules for writing React
-    'plugin:react/recommended',
-    // Use native JS instead of lodash
-    'plugin:you-dont-need-lodash-underscore/compatible',
-  ]),
+  ].map(require.resolve),
+  // aid maintainability of eslint directives (usually overrides)
+  'plugin:eslint-comments/recommended',
+  // Helpful rules for writing React
+  'plugin:react/recommended',
+  // Use native JS instead of lodash
+  'plugin:you-dont-need-lodash-underscore/compatible',
+  ],
   env: {
     browser: true,
     node: true,
@@ -53,6 +54,7 @@ module.exports = {
     },
   },
   plugins: [
+    'eslint-comments',
     'import',
     'inclusive-language',
     'jsx-a11y',
@@ -63,6 +65,11 @@ module.exports = {
   ],
   rules: {
     // open a PR per rule change
+
+    // record why the directive is seen to be justified
+    'eslint-comments/require-description': ['error'],
+    // remove out of date directives, ensure the directive is used where it should be
+    'eslint-comments/no-unused-disable': ['error'],
 
     // Simplifies code and reduces bugs
     // https://eslint.org/docs/rules/no-lonely-if
@@ -131,6 +138,13 @@ module.exports = {
     // we should turn this rule off.
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/455#issuecomment-403359963
     'jsx-a11y/label-has-for': 'off',
+
+    // Nesting controls inside of label has poor support in assistive technologies,
+    // instead enforce separate tags with an htmlFor on the label.
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
+    'jsx-a11y/label-has-associated-control': ['error', {
+      assert: 'htmlFor',
+    }],
 
     // this rule isn't ready yet
     // arrow functions are forced to put the return values on a new line, rather than inline
@@ -223,6 +237,8 @@ module.exports = {
     'react/require-default-props': 'off',
 
     // encourage the use of inclusive language
+    /* eslint-disable inclusive-language/use-inclusive-words
+    -- The following config lists noninclusive words: */
     'inclusive-language/use-inclusive-words': [
       'warn',
       {
@@ -247,6 +263,7 @@ module.exports = {
         lintStrings: true,
       },
     ],
+    /* eslint-enable inclusive-language/use-inclusive-words -- Check for noninclusive words */
   },
   overrides: [{
     // Certain rules need to be disabled when we are linting markdown files,

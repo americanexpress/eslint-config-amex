@@ -1,3 +1,24 @@
+# [15.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v14.2.1...v15.0.0) (2021-10-01)
+
+
+### chore
+
+* **relese:** 15.x ([366da96](https://github.com/americanexpress/eslint-config-amex/commit/366da962e7762cd8654b38060b8a8436af32854b)), closes [#80](https://github.com/americanexpress/eslint-config-amex/issues/80)
+
+
+### BREAKING CHANGES
+
+* **relese:** Node v10 has reached end-of-life and is no longer supported.
+
+* feat(eslint-comments): aid maintainability of eslint directives
+* **relese:** 7 new rules added as errors
+
+* fix(index): move eslint-disable directive and pair it
+
+* feat(ally): disallow nesting of controls in labels
+
+* feat(unicorn): upgrade eslint-plugin-unicorn from 23.0.0 to 36.0.0
+
 ## [14.2.1](https://github.com/americanexpress/eslint-config-amex/compare/v14.2.0...v14.2.1) (2021-05-26)
 
 
