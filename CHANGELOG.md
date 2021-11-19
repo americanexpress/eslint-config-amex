@@ -1,3 +1,10 @@
+## [15.0.1](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.0...v15.0.1) (2021-11-19)
+
+
+### Bug Fixes
+
+* **typescript:** peer dep conflict ([1793a26](https://github.com/americanexpress/eslint-config-amex/commit/1793a265691d3b86b0436ec7646a137df71531d7))
+
 # [15.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v14.2.1...v15.0.0) (2021-10-01)
 
 
