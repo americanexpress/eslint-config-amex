@@ -265,31 +265,40 @@ module.exports = {
     ],
     /* eslint-enable inclusive-language/use-inclusive-words -- Check for noninclusive words */
   },
-  overrides: [{
-    // Certain rules need to be disabled when we are linting markdown files,
-    // since they will often be snippets in documentation that cannot be run on
-    // their own.
-    files: ['**/*.md'],
-    rules: {
-      'no-unused-expressions': 0,
-      'no-unused-vars': 0,
-      'no-undef': 0,
-      'react/jsx-no-undef': 0,
-      'import/extensions': 0,
-      'import/no-unresolved': 0,
-      'import/prefer-default-export': 0,
-      'import/no-extraneous-dependencies': 0,
-      'react/react-in-jsx-scope': 0,
-      'react/jsx-filename-extension': 0,
-      'react/prop-types': 0,
-      'react/require-default-props': 0,
+  overrides: [
+    {
+      // use the markdown processor for all .md files
+      files: ['**/*.{md,mkdn,mdown,markdown}'],
+      processor: 'markdown/markdown',
     },
-  }, {
-    files: ['**/*.jsx'],
-    rules: {
-      // It is common to comment JSX during normal development, so 'warn' is least disruptive
-      // https://eslint.org/docs/rules/spaced-comment
-      'spaced-comment': 'warn',
+    {
+      // ```js -fenced code blocks inside .md files
+      // Certain rules need to be disabled when we are linting markdown files,
+      // since they will often be snippets in documentation that cannot be run on
+      // their own.
+      files: ['**/*.{md,mkdn,mdown,markdown}/*.{js,javascript,jsx,node}'],
+      rules: {
+        'no-unused-expressions': 0,
+        'no-unused-vars': 0,
+        'no-undef': 0,
+        'react/jsx-no-undef': 0,
+        'import/extensions': 0,
+        'import/no-unresolved': 0,
+        'import/prefer-default-export': 0,
+        'import/no-extraneous-dependencies': 0,
+        'react/react-in-jsx-scope': 0,
+        'react/jsx-filename-extension': 0,
+        'react/prop-types': 0,
+        'react/require-default-props': 0,
+      },
     },
-  }],
+    {
+      files: ['**/*.jsx'],
+      rules: {
+        // It is common to comment JSX during normal development, so 'warn' is least disruptive
+        // https://eslint.org/docs/rules/spaced-comment
+        'spaced-comment': 'warn',
+      },
+    },
+  ],
 };
