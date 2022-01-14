@@ -1,3 +1,10 @@
+## [15.0.2](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.1...v15.0.2) (2022-01-14)
+
+
+### Bug Fixes
+
+* **eslint-plugin-prettier:** peer version ([#92](https://github.com/americanexpress/eslint-config-amex/issues/92)) ([ef06bd0](https://github.com/americanexpress/eslint-config-amex/commit/ef06bd072e128c5ff24ff28162b2c75924677345))
+
 ## [15.0.1](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.0...v15.0.1) (2021-11-19)
 
 
