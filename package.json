@@ -42,7 +42,7 @@
     "node": ">= 12.0.0"
   },
   "dependencies": {
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "7.16.5",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
