@@ -1,3 +1,10 @@
+## [15.0.3](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.2...v15.0.3) (2022-02-14)
+
+
+### Bug Fixes
+
+* update link to remove non-inclusive term ([#98](https://github.com/americanexpress/eslint-config-amex/issues/98)) ([86e85cd](https://github.com/americanexpress/eslint-config-amex/commit/86e85cd4c5deece1e47df8d16421312afdd5dc06))
+
 ## [15.0.2](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.1...v15.0.2) (2022-01-14)
 
 
