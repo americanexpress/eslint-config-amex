@@ -1,3 +1,10 @@
+# [15.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.3...v15.1.0) (2022-02-15)
+
+
+### Features
+
+* add support for ESLint v8 ([#97](https://github.com/americanexpress/eslint-config-amex/issues/97)) ([be60e2d](https://github.com/americanexpress/eslint-config-amex/commit/be60e2d688184aaacaa4a3c33346e0e18c3bcd99))
+
 ## [15.0.3](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.2...v15.0.3) (2022-02-14)
 
 
