@@ -1,3 +1,10 @@
+# [15.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.1.0...v15.2.0) (2022-04-13)
+
+
+### Features
+
+* **max-len:** ignore described eslint ignores ([#104](https://github.com/americanexpress/eslint-config-amex/issues/104)) ([283f68e](https://github.com/americanexpress/eslint-config-amex/commit/283f68e548f987916785f0135f60a1ee6516291a))
+
 # [15.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.0.3...v15.1.0) (2022-02-15)
 
 
