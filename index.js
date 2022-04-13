@@ -265,6 +265,24 @@ module.exports = {
       },
     ],
     /* eslint-enable inclusive-language/use-inclusive-words -- Check for noninclusive words */
+
+    // https://eslint.org/docs/rules/max-len
+    'max-len': [
+      // Options from airbnb https://github.com/airbnb/javascript/blob/d8cb404da74c302506f91e5928f30cc75109e74d/packages/eslint-config-airbnb-base/rules/style.js#L198-L205
+      'error',
+      100,
+      2,
+      {
+        ignoreUrls: true,
+        ignoreComments: false,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        // Options we want to override
+        // Ignore comments that contain described eslint ignores, as these are often very long
+        ignorePattern: '^\\s*// eslint-disable-next-line.*?--',
+      },
+    ],
   },
   overrides: [
     {
