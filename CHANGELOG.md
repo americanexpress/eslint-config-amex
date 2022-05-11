@@ -1,3 +1,10 @@
+## [15.2.1](https://github.com/americanexpress/eslint-config-amex/compare/v15.2.0...v15.2.1) (2022-05-11)
+
+
+### Bug Fixes
+
+* **peerDeps:** widen semver ranges of ESLint plugins for Jest ([#106](https://github.com/americanexpress/eslint-config-amex/issues/106)) ([71dde2e](https://github.com/americanexpress/eslint-config-amex/commit/71dde2ef378e35fcbde1595e4dad8a6f141356f8))
+
 # [15.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.1.0...v15.2.0) (2022-04-13)
 
 
