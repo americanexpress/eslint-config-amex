@@ -1,3 +1,10 @@
+# [15.3.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.2.1...v15.3.0) (2022-05-26)
+
+
+### Features
+
+* **deps:** update Jest to v28 ([#107](https://github.com/americanexpress/eslint-config-amex/issues/107)) ([82e87e4](https://github.com/americanexpress/eslint-config-amex/commit/82e87e439b61a859fbfc894d1c4d5ec6643b5849))
+
 ## [15.2.1](https://github.com/americanexpress/eslint-config-amex/compare/v15.2.0...v15.2.1) (2022-05-11)
 
 
