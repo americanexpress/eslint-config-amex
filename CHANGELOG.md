@@ -1,3 +1,10 @@
+## [15.3.1](https://github.com/americanexpress/eslint-config-amex/compare/v15.3.0...v15.3.1) (2022-09-05)
+
+
+### Bug Fixes
+
+* **eslint-plugin-jest:** allow 27.x peer dep ([#113](https://github.com/americanexpress/eslint-config-amex/issues/113)) ([e8624b0](https://github.com/americanexpress/eslint-config-amex/commit/e8624b0f8c06544633f0229ae7598ae878b364f2))
+
 # [15.3.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.2.1...v15.3.0) (2022-05-26)
 
 
