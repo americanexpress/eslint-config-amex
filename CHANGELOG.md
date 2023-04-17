@@ -1,3 +1,10 @@
+## [15.3.2](https://github.com/americanexpress/eslint-config-amex/compare/v15.3.1...v15.3.2) (2023-04-17)
+
+
+### Bug Fixes
+
+* **peerDeps:** allow typescript 5 ([#119](https://github.com/americanexpress/eslint-config-amex/issues/119)) ([42bdf3e](https://github.com/americanexpress/eslint-config-amex/commit/42bdf3e7bc62ab7b2f44649a9c0a4f0e701df5d1))
+
 ## [15.3.1](https://github.com/americanexpress/eslint-config-amex/compare/v15.3.0...v15.3.1) (2022-09-05)
 
 
