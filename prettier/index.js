@@ -17,8 +17,7 @@ module.exports = {
     '../index',
   ].map(require.resolve),
   'plugin:prettier/recommended',
-  'prettier/react',
-  'prettier/unicorn',
+  'prettier',
   ],
   plugins: [
     'prettier',
