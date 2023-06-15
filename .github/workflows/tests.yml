@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [ '16.x' ]
+        node: [ '16.x', '18.x' ]
         eslint: [ 8 ]
     name: Node ${{ matrix.node }} with ESLint ${{ matrix.eslint }}
     steps:
