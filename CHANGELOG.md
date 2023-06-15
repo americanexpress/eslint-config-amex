@@ -1,3 +1,17 @@
+# [16.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.3.2...v16.0.0) (2023-06-15)
+
+
+### Features
+
+* **dependencies:** update plugins and remove eslint@7 support ([#121](https://github.com/americanexpress/eslint-config-amex/issues/121)) ([85cae7e](https://github.com/americanexpress/eslint-config-amex/commit/85cae7eb2decba0c30b02dfaf4823839b9426c89))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Require minimum of eslint 8 and node 16 required to fix bug in node 18
+* **dependencies:** eslint-config-prettier All configs merged into prettier
+* **dependencies:** esling-plugin-prettier Drop support for eslint 5/6, prettier 1, node 6/8
+
 ## [15.3.2](https://github.com/americanexpress/eslint-config-amex/compare/v15.3.1...v15.3.2) (2023-04-17)
 
 
