@@ -1,3 +1,10 @@
+# [16.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.0.0...v16.1.0) (2024-03-26)
+
+
+### Features
+
+* **dependencies:** add support for prettier 3 ([#126](https://github.com/americanexpress/eslint-config-amex/issues/126)) ([cfa4df3](https://github.com/americanexpress/eslint-config-amex/commit/cfa4df391db83a69db64dd5eda02bcebec407547))
+
 # [16.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v15.3.2...v16.0.0) (2023-06-15)
 
 
