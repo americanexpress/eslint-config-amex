@@ -3,7 +3,7 @@
 </h1>
 
 [![npm](https://img.shields.io/npm/v/eslint-config-amex)](https://www.npmjs.com/package/eslint-config-amex)
-![Health Check](https://github.com/americanexpress/eslint-config-amex/workflows/Health%20Check/badge.svg)
+[![Health Check](https://github.com/americanexpress/eslint-config-amex/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/americanexpress/eslint-config-amex/actions/workflows/ci.yml)
 
 > ESLint configurations used at American Express.
 

@@ -1,12 +1,14 @@
-name: "Pull Request Labeler"
+name: PR Labeler
 on:
   pull_request_target:
     types: [opened, reopened]
 
 jobs:
-  triage:
+  pr-labeler:
+    name: PR Labeler
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v3
+    - name: Labeler Action
+      uses: actions/labeler@v5
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
