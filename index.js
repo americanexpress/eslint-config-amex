@@ -68,7 +68,7 @@ module.exports = {
     // open a PR per rule change
 
     // record why the directive is seen to be justified
-    'eslint-comments/require-description': ['error'],
+    'eslint-comments/require-description': ['error', { ignore: ['eslint-enable'] }],
     // remove out of date directives, ensure the directive is used where it should be
     'eslint-comments/no-unused-disable': ['error'],
 
