@@ -1,3 +1,10 @@
+# [16.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.1.0...v16.2.0) (2024-10-23)
+
+
+### Features
+
+* don't require descriptions for eslint-enable comments ([#128](https://github.com/americanexpress/eslint-config-amex/issues/128)) ([0f1ea18](https://github.com/americanexpress/eslint-config-amex/commit/0f1ea186781964cf3ffbf4c3e4769ffd0f496606))
+
 # [16.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.0.0...v16.1.0) (2024-03-26)
 
 
