@@ -1,3 +1,10 @@
+# [16.4.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.3.0...v16.4.0) (2024-11-15)
+
+
+### Features
+
+* support typescript extensions ([#131](https://github.com/americanexpress/eslint-config-amex/issues/131)) ([733c090](https://github.com/americanexpress/eslint-config-amex/commit/733c090cbdf7d7230307a1daa4d5e7b60b205456))
+
 # [16.3.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.2.0...v16.3.0) (2024-11-15)
 
 
