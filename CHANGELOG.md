@@ -1,3 +1,10 @@
+# [16.3.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.2.0...v16.3.0) (2024-11-15)
+
+
+### Features
+
+* treat vite config files as dev files ([#130](https://github.com/americanexpress/eslint-config-amex/issues/130)) ([ef8c6ab](https://github.com/americanexpress/eslint-config-amex/commit/ef8c6abde9751c026c490212fba5c89e5b2a3c01))
+
 # [16.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.1.0...v16.2.0) (2024-10-23)
 
 
