@@ -65,6 +65,16 @@ To use the Prettier compatible config:
 }
 ```
 
+:warning: The `amex` eslint config enforces single quotes, while Prettier uses double quotes by default.
+Enabling the Prettier config will change all the quotes in your files. 
+To avoid this, add a custom Prettier `.prettierrc` config:
+
+```json
+{
+    "singleQuote": true
+}
+```
+
 ### (Optionally) Create an `.eslintrc` file in your test directory
 
 ```json
