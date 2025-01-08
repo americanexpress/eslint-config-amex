@@ -213,7 +213,7 @@ module.exports = {
 
         // additional paths used only in development
         'dev.*.js', // developer config
-        'mock/**', // parrot mocks
+        'mock{,s}/**', // parrot mocks
         '**/vite.config.{ts,js}', // vite config
         '**/vitest.config.{ts,js}', // vitest config
       ],
