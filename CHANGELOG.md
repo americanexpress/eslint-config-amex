@@ -1,3 +1,10 @@
+# [16.5.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.4.0...v16.5.0) (2025-01-08)
+
+
+### Features
+
+* support mocks dir as dev directory ([0482401](https://github.com/americanexpress/eslint-config-amex/commit/04824018f5df261843bea50d54c0f3a051109371))
+
 # [16.4.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.3.0...v16.4.0) (2024-11-15)
 
 
