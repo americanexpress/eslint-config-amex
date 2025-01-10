@@ -1,3 +1,10 @@
+# [16.6.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.5.0...v16.6.0) (2025-01-10)
+
+
+### Features
+
+* **deps:** support latest eslint-plugin-jest and eslint-plugin-jest-dom ([#133](https://github.com/americanexpress/eslint-config-amex/issues/133)) ([09fd81a](https://github.com/americanexpress/eslint-config-amex/commit/09fd81af597a45feceaad34e679a114eddb0cf93))
+
 # [16.5.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.4.0...v16.5.0) (2025-01-08)
 
 
