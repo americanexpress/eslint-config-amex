@@ -1,3 +1,10 @@
+## [16.6.1](https://github.com/americanexpress/eslint-config-amex/compare/v16.6.0...v16.6.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* **deps:** use semver for @babel/eslint-parser ([#140](https://github.com/americanexpress/eslint-config-amex/issues/140)) ([af799e2](https://github.com/americanexpress/eslint-config-amex/commit/af799e2d6cf7537237fa6f5f5183a3d9a97142a1))
+
 # [16.6.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.5.0...v16.6.0) (2025-01-10)
 
 
