@@ -13,13 +13,20 @@
  */
 
 import { defineConfig } from "eslint/config";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 export default defineConfig([
-  // this will:
-  // 1. Enable the prettier/prettier rule.
-  // 2. Disable the arrow-body-style and prefer-arrow-callback rules which are problematic with this plugin
-  // 3. Enable the eslint-config-prettier config which will turn off ESLint rules that conflict with Prettier.
-  eslintPluginPrettierRecommended,
+  // behavior from https://github.aexp.com/amex-eng/one-app-dependencies/blob/main/packages/cli/amex-one-app-module-template/js-template/__tests__/browser/.eslintrc.json.ejs
+  {
+    name: "browser test files",
+    // files: ["__tests__/browser/**"], // this should be defined in module eslint.config.js
+    languageOptions: {
+      globals: {
+        testHost: "false",
+        seleniumServerPort: "false",
+        port: "false",
+        devProxyServerPort: "false",
+      },
+    },
+  },
 ]);
 
