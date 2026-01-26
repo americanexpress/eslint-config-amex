@@ -58,18 +58,5 @@ export default defineConfig([
       "unicorn/import-index": "off",
     },
   },
-  // behavior from https://github.aexp.com/amex-eng/one-app-dependencies/blob/main/packages/cli/amex-one-app-module-template/js-template/__tests__/browser/.eslintrc.json.ejs
-  {
-    name: "browser test files",
-    files: ["__tests__/browser/**"],
-    languageOptions: {
-      globals: {
-        testHost: "false",
-        seleniumServerPort: "false",
-        port: "false",
-        devProxyServerPort: "false",
-      },
-    },
-  },
 ]);
 
