@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
+ * Copyright (c) 2026 American Express Travel Related Services Company, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -11,17 +11,20 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
-describe('index.js', () => {
-  it('should be import/require-able', () => {
-    let configImportable = true;
+describe("config should be import/require-able", () => {
+  it("standard config", async () => {
+    let configsImportable = true;
     try {
       // eslint-disable-next-line global-require -- require is part of the test
-      require('..');
+      await import("../src/index.js");
+      await import("../src/test-config.js");
+      await import("../src/browser-test-config.js");
+      await import("../src/ignore-prettier-rules-config.js");
     } catch (error) {
-      configImportable = false;
+      console.log("error", error);
+      configsImportable = false;
     }
 
-    expect(configImportable).toBe(true);
+    expect(configsImportable).toBe(true);
   });
 });

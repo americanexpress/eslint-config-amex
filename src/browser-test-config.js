@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 American Express Travel Related Services Company, Inc.
+ * Copyright (c) 2026 American Express Travel Related Services Company, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -12,14 +12,18 @@
  * the License.
  */
 
-module.exports = {
-  extends: [...[
-    '../index',
-  ].map(require.resolve),
-  'plugin:prettier/recommended',
-  'prettier',
-  ],
-  plugins: [
-    'prettier',
-  ],
-};
+import { defineConfig } from "eslint/config";
+
+export default defineConfig([
+  {
+    name: "browser test files",
+    languageOptions: {
+      globals: {
+        testHost: "false",
+        seleniumServerPort: "false",
+        port: "false",
+        devProxyServerPort: "false",
+      },
+    },
+  },
+]);
