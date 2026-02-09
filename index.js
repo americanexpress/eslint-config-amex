@@ -61,12 +61,13 @@ const momentRestrictedModule = {
 };
 
 export default defineConfig([
-  includeIgnoreFile(gitignorePath), // behavior from https://github.aexp.com/amex-eng/one-app-dependencies/blob/main/packages/cli/amex-one-app-module-template/js-template/package.json.ejs#L28
+  // below may need to be handled in consumer's eslint.config.js
+  // includeIgnoreFile(gitignorePath), // behavior from https://github.aexp.com/amex-eng/one-app-dependencies/blob/main/packages/cli/amex-one-app-module-template/js-template/package.json.ejs#L28
   {
     name: "js, mjs, cjs, jsx, and snap files",
     // js, mjs, cjs are included by default: https://eslint.org/docs/latest/use/command-line-interface#--ext
     // add jsx and snap files
-    // files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.snap"], // // this should be defined in module eslint.config.js
+    files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.snap"],
     languageOptions: {
       parser: babelParser,
       ecmaVersion: 2020,
@@ -337,6 +338,5 @@ export default defineConfig([
       "react/prop-types": "off",
       "react/require-default-props": "off",
     },
-  }
+  },
 ]);
-

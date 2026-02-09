@@ -22,4 +22,3 @@ export default defineConfig([
   // 3. Enable the eslint-config-prettier config which will turn off ESLint rules that conflict with Prettier.
   eslintPluginPrettierRecommended,
 ]);
-
