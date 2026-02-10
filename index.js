@@ -41,6 +41,10 @@ import eslintPluginYouDontNeedLodashUnderscore from "eslint-plugin-you-dont-need
 
 // eslint config defined in a separate file
 import unicornConfig from "./unicorn.js";
+import eslintRules from "./rules/eslint.js";
+import reactRules from "./rules/react.js";
+import importRules from "./rules/import.js";
+import stylisticRules from "./rules/stylistic.js";
 
 // eslint parser for babel syntax
 import babelParser from "@babel/eslint-parser";
@@ -84,7 +88,7 @@ export default defineConfig([
       },
     },
     plugins: {
-      "@eslint/js": eslintJs.configs.recommended,
+      "@eslint/js": eslintJs,
       // see https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/215
       "@eslint-community/eslint-comments":
         eslintPluginEslintCommentsConfig.recommended.plugins[
@@ -115,7 +119,7 @@ export default defineConfig([
         version: "detect",
       },
     },
-
+    extends: ["@eslint/js/recommended"],
     rules: {
       // `@eslint-community/eslint-comments` rules
       ...eslintPluginEslintCommentsConfig.recommended.rules,
@@ -128,86 +132,14 @@ export default defineConfig([
       "@eslint-community/eslint-comments/no-unused-disable": ["error"],
 
       // `eslint/js` rules
-      "no-lonely-if": ["error"],
-      "no-return-assign": ["error"],
-      "prefer-object-spread": ["error"],
-      "no-bitwise": ["error"],
-      complexity: ["error"],
-      "max-params": ["error", 3],
-      "no-restricted-imports": ["error", momentRestrictedModule],
+      ...eslintRules,
 
       // `@stylistic` rules
-      // ...stylisticEslintPlugin.configs.recommended.rules,
-      "@stylistic/function-paren-newline": "off",
-      "@stylistic/comma-dangle": [
-        "error",
-        {
-          arrays: "always-multiline",
-          objects: "always-multiline",
-          imports: "always-multiline",
-          exports: "always-multiline",
-          functions: "never",
-        },
-      ],
-      "@stylistic/max-len": [
-        "error",
-        100,
-        2,
-        {
-          ignoreUrls: true,
-          ignoreComments: false,
-          ignoreRegExpLiterals: true,
-          ignoreStrings: true,
-          ignoreTemplateLiterals: true,
-          ignorePattern: "^\\s*// eslint-disable-next-line.*?--",
-        },
-      ],
-      "@stylistic/no-extra-parens": "error",
+      ...stylisticEslintPlugin.configs.recommended.rules,
+      ...stylisticRules,
 
       // `import` rules
-      "import/no-anonymous-default-export": [
-        "error",
-        {
-          allowArray: true,
-          allowLiteral: true,
-          allowObject: true,
-        },
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          devDependencies: [
-            "test/**",
-            "tests/**",
-            "spec/**",
-            "**/__tests__/**",
-            "**/__mocks__/**",
-            "test.{js,jsx,ts,tsx}",
-            "test-*.{js,jsx,ts,tsx}",
-            "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}",
-            "**/jest.config.js",
-            "**/jest.setup.js",
-            "**/vue.config.js",
-            "**/webpack.config.js",
-            "**/webpack.config.*.js",
-            "**/rollup.config.js",
-            "**/rollup.config.*.js",
-            "**/gulpfile.js",
-            "**/gulpfile.*.js",
-            "**/Gruntfile{,.js}",
-            "**/protractor.conf.js",
-            "**/protractor.conf.*.js",
-            "dev.*.js",
-            "mock{,s}/**",
-            "**/vite.config.{ts,js}",
-            "**/vitest.config.{ts,js}",
-            "*.config.{js,mjs,cjs}", // added since this is a flat config file
-          ],
-
-          optionalDependencies: false,
-        },
-      ],
-      "import/prefer-default-export": "off",
+      ...importRules,
 
       // `inclusive-language` rules
       /* eslint-disable inclusive-language/use-inclusive-words 
@@ -273,18 +205,7 @@ export default defineConfig([
       "n/no-restricted-require": ["error", [momentRestrictedModule]],
 
       // `react` rules
-      "react/jsx-boolean-value": ["error", "always"],
-      "react/boolean-prop-naming": [
-        "error",
-        {
-          propTypeNames: ["bool", "mutuallyExclusiveTrueProps"],
-          rule: "^((is|has|can|show|hide|should)[A-Z]([A-Za-z0-9]?)+|(show|hide))",
-        },
-      ],
-      "react/function-component-definition": "off",
-      "react/jsx-fragments": "off",
-      "react/jsx-one-expression-per-line": "off",
-      "react/require-default-props": "off",
+      ...reactRules,
 
       // `react-hooks` rules
       "react-hooks/rules-of-hooks": "error",
