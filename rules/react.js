@@ -1,4 +1,4 @@
-export default reactRules = {
+export default {
   // Enforces consistent naming for boolean props
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.37.5/docs/rules/boolean-prop-naming.md
   "react/boolean-prop-naming": [

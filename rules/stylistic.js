@@ -1,4 +1,4 @@
-export default stylisticRules = {
+export default {
   // https://eslint.style/rules/comma-dangle
   "@stylistic/comma-dangle": [
     "error",
@@ -119,11 +119,8 @@ export default stylisticRules = {
   // https://eslint.style/rules/padding-line-between-statements
   "@stylistic/padding-line-between-statements": [
     "error",
-    // TODO
-    {
-      before: "always",
-      after: "always",
-    },
+    { blankLine: "always", prev: "directive", next: "*" },
+    { blankLine: "any", prev: "directive", next: "directive" },
   ],
 
   // Enforce spacing around colons of switch statements

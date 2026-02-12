@@ -12,13 +12,13 @@
  * the License.
  */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+// import path from "node:path";
+// import { fileURLToPath } from "node:url";
 
 // eslint utilities
 import { defineConfig } from "eslint/config";
-import { fixupPluginRules, includeIgnoreFile } from "@eslint/compat";
-import { FlatCompat } from "@eslint/eslintrc";
+import { fixupPluginRules } from "@eslint/compat";
+// import { FlatCompat } from "@eslint/eslintrc";
 
 // eslint core plugins
 import eslintJs from "@eslint/js";
@@ -31,42 +31,37 @@ import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginInclusiveLanguage from "eslint-plugin-inclusive-language";
 import eslintPluginJsxA11Y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import eslintPluginJest from "eslint-plugin-jest";
-import eslintPluginJestDom from "eslint-plugin-jest-dom";
+import eslintPluginReactHooks from "eslint-plugin-react-hooks";
+// import eslintPluginJest from "eslint-plugin-jest";
+// import eslintPluginJestDom from "eslint-plugin-jest-dom";
 import stylisticEslintPlugin from "@stylistic/eslint-plugin";
 import eslintPluginN from "eslint-plugin-n";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import eslintPluginYouDontNeedLodashUnderscore from "eslint-plugin-you-dont-need-lodash-underscore";
 
+// eslint parser for babel syntax
+import babelParser from "@babel/eslint-parser";
+
 // eslint config defined in a separate file
-import unicornConfig from "./unicorn.js";
+import unicornRules from "./rules/unicorn.js";
 import eslintRules from "./rules/eslint.js";
 import reactRules from "./rules/react.js";
 import importRules from "./rules/import.js";
 import stylisticRules from "./rules/stylistic.js";
+import eslintCommentsRules from "./rules/eslintComments.js";
+import inclusiveLanguageRules from "./rules/inclusiveLanguage.js";
+import jsxA11yRules from "./rules/jsxA11y.js";
+import nRules from "./rules/n.js";
 
-// eslint parser for babel syntax
-import babelParser from "@babel/eslint-parser";
-
-const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: eslintJs.configs.recommended,
-  allConfig: eslintJs.configs.all,
-});
-
-const momentRestrictedModule = {
-  name: "moment/moment",
-  message: "Import only from 'moment' instead.",
-};
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+// const compat = new FlatCompat({
+//   baseDirectory: __dirname,
+//   recommendedConfig: eslintJs.configs.recommended,
+//   allConfig: eslintJs.configs.all,
+// });
 
 export default defineConfig([
-  // below may need to be handled in consumer's eslint.config.js
-  // includeIgnoreFile(gitignorePath), // behavior from https://github.aexp.com/amex-eng/one-app-dependencies/blob/main/packages/cli/amex-one-app-module-template/js-template/package.json.ejs#L28
   {
     name: "js, mjs, cjs, jsx, and snap files",
     // js, mjs, cjs are included by default: https://eslint.org/docs/latest/use/command-line-interface#--ext
@@ -102,7 +97,7 @@ export default defineConfig([
       markdown: eslintMarkdown,
       n: eslintPluginN,
       react: eslintPluginReact,
-      "react-hooks": reactHooks,
+      "react-hooks": eslintPluginReactHooks,
       unicorn: eslintPluginUnicorn,
       // this plugin does not support ESLint 9 yet, use `fixupPluginRules` to make compatible
       "you-dont-need-lodash-underscore": fixupPluginRules(
@@ -123,13 +118,7 @@ export default defineConfig([
     rules: {
       // `@eslint-community/eslint-comments` rules
       ...eslintPluginEslintCommentsConfig.recommended.rules,
-      "@eslint-community/eslint-comments/require-description": [
-        "error",
-        {
-          ignore: ["eslint-enable"],
-        },
-      ],
-      "@eslint-community/eslint-comments/no-unused-disable": ["error"],
+      ...eslintCommentsRules,
 
       // `eslint/js` rules
       ...eslintRules,
@@ -142,77 +131,24 @@ export default defineConfig([
       ...importRules,
 
       // `inclusive-language` rules
-      /* eslint-disable inclusive-language/use-inclusive-words 
-        -- config must specify non-inclusive words */
-      "inclusive-language/use-inclusive-words": [
-        "warn",
-        {
-          words: [
-            {
-              word: "blacklist",
-              suggestions: [
-                "blocklist",
-                "denylist",
-                "deny",
-                "block",
-                "unapproved",
-              ],
-            },
-            {
-              word: "whitelist",
-              suggestions: [
-                "allowlist",
-                "passlist",
-                "allow",
-                "permit",
-                "approved",
-              ],
-            },
-            {
-              word: "master",
-              suggestions: ["main", "primary", "host", "leader"],
-            },
-            {
-              word: "slave",
-              suggestions: ["secondary", "replica", "client", "follower"],
-            },
-          ],
-
-          lintStrings: true,
-        },
-      ],
-      /* eslint-enable inclusive-language/use-inclusive-words 
-        -- config must specify non-inclusive words */
+      ...inclusiveLanguageRules,
 
       // `jsx-a11y` rules
-      // ...jsxA11Y.flatConfigs.recommended.rules, // TODO: this was not included originally, should we include?
-      "jsx-a11y/anchor-is-valid": [
-        "error",
-        {
-          components: ["Link"],
-          specialLink: ["to"],
-        },
-      ],
-      // "jsx-a11y/label-has-for": "off", // unncessary
-      "jsx-a11y/label-has-associated-control": [
-        "error",
-        {
-          assert: "htmlFor",
-        },
-      ],
+      // ...jsxA11Y.flatConfigs.recommended.rules, // TODO: this was not included originally
+      ...jsxA11yRules,
 
-      // `n` rules
-      "n/no-restricted-require": ["error", [momentRestrictedModule]],
+      // `n` (Node) rules
+      ...eslintPluginN.configs["flat/recommended"].rules,
+      ...nRules,
 
       // `react` rules
       ...reactRules,
 
       // `react-hooks` rules
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
+      ...eslintPluginReactHooks.configs.flat.recommended.rules,
 
       // `unicorn` rules
-      ...unicornConfig.rules,
+      ...unicornRules,
 
       // `you-dont-need-lodash-underscore` rules
       ...eslintPluginYouDontNeedLodashUnderscore.configs.compatible.rules,
@@ -236,6 +172,7 @@ export default defineConfig([
     rules: {
       ...eslintMarkdown.configs.recommended.at(0).rules,
       "markdown/heading-increment": "off", // this might be annoying
+      "markdown/no-multiple-h1": "off", // this might be annoying
     },
   },
   {

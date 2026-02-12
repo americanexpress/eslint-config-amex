@@ -1,4 +1,6 @@
-export default eslintRules = {
+import { momentRestrictedModule } from "../restricted-modules.js";
+
+export default {
   // enforces return statements in callbacks of array's methods
   // https://eslint.org/docs/rules/array-callback-return
   "array-callback-return": ["error", { allowImplicit: true }],
