@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 American Express Travel Related Services Company, Inc.
+ * Copyright (c) 2026 American Express Travel Related Services Company, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -12,16 +12,15 @@
  * the License.
  */
 
-describe('prettier.js', () => {
-  it('should be import/require-able', () => {
-    let configImportable = true;
-    try {
-      // eslint-disable-next-line global-require -- require is part of the test
-      require('../../prettier/test');
-    } catch {
-      configImportable = false;
-    }
+export default {
+  // https://github.com/eslint-community/eslint-plugin-eslint-comments/blob/v4.6.0/docs/rules/require-description.md
+  "@eslint-community/eslint-comments/require-description": [
+    "error",
+    {
+      ignore: ["eslint-enable"],
+    },
+  ],
 
-    expect(configImportable).toBe(true);
-  });
-});
+  // https://github.com/eslint-community/eslint-plugin-eslint-comments/blob/main/docs/rules/no-unused-disable.md
+  "@eslint-community/eslint-comments/no-unused-disable": ["error"],
+};

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
+ * Copyright (c) 2026 American Express Travel Related Services Company, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -11,9 +11,6 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
-// import path from "node:path";
-// import { fileURLToPath } from "node:url";
 
 // eslint utilities
 import { defineConfig } from "eslint/config";
@@ -32,8 +29,6 @@ import eslintPluginInclusiveLanguage from "eslint-plugin-inclusive-language";
 import eslintPluginJsxA11Y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
-// import eslintPluginJest from "eslint-plugin-jest";
-// import eslintPluginJestDom from "eslint-plugin-jest-dom";
 import stylisticEslintPlugin from "@stylistic/eslint-plugin";
 import eslintPluginN from "eslint-plugin-n";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
@@ -52,14 +47,6 @@ import eslintCommentsRules from "./rules/eslintComments.js";
 import inclusiveLanguageRules from "./rules/inclusiveLanguage.js";
 import jsxA11yRules from "./rules/jsxA11y.js";
 import nRules from "./rules/n.js";
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// const compat = new FlatCompat({
-//   baseDirectory: __dirname,
-//   recommendedConfig: eslintJs.configs.recommended,
-//   allConfig: eslintJs.configs.all,
-// });
 
 export default defineConfig([
   {

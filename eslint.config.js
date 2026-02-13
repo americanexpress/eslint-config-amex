@@ -1,10 +1,10 @@
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "eslint/config";
 import { includeIgnoreFile } from "@eslint/compat";
-import basicConfig from "./index.js";
-import testConfig from "./test-config.js";
-import browserTestConfig from "./browser-test-config.js";
-import prettierTurnedOffConfig from "./prettier/index.js";
+import amexConfig from "./src/index.js";
+import amexTestConfig from "./src/test-config.js";
+import amexBrowserTestConfig from "./src/browser-test-config.js";
+import amexPrettierTurnedOffConfig from "./src/prettier-config.js";
 
 const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 
@@ -13,14 +13,14 @@ export default defineConfig([
   {
     ignores: ["test_results/"],
   },
-  basicConfig,
+  amexConfig,
   {
     files: ["**/__tests__/**", "**/__mocks__/**"],
-    extends: [testConfig],
+    extends: [amexTestConfig],
   },
   {
     files: ["__tests__/browser/**"],
-    extends: [browserTestConfig],
+    extends: [amexBrowserTestConfig],
   },
   // needed for this repo but not One App module repos
   {
@@ -35,5 +35,5 @@ export default defineConfig([
       ],
     },
   },
-  prettierTurnedOffConfig,
+  amexPrettierTurnedOffConfig,
 ]);

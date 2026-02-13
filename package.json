@@ -2,7 +2,13 @@
   "name": "eslint-config-amex",
   "version": "16.6.1",
   "description": "American Express' ESLint config",
-  "main": "index.js",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./test-config.js": "./src/test-config.js",
+    "./browser-test-config.js": "./src/browser-test-config.js",
+    "./prettier-config.js": "./src/prettier-config.js"
+  },
   "scripts": {
     "test:lint": "eslint .",
     "test:unit": "jest",
