@@ -11,17 +11,15 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-describe("config should be import/require-able", () => {
+describe("config should be importable", () => {
   it("standard config", async () => {
     let configsImportable = true;
     try {
-      // eslint-disable-next-line global-require -- require is part of the test
       await import("../src/index.js");
       await import("../src/test-config.js");
       await import("../src/browser-test-config.js");
       await import("../src/ignore-prettier-rules-config.js");
-    } catch (error) {
-      console.log("error", error);
+    } catch {
       configsImportable = false;
     }
 

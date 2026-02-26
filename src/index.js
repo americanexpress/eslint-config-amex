@@ -58,6 +58,9 @@ import inclusiveLanguageRules from "./rules/inclusiveLanguage.js";
 import jsxA11yRules from "./rules/jsxA11y.js";
 import nRules from "./rules/n.js";
 
+import reactSettings from "./settings/react.js";
+import importSettings from "./settings/import.js";
+
 export default defineConfig([
   {
     name: "js, mjs, cjs, jsx, and snap files",
@@ -98,25 +101,12 @@ export default defineConfig([
       unicorn: eslintPluginUnicorn,
       // this plugin does not support ESLint 9 yet, use `fixupPluginRules` to make compatible
       "you-dont-need-lodash-underscore": fixupPluginRules(
-        eslintPluginYouDontNeedLodashUnderscore
+        eslintPluginYouDontNeedLodashUnderscore,
       ),
     },
     settings: {
-      "import/resolver": {
-        node: {
-          paths: ["src"],
-          extensions: [".js", ".jsx", ".json"],
-        },
-      },
-      react: {
-        version: "detect",
-      },
-      "import/extensions": [".js", ".mjs", ".jsx"],
-      "import/core-modules": [],
-      "import/ignore": [
-        "node_modules",
-        "\\.(coffee|scss|css|less|hbs|svg|json)$",
-      ],
+      ...reactSettings,
+      ...importSettings,
     },
     extends: ["@eslint/js/recommended"],
     rules: {
@@ -178,8 +168,8 @@ export default defineConfig([
     language: "markdown/gfm",
     rules: {
       ...eslintMarkdown.configs.recommended.at(0).rules,
-      "markdown/heading-increment": "off", // this might be annoying
-      "markdown/no-multiple-h1": "off", // this might be annoying
+      "markdown/heading-increment": "off", // disabled as this might be annoying
+      "markdown/no-multiple-h1": "off", // disabled as this might be annoying
     },
   },
   {
