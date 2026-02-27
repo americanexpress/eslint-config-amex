@@ -75,12 +75,15 @@ export default defineConfig([
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
+          generators: false,
+          objectLiteralDuplicateProperties: false,
         },
         requireConfigFile: false,
       },
       globals: {
         ...globals.browser,
         ...globals.node,
+        ...globals.es2020,
       },
     },
     plugins: {
