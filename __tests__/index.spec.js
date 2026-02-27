@@ -11,20 +11,13 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-describe("config should be importable", () => {
-  it("standard config", async () => {
-    let configsImportable = true;
-    try {
-      await Promise.all([
-        import("../src/index.js"),
-        import("../src/test-config.js"),
-        import("../src/browser-test-config.js"),
-        import("../src/ignore-prettier-rules-config.js"),
-      ]);
-    } catch {
-      configsImportable = false;
-    }
+import { loadESLint } from "eslint";
 
-    expect(configsImportable).toBe(true);
+describe("calculated eslint config should match snapshot", () => {
+  test("when linting js file", async () => {
+    const DefaultESLint = await loadESLint({ useFlatConfig: true });
+    const eslint = new DefaultESLint({ cwd: import.meta.dirname });
+    const config = await eslint.calculateConfigForFile("./src/index.js");
+    expect(config).toMatchSnapshot();
   });
 });

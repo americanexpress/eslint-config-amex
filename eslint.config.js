@@ -19,6 +19,10 @@ export default defineConfig([
   {
     files: ["**/__tests__/**", "**/__mocks__/**"],
     extends: [testConfig],
+    rules: {
+      "jest/no-large-snapshots": ["off"], // for snapshot of eslint config
+      "inclusive-language/use-inclusive-words": ["off"], // for snapshot of eslint config
+    },
   },
   {
     files: ["__tests__/browser/**"],

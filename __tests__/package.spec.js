@@ -22,7 +22,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const exec = promisify(execCallback);
 const packageJson = JSON.parse(
-  readFileSync(path.join(__dirname, "../package.json"), "utf8")
+  readFileSync(path.join(__dirname, "../package.json"), "utf8"),
 );
 
 describe("package.json", () => {
@@ -40,7 +40,7 @@ describe("package.json", () => {
 
   it("should have the same eslint version in devDependencies as in peerDependencies", () => {
     expect(packageJson.devDependencies.eslint).toEqual(
-      packageJson.peerDependencies.eslint
+      packageJson.peerDependencies.eslint,
     );
   });
 });
