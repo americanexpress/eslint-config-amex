@@ -15,10 +15,12 @@ describe("config should be importable", () => {
   it("standard config", async () => {
     let configsImportable = true;
     try {
-      await import("../src/index.js");
-      await import("../src/test-config.js");
-      await import("../src/browser-test-config.js");
-      await import("../src/ignore-prettier-rules-config.js");
+      await Promise.all([
+        import("../src/index.js"),
+        import("../src/test-config.js"),
+        import("../src/browser-test-config.js"),
+        import("../src/ignore-prettier-rules-config.js"),
+      ]);
     } catch {
       configsImportable = false;
     }
