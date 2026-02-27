@@ -19,7 +19,7 @@ import { momentRestrictedModule } from "../utils/restricted-modules.js";
  *
  * The rules in this file were migrated from https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v19.0.4/packages/eslint-config-airbnb-base/rules/node.js.
  *
- * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules, see https://github.com/eslint-community/eslint-plugin-n/tree/v17.23.2?tab=readme-ov-file#-rules.
  */

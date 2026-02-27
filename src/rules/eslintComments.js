@@ -15,7 +15,7 @@
 /**
  * This file contains all rules for the `@eslint-community/eslint-comments` plugin.
  *
- * These rules were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * These rules were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules, see https://github.com/eslint-community/eslint-plugin-eslint-comments/tree/v4.6.0/docs/rules.
  */

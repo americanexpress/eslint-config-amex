@@ -19,7 +19,7 @@
  * - https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v19.0.4/packages/eslint-config-airbnb-base/rules/style.js
  * - https://github.com/airbnb/javascript/tree/eslint-config-airbnb-v19.0.4/packages/eslint-config-airbnb-base/rules (some additional rules which were migrated into the `@stylistic` plugin)
  *
- * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules, see https://github.com/eslint-stylistic/eslint-stylistic/tree/v5.7.1/packages/eslint-plugin/rules.
  */
@@ -49,7 +49,7 @@ export default {
 
   // require trailing commas in multiline object literals
   // https://eslint.style/rules/comma-dangle
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L117
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L117
   "@stylistic/comma-dangle": [
     "error",
     {
@@ -104,7 +104,7 @@ export default {
 
   // require line breaks inside function parentheses if there are line breaks between parameters
   // https://eslint.style/rules/function-paren-newline
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L155
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L155
   "@stylistic/function-paren-newline": ["off"],
 
   // Enforce the location of arrow function bodies with implicit returns
@@ -216,7 +216,7 @@ export default {
 
   // specify the maximum length of a line in your program
   // https://eslint.style/rules/max-len
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L272
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L272
   "@stylistic/max-len": [
     "error",
     100,
@@ -493,7 +493,7 @@ export default {
 
   // disallow unnecessary parentheses
   // https://eslint.style/rules/no-extra-parens
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L232
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L232
   "@stylistic/no-extra-parens": [
     "error",
     "all",

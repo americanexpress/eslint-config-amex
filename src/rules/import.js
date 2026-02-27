@@ -17,7 +17,7 @@
  *
  *  * The rules in this file were migrated from https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v19.0.4/packages/eslint-config-airbnb-base/rules/imports.js.
  *
- * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules, see https://github.com/import-js/eslint-plugin-import/tree/v2.32.0/docs/rules.
  */
@@ -59,7 +59,7 @@ export default {
   // Forbid the use of extraneous packages
   // paths are treated both as absolute paths, and relative to process.cwd()
   // https://github.com/import-js/eslint-plugin-import/blob/v2.32.0/docs/rules/no-extraneous-dependencies.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L190
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L190
   "import/no-extraneous-dependencies": [
     "error",
     {
@@ -149,7 +149,7 @@ export default {
 
   // Require modules with a single export to use a default export
   // https://github.com/import-js/eslint-plugin-import/blob/v2.32.0/docs/rules/prefer-default-export.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L226
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L226
   "import/prefer-default-export": "off",
 
   // Restrict which files can be imported in a given folder
@@ -199,7 +199,7 @@ export default {
 
   // Reports if a module's default export is unnamed
   // https://github.com/import-js/eslint-plugin-import/blob/d9b712ac7fd1fddc391f7b234827925c160d956f/docs/rules/no-anonymous-default-export.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L169
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L169
   "import/no-anonymous-default-export": [
     "error",
     {

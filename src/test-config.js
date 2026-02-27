@@ -20,7 +20,7 @@ import eslintPluginJestDom from "eslint-plugin-jest-dom";
 import eslintPluginN from "eslint-plugin-n";
 
 export default defineConfig([
-  // https://github.com/americanexpress/eslint-config-amex/blob/main/test.js
+  // https://github.com/americanexpress/eslint-config-amex/blob/16.x/test.js
   {
     name: "test files",
     plugins: {

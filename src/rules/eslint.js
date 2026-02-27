@@ -24,7 +24,7 @@ import { momentRestrictedModule } from "../utils/restricted-modules.js";
  *  - https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v19.0.4/packages/eslint-config-airbnb-base/rules/variables.js
  *  - https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v19.0.4/packages/eslint-config-airbnb-base/rules/style.js
  *
- * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules for this plugin, see https://eslint.org/docs/latest/rules.
  */
@@ -48,7 +48,7 @@ export default {
 
   // specify the maximum cyclomatic complexity allowed in a program
   // https://eslint.org/docs/rules/complexity
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L126
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L126
   complexity: ["error", 20],
 
   // enforce that class methods use "this"
@@ -700,7 +700,7 @@ export default {
   "no-restricted-imports": [
     "error",
     {
-      // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L159
+      // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L159
       paths: [momentRestrictedModule],
       patterns: [],
     },
@@ -992,7 +992,7 @@ export default {
 
   // limits the number of parameters that can be used in the function declaration.
   // https://eslint.org/docs/latest/rules/max-params
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L164
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L164
   "max-params": ["error", 3],
 
   // specify the maximum number of statement allowed in a function

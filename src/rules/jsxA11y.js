@@ -15,14 +15,14 @@
 /**
  * This file contains all rules for the `eslint-plugin-jsx-a11y` plugin.
  *
- * These rules were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * These rules were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules, see https://github.com/muenzpraeger/eslint-plugin-inclusive-language/tree/2.2.1/docs/rules.
  */
 
 export default {
   // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/v6.10.2/docs/rules/anchor-is-valid.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L132
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L132
   "jsx-a11y/anchor-is-valid": [
     "error",
     {
@@ -32,11 +32,11 @@ export default {
   ],
 
   // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/v6.10.2/docs/rules/label-has-for.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L141
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L141
   "jsx-a11y/label-has-for": "off",
 
   // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/v6.10.2/docs/rules/label-has-associated-control.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L146
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L146
   "jsx-a11y/label-has-associated-control": [
     "error",
     {
