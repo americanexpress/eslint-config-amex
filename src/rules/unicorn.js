@@ -15,7 +15,7 @@
 /**
  * This file contains all rules for the `eslint-plugin-unicorn` plugin.
  *
- * The rules in this file were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/unicorn.js.
+ * The rules in this file were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/unicorn.js.
  *
  * For a complete list of rules, see https://github.com/sindresorhus/eslint-plugin-unicorn/tree/v62.0.0/docs/rules.
  */

@@ -45,7 +45,7 @@ import eslintPluginYouDontNeedLodashUnderscore from "eslint-plugin-you-dont-need
  *
  *
  * b) Migrated from `eslint-config-amex@16` (the previous major version of this config).
- *    See https://github.com/americanexpress/eslint-config-amex/blob/v16.6.1/index.js.
+ *    See https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * c) Added as of `eslint-config-amex` >= 17.
  */

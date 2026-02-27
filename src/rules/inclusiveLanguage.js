@@ -15,7 +15,7 @@
 /**
  * This file contains all rules for the `eslint-plugin-inclusive-language` plugin.
  *
- * These rules were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * These rules were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules, see https://github.com/muenzpraeger/eslint-plugin-inclusive-language/tree/2.2.1/docs/rules.
  */

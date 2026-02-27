@@ -17,7 +17,7 @@
  *
  * These rules were migrated from https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v19.0.4/packages/eslint-config-airbnb/rules/react.js.
  *
- * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js.
+ * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
  * For a complete list of rules, see https://github.com/jsx-eslint/eslint-plugin-react/tree/v7.37.5/docs/rules.
  */
@@ -73,7 +73,7 @@ export default {
 
   // Enforce boolean attributes notation in JSX
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.37.5/docs/rules/jsx-boolean-value.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L97
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L97
   "react/jsx-boolean-value": ["error", "always"],
 
   // Validate closing bracket location in JSX
@@ -420,7 +420,7 @@ export default {
 
   // Enforce a defaultProps definition for every prop that is not a required prop
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.37.5/docs/rules/require-default-props.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L240
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L240
   "react/require-default-props": [
     "off",
     {
@@ -455,7 +455,7 @@ export default {
 
   // Enforces consistent naming for boolean props
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.37.5/docs/rules/boolean-prop-naming.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L102
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L102
   "react/boolean-prop-naming": [
     "error",
     {
@@ -477,7 +477,7 @@ export default {
 
   // One JSX Element Per Line
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.37.5/docs/rules/jsx-one-expression-per-line.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L236
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L236
   "react/jsx-one-expression-per-line": ["off", { allow: "single-child" }],
 
   // Enforce consistent usage of destructuring assignment of props, state, and context
@@ -521,7 +521,7 @@ export default {
 
   // Enforce shorthand or standard form for React fragments
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.37.5/docs/rules/jsx-fragments.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L229
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L229
   "react/jsx-fragments": ["off", "syntax"],
 
   // Enforce linebreaks in curly braces in JSX attributes and expressions.
@@ -583,7 +583,7 @@ export default {
 
   // Enforce a specific function type for function components
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.37.5/docs/rules/function-component-definition.md
-  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/main/index.js#L177
+  // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L177
   "react/function-component-definition": [
     "off",
     {
