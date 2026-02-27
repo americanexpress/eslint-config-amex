@@ -1,5 +1,6 @@
 /* istanbul ignore file */
 import { fileURLToPath } from "node:url";
+// eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
 import { defineConfig } from "eslint/config";
 import { includeIgnoreFile } from "@eslint/compat";
 import baseConfig from "./src/index.js";

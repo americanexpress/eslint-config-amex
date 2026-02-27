@@ -13,6 +13,7 @@
  */
 
 // eslint utilities
+// eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
 import { defineConfig } from "eslint/config";
 import { fixupPluginRules } from "@eslint/compat";
 import globals from "globals";
