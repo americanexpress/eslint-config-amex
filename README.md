@@ -10,88 +10,74 @@
 ## 👩‍💻 Hiring 👨‍💻
 
 Want to get paid for your contributions to `eslint-config-amex`?
+
 > Send your resume to oneamex.careers@aexp.com
 
 ## 📖 Table of Contents
 
-* [Usage](#-usage)
-* [Contributing](#-contributing)
-* [License](#️-license)
-* [Code of Conduct](#️-code-of-conduct)
+- [Usage](#-usage)
+- [Contributing](#-contributing)
+- [License](#️-license)
+- [Code of Conduct](#️-code-of-conduct)
 
 ## 🤹‍ Usage
 
+This config is compatible with ESLint >= 9.
+
 ### Installation
 
+```bash
+npm install --save-dev eslint@^9.0.0 @eslint/compat@^2.0.0 eslint-config-amex
+```
+
+If using Jest for unit tests and browser tests
 
 ```bash
-npm install --save-dev eslint eslint-config-amex
+npm install --save-dev typescript eslint-plugin-jest@^29.0.0 eslint-plugin-jest-dom@^5.0.0
 ```
 
-The default config provides support for React applications. ESLint configs are also provided for:
+### Configuration
 
-* Jest
-* Prettier
+Create a `eslint.config.js` file. This "flat config" is the new configuration format as of `eslint@9`. See https://eslint.org/docs/latest/use/configure/configuration-files for more details.
 
-Install required peer dependencies before [extending your ESLint config](#extend-your-eslintrc):
+```js
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "eslint/config";
+import { includeIgnoreFile } from "@eslint/compat";
+import baseConfig from "eslint-config-amex";
+import testConfig from "eslint-config-amex/test-config";
+import browserTestConfig from "eslint-config-amex/browser-test-config";
+import ignorePrettierRulesConfig from "eslint-config-amex/ignore-prettier-rules-config";
 
-Jest:
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 
-```bash
-npm install --save-dev typescript eslint-plugin-jest eslint-plugin-jest-dom
+export default defineConfig([
+  includeIgnoreFile(gitignorePath), // ignore files which are gitignored
+  {
+    extends: [baseConfig], // for JavaScript and React code
+  },
+  {
+    files: ["**/__tests__/**", "**/__mocks__/**"],
+    extends: [testConfig], // for Jest unit tests
+  },
+  {
+    files: ["__tests__/browser/**"],
+    extends: [browserTestConfig], // for Jest browser tests
+  },
+  ignorePrettierRulesConfig, // include if using Prettier in your project
+]);
 ```
 
-Prettier:
+### Linting vs Formatting
 
-```bash
-npm install --save-dev prettier eslint-plugin-prettier
-```
+|                  | Linting                                     | Formatting                      |
+| ---------------- | ------------------------------------------- | ------------------------------- |
+| Purpose          | Used to improve code quality and catch bugs | Used to format and stylize code |
+| Recommended Tool | ESLint                                      | Prettier                        |
 
-### Extend your `.eslintrc`
+Previously, formatting was done as _part of_ linting by using `eslint-plugin-prettier`. However, this is [no longer recommended](https://prettier.io/docs/integrating-with-linters#notes).
 
-To use the base config:
-
-```json
-{
-    "extends": "amex"
-}
-```
-
-To use the Prettier compatible config:
-
-```json
-{
-    "extends": "amex/prettier"
-}
-```
-
-:warning: The `amex` eslint config enforces single quotes, while Prettier uses double quotes by default.
-Enabling the Prettier config will change all the quotes in your files. 
-To avoid this, add a custom Prettier `.prettierrc` config:
-
-```json
-{
-    "singleQuote": true
-}
-```
-
-### (Optionally) Create an `.eslintrc` file in your test directory
-
-```json
-{
-    "extends": "amex/test"
-}
-```
-
-If you are using Prettier use the `prettier/test` config:
-
-```json
-{
-    "extends": "amex/prettier/test"
-}
-```
-
-This gives you the `jest` global and some `jest` specific rules.
+If you want formatting in your repo, [install Prettier](https://prettier.io/docs/install) and use the `ignorePrettierRulesConfig` config (see above) in order to disable any ESLint rules which may conflict with Prettier.
 
 ## 🏆 Contributing
 

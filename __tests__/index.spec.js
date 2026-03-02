@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
+ * Copyright (c) 2026 American Express Travel Related Services Company, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -11,17 +11,13 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
+import { loadESLint } from "eslint";
 
-describe('index.js', () => {
-  it('should be import/require-able', () => {
-    let configImportable = true;
-    try {
-      // eslint-disable-next-line global-require -- require is part of the test
-      require('..');
-    } catch (error) {
-      configImportable = false;
-    }
-
-    expect(configImportable).toBe(true);
+describe("calculated eslint config should match snapshot", () => {
+  test("when linting js file", async () => {
+    const DefaultESLint = await loadESLint({ useFlatConfig: true });
+    const eslint = new DefaultESLint({ cwd: import.meta.dirname });
+    const config = await eslint.calculateConfigForFile("./src/index.js");
+    expect(config).toMatchSnapshot();
   });
 });

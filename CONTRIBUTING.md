@@ -4,12 +4,12 @@
 
 ## 📖 Table of Contents
 
-* [Code of Conduct](#code-of-conduct)
-* [Developing](#developing)
-* [Submitting a new feature](#submitting-a-new-feature)
-* [Reporting bugs](#reporting-bugs)
-* [Contributing](#getting-in-contact)
-* [Coding conventions](#coding-conventions)
+- [Code of Conduct](#code-of-conduct)
+- [Developing](#developing)
+- [Submitting a new feature](#submitting-a-new-feature)
+- [Reporting bugs](#reporting-bugs)
+- [Contributing](#getting-in-contact)
+- [Coding conventions](#coding-conventions)
 
 ## Code of Conduct
 
@@ -22,21 +22,20 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 1. Fork the repository `eslint-config-amex` to your GitHub account.
 2. Afterwards run the following commands in your terminal
 
-    ```bash
-    $ git clone https://github.com/<your-github-username>/eslint-config-amex
-    $ cd eslint-config-amex
-    ```
+   ```bash
+   $ git clone https://github.com/<your-github-username>/eslint-config-amex
+   $ cd eslint-config-amex
+   ```
 
    > replace `your-github-username` with your github username
 
 3. Install the dependencies by running
 
-    ```bash
-    $ npm install
-    ```
+   ```bash
+   $ npm install
+   ```
 
 4. You can now run any of these scripts from the root folder.
-
 
 #### Running tests
 
@@ -101,9 +100,9 @@ If applicable, add screenshots or animated GIFs to help explain your problem.
 
 Provide the system information which is not limited to the below:
 
-- OS: [e.g. macOS, Windows]
-- Version of eslint-config-amex: [e.g. 5.0.0]
-- Node version:[e.g 14.17.0]
+- OS: (e.g. macOS, Windows)
+- Version of eslint-config-amex: (e.g. 5.0.0)
+- Node version: (e.g 14.17.0)
 
 ### Security Bugs
 
