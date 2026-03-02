@@ -13,8 +13,8 @@
  */
 import { loadESLint } from "eslint";
 
-describe("calculated eslint config should match snapshot", () => {
-  test("when linting js file", async () => {
+describe("calculated eslint config should match snapshot when linting", () => {
+  it("js file", async () => {
     const DefaultESLint = await loadESLint({ useFlatConfig: true });
     const eslint = new DefaultESLint({ cwd: import.meta.dirname });
     const config = await eslint.calculateConfigForFile("./src/index.js");
