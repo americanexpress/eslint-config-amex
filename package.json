@@ -47,7 +47,7 @@
     "eslintconfig"
   ],
   "engines": {
-    "node": ">= 20"
+    "node": ">= 18.18.0 || >= 20.9.0 || >= 22.0.0"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.28.5",
