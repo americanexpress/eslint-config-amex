@@ -25,7 +25,7 @@ jobs:
       fail-fast: false
       matrix:
         node: ["18.x", "20.x", "22.x"]
-        eslint: [8]
+        eslint: [9]
     name: Node.js ${{ matrix.node }} with ESLint ${{ matrix.eslint }}
     steps:
       - name: Checkout Repo
@@ -46,7 +46,6 @@ jobs:
         run: npm run test:unit
         env:
           NODE_ENV: production
-          NODE_OPTIONS: --experimental-vm-modules
       - name: Lockfile Lint Test
         run: npm run test:lockfile
       - name: Lint
