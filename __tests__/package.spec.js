@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
+ * Copyright (c) 2026 American Express Travel Related Services Company, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -12,27 +12,35 @@
  * the License.
  */
 
-const path = require('path');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-const packageJson = require('../package.json');
+import path from "path";
+import { exec as execCallback } from "child_process";
+import { promisify } from "util";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
 
-jest.setTimeout(10000);
+// eslint-disable-next-line no-underscore-dangle -- proper syntax for ES modules
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const exec = promisify(execCallback);
+const packageJson = JSON.parse(
+  readFileSync(path.join(__dirname, "../package.json"), "utf8"),
+);
 
-describe('package.json', () => {
-  it('should not have peer dep warnings', async () => {
+describe("package.json", () => {
+  it("should not have peer dep warnings", async () => {
     expect.assertions(2);
     // ex:
     // npm ERR! peer dep missing: eslint@<2.3.0, required by babel-eslint@5.0.4
-    const { stdout, stderr } = await exec('npm ls', {
-      cwd: path.resolve(__dirname, '../'),
+    const { stdout, stderr } = await exec("npm ls", {
+      cwd: path.resolve(__dirname, "../"),
     });
     // if there are no complaints from npm, stdout is null
-    expect(stdout || '').not.toMatch('peer dep missing');
-    expect(stderr || '').not.toMatch('peer dep missing');
+    expect(stdout || "").not.toMatch("peer dep missing");
+    expect(stderr || "").not.toMatch("peer dep missing");
   });
 
-  it('should have the same eslint version in devDependencies as in peerDependencies', () => {
-    expect(packageJson.devDependencies.eslint).toEqual(packageJson.peerDependencies.eslint);
+  it("should have the same eslint version in devDependencies as in peerDependencies", () => {
+    expect(packageJson.devDependencies.eslint).toEqual(
+      packageJson.peerDependencies.eslint,
+    );
   });
 });

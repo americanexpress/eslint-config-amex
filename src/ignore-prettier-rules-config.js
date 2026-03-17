@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 American Express Travel Related Services Company, Inc.
+ * Copyright (c) 2026 American Express Travel Related Services Company, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -12,16 +12,9 @@
  * the License.
  */
 
-describe('test.js', () => {
-  it('should be import/require-able', () => {
-    let configImportable = true;
-    try {
-      // eslint-disable-next-line global-require -- require is part of the test
-      require('../test');
-    } catch (error) {
-      configImportable = false;
-    }
+// eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
+import { defineConfig } from "eslint/config";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
-    expect(configImportable).toBe(true);
-  });
-});
+// disable all eslint rules which would conflict with prettier formatting
+export default defineConfig([eslintConfigPrettier]);
