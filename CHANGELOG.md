@@ -1,3 +1,20 @@
+# [17.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.6.1...v17.0.0) (2026-03-17)
+
+
+### Bug Fixes
+
+* **deps:** add eslint-plugin-jest@29 as peer dep ([#143](https://github.com/americanexpress/eslint-config-amex/issues/143)) ([cc69108](https://github.com/americanexpress/eslint-config-amex/commit/cc69108764f093898f775472b82a0ad5b4259c84))
+
+
+### Features
+
+* **eslint:** update for eslint 9 compatibility ([d329b57](https://github.com/americanexpress/eslint-config-amex/commit/d329b5784c9ce6cfb418a6d4e75e964813e8ce27))
+
+
+### BREAKING CHANGES
+
+* **eslint:** move to eslint 9 support
+
 ## [16.6.1](https://github.com/americanexpress/eslint-config-amex/compare/v16.6.0...v16.6.1) (2025-01-10)
 
 
