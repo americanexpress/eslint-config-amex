@@ -15,7 +15,10 @@ export default defineConfig([
   {
     ignores: ["test_results/"],
   },
-  baseConfig,
+  {
+    files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.snap"],
+    extends: [baseConfig],
+  },
   {
     files: ["**/__tests__/**", "**/__mocks__/**"],
     extends: [testConfig],

@@ -67,7 +67,6 @@ export default defineConfig([
     name: "js, mjs, cjs, jsx, and snap files",
     // js, mjs, cjs are included by default: https://eslint.org/docs/latest/use/command-line-interface#--ext
     // add jsx and snap files
-    files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.snap"],
     languageOptions: {
       parser: babelParser,
       ecmaVersion: 2020,

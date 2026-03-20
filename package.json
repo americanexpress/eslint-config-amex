@@ -8,7 +8,9 @@
     ".": "./src/index.js",
     "./test-config": "./src/test-config.js",
     "./browser-test-config": "./src/browser-test-config.js",
-    "./ignore-prettier-rules-config": "./src/ignore-prettier-rules-config.js"
+    "./ignore-prettier-rules-config": "./src/ignore-prettier-rules-config.js",
+    "./ts-config": "./src/ts-config.js",
+    "./ts-test-config": "./src/ts-test-config.js"
   },
   "scripts": {
     "test:lint": "eslint .",
@@ -59,6 +61,7 @@
     "@stylistic/eslint-plugin": "^5.7.0",
     "confusing-browser-globals": "^1.0.11",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-inclusive-language": "^2.2.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -67,7 +70,8 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unicorn": "^62.0.0",
     "eslint-plugin-you-dont-need-lodash-underscore": "^6.14.0",
-    "globals": "^17.0.0"
+    "globals": "^17.0.0",
+    "typescript-eslint": "^8.56.1"
   },
   "peerDependencies": {
     "eslint": "^9.0.0",
