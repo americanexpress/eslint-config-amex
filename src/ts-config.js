@@ -35,7 +35,7 @@ export default defineConfig([
       // props should be typed with TS, so proptypes will not exist
       "react/prop-types": "off",
 
-      // Use TS rather than eslint to check these rules, as es-lint often get them wrong
+      // Use TS rather than eslint to check these rules, as eslint often get them wrong
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": ["error"],
       "no-shadow": "off",
