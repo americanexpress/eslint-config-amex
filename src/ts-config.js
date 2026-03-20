@@ -45,7 +45,15 @@ export default defineConfig([
       "react/jsx-filename-extension": [2, { extensions: [".jsx", ".tsx"] }],
 
       // Backwards compatibility with older typescript-eslint/recommended config
-      "@typescript-eslint/no-unused-vars": ["error", { caughtErrors: "none" }],
+      "@typescript-eslint/no-unused-vars": ["error", { 
+        caughtErrors: "none",
+        // this rule will be ignored for all variables starting with leading underscore
+        // this is helpful for arguments in event handlers that are not used
+        argsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      }],
 
       // allow implicit extensions when importing files for .ts and .tsx
       "import/extensions": [
