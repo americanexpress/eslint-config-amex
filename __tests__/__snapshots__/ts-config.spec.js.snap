@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`calculated eslint config should match snapshot when linting js file 1`] = `
+exports[`calculated eslint config should match snapshot when linting ts file 1`] = `
 {
   "language": "@/js",
   "languageOptions": {
@@ -1244,7 +1244,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       "when": false,
       "window": false,
     },
-    "parser": "@babel/eslint-parser@7.28.6",
+    "parser": "typescript-eslint/parser@8.57.1",
     "parserOptions": {
       "ecmaFeatures": {
         "generators": false,
@@ -1272,6 +1272,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
     "react-hooks:eslint-plugin-react-hooks@7.0.0",
     "unicorn:eslint-plugin-unicorn@62.0.0",
     "you-dont-need-lodash-underscore",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.57.1",
   ],
   "processor": undefined,
   "rules": {
@@ -2287,6 +2288,9 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
       "after",
     ],
+    "@typescript-eslint/ban-ts-comment": [
+      2,
+    ],
     "@typescript-eslint/block-spacing": [
       0,
     ],
@@ -2314,8 +2318,29 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
     "@typescript-eslint/lines-around-comment": [
       0,
     ],
+    "@typescript-eslint/max-params": [
+      2,
+      {
+        "max": 3,
+      },
+    ],
     "@typescript-eslint/member-delimiter-style": [
       0,
+    ],
+    "@typescript-eslint/no-array-constructor": [
+      2,
+    ],
+    "@typescript-eslint/no-duplicate-enum-values": [
+      2,
+    ],
+    "@typescript-eslint/no-empty-object-type": [
+      2,
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      2,
+    ],
+    "@typescript-eslint/no-extra-non-null-assertion": [
+      2,
     ],
     "@typescript-eslint/no-extra-parens": [
       0,
@@ -2323,8 +2348,65 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
     "@typescript-eslint/no-extra-semi": [
       0,
     ],
+    "@typescript-eslint/no-misused-new": [
+      2,
+    ],
+    "@typescript-eslint/no-namespace": [
+      2,
+    ],
+    "@typescript-eslint/no-non-null-asserted-optional-chain": [
+      2,
+    ],
+    "@typescript-eslint/no-require-imports": [
+      2,
+    ],
+    "@typescript-eslint/no-shadow": [
+      2,
+    ],
+    "@typescript-eslint/no-this-alias": [
+      2,
+    ],
+    "@typescript-eslint/no-unnecessary-type-constraint": [
+      2,
+    ],
+    "@typescript-eslint/no-unsafe-declaration-merging": [
+      2,
+    ],
+    "@typescript-eslint/no-unsafe-function-type": [
+      2,
+    ],
+    "@typescript-eslint/no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": false,
+        "allowTaggedTemplates": false,
+        "allowTernary": false,
+      },
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      2,
+      {
+        "argsIgnorePattern": "^_",
+        "caughtErrors": "none",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+      },
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      2,
+    ],
+    "@typescript-eslint/no-wrapper-object-types": [
+      2,
+    ],
     "@typescript-eslint/object-curly-spacing": [
       0,
+    ],
+    "@typescript-eslint/prefer-as-const": [
+      2,
+    ],
+    "@typescript-eslint/prefer-namespace-keyword": [
+      2,
     ],
     "@typescript-eslint/quotes": [
       0,
@@ -2340,6 +2422,9 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
     ],
     "@typescript-eslint/space-infix-ops": [
       0,
+    ],
+    "@typescript-eslint/triple-slash-reference": [
+      2,
     ],
     "@typescript-eslint/type-annotation-spacing": [
       0,
@@ -2479,7 +2564,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       "that",
     ],
     "constructor-super": [
-      2,
+      0,
     ],
     "curly": [
       0,
@@ -2591,7 +2676,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "getter-return": [
-      2,
+      0,
       {
         "allowImplicit": true,
       },
@@ -2651,7 +2736,10 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       2,
       "ignorePackages",
       {
-        "js": "always",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
       },
     ],
     "import/first": [
@@ -2965,7 +3053,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "max-params": [
-      2,
+      0,
       3,
     ],
     "max-statements": [
@@ -3042,7 +3130,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       1,
     ],
     "no-array-constructor": [
-      2,
+      0,
     ],
     "no-arrow-condition": [
       0,
@@ -3067,7 +3155,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       2,
     ],
     "no-class-assign": [
-      2,
+      0,
     ],
     "no-comma-dangle": [
       0,
@@ -3087,7 +3175,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       {},
     ],
     "no-const-assign": [
-      2,
+      0,
     ],
     "no-constant-binary-expression": [
       2,
@@ -3117,16 +3205,16 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "no-dupe-args": [
-      2,
+      0,
     ],
     "no-dupe-class-members": [
-      2,
+      0,
     ],
     "no-dupe-else-if": [
       2,
     ],
     "no-dupe-keys": [
-      2,
+      0,
     ],
     "no-duplicate-case": [
       2,
@@ -3217,7 +3305,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "no-func-assign": [
-      2,
+      0,
     ],
     "no-global-assign": [
       2,
@@ -3245,7 +3333,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       2,
     ],
     "no-import-assign": [
-      2,
+      0,
     ],
     "no-inline-comments": [
       0,
@@ -3352,7 +3440,10 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       2,
     ],
     "no-new-native-nonconstructor": [
-      2,
+      0,
+    ],
+    "no-new-symbol": [
+      0,
     ],
     "no-new-wrappers": [
       2,
@@ -3361,7 +3452,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       2,
     ],
     "no-obj-calls": [
-      2,
+      0,
     ],
     "no-object-constructor": [
       2,
@@ -3410,7 +3501,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       2,
     ],
     "no-redeclare": [
-      2,
+      0,
       {
         "builtinGlobals": true,
       },
@@ -3604,10 +3695,10 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       },
     ],
     "no-setter-return": [
-      2,
+      0,
     ],
     "no-shadow": [
-      2,
+      0,
       {
         "allow": [],
         "builtinGlobals": false,
@@ -3642,7 +3733,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "no-this-before-super": [
-      2,
+      0,
     ],
     "no-throw-literal": [
       2,
@@ -3651,7 +3742,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "no-undef": [
-      2,
+      0,
       {
         "typeof": false,
       },
@@ -3691,7 +3782,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       },
     ],
     "no-unreachable": [
-      2,
+      0,
     ],
     "no-unreachable-loop": [
       2,
@@ -3703,7 +3794,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       2,
     ],
     "no-unsafe-negation": [
-      2,
+      0,
       {
         "enforceForOrderingRelations": false,
       },
@@ -3715,7 +3806,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       },
     ],
     "no-unused-expressions": [
-      2,
+      0,
       {
         "allowShortCircuit": false,
         "allowTaggedTemplates": false,
@@ -3731,7 +3822,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "no-unused-vars": [
-      2,
+      0,
       {
         "args": "after-used",
         "ignoreRestSiblings": true,
@@ -3739,7 +3830,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       },
     ],
     "no-use-before-define": [
-      2,
+      0,
       {
         "allowNamedExports": false,
         "classes": true,
@@ -3812,7 +3903,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       0,
     ],
     "no-with": [
-      2,
+      0,
     ],
     "no-wrap-func": [
       0,
@@ -4106,6 +4197,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       {
         "extensions": [
           ".jsx",
+          ".tsx",
         ],
       },
     ],
@@ -4378,7 +4470,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
       },
     ],
     "react/prop-types": [
-      2,
+      0,
       {
         "customValidators": [],
         "ignore": [],
@@ -5151,6 +5243,7 @@ exports[`calculated eslint config should match snapshot when linting js file 1`]
           "src",
         ],
       },
+      "typescript": {},
     },
     "propWrapperFunctions": [
       "forbidExtraProps",

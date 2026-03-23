@@ -18,10 +18,11 @@ import { defineConfig } from "eslint/config";
 import typescriptEslint from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginImport from "eslint-plugin-import";
+import baseConfig from "./index.js";
 
 export default defineConfig([
-  ...typescriptEslint.configs.recommended,
   {
+    extends: [baseConfig, typescriptEslint.configs.recommended],
     // these plugins need to be defined because some of their rules are overrides below
     plugins: {
       react: eslintPluginReact,
@@ -54,6 +55,11 @@ export default defineConfig([
         destructuredArrayIgnorePattern: '^_',
         varsIgnorePattern: '^_',
       }],
+
+      // replaces core ESLint rule with "extension" rule that is TS-aware
+      // https://typescript-eslint.io/rules/max-params/
+      "max-params": "off",
+      "@typescript-eslint/max-params": ["error", { max: 3 }],
 
       // allow implicit extensions when importing files for .ts and .tsx
       "import/extensions": [

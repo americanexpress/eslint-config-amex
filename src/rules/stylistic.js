@@ -98,10 +98,6 @@ export default {
   // https://eslint.style/rules/function-call-argument-newline
   "@stylistic/function-call-argument-newline": ["error", "consistent"],
 
-  // enforce spacing between functions and their invocations
-  // https://eslint.style/rules/function-call-spacing
-  "@stylistic/func-call-spacing": ["error", "never"],
-
   // require line breaks inside function parentheses if there are line breaks between parameters
   // https://eslint.style/rules/function-paren-newline
   // migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js#L155
@@ -290,7 +286,7 @@ export default {
 
   // disallow space between function identifier and application
   // https://eslint.style/rules/function-call-spacing
-  "@stylistic/function-call-spacing": "error",
+  "@stylistic/function-call-spacing": ["error", "never"],
 
   // disallow tab characters entirely
   // https://eslint.style/rules/no-tabs

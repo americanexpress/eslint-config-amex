@@ -11,18 +11,13 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
+import { loadESLint } from "eslint";
 
-// eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
-import { defineConfig } from "eslint/config";
-import testConfig from "./test-config.js";
-import tsConfig from "./ts-config.js";
-
-export default defineConfig([
-  {
-    extends: [testConfig, tsConfig],
-    rules: {
-      // allow the use of the `any` type in tests, as its often required to type mocks simply
-      "@typescript-eslint/no-explicit-any": "off",
-    },
-  },
-]);
+describe("calculated eslint config should match snapshot when linting", () => {
+  it("ts file", async () => {
+    const DefaultESLint = await loadESLint({ useFlatConfig: true });
+    const eslint = new DefaultESLint({ cwd: import.meta.dirname });
+    const config = await eslint.calculateConfigForFile("./__fixtures__/index.ts");
+    expect(config).toMatchSnapshot();
+  });
+});

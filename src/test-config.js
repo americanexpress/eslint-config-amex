@@ -18,11 +18,13 @@ import globals from "globals";
 import eslintPluginJest from "eslint-plugin-jest";
 import eslintPluginJestDom from "eslint-plugin-jest-dom";
 import eslintPluginN from "eslint-plugin-n";
+import baseConfig from "./index.js";
 
 export default defineConfig([
   // https://github.com/americanexpress/eslint-config-amex/blob/16.x/test.js
   {
     name: "test files",
+    extends: [baseConfig],
     plugins: {
       jest: eslintPluginJest,
       "jest-dom": eslintPluginJestDom,

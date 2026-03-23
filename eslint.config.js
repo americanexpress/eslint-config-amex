@@ -6,6 +6,8 @@ import { includeIgnoreFile } from "@eslint/compat";
 import baseConfig from "./src/index.js";
 import testConfig from "./src/test-config.js";
 import browserTestConfig from "./src/browser-test-config.js";
+import tsConfig from "./src/ts-config.js";
+import tsTestConfig from "./src/ts-test-config.js";
 import ignorePrettierRulesConfig from "./src/ignore-prettier-rules-config.js";
 
 const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
@@ -43,6 +45,16 @@ export default defineConfig([
         },
       ],
     },
+  },
+  // apply to dummy file so we can take snapshot of calculated config
+  {
+    files: ["__fixtures__/index.ts"],
+    extends: [tsConfig],
+  },
+  // apply to dummy file so we can take snapshot of calculated config
+  {
+    files: ["__fixtures__/tests/index.ts"],
+    extends: [tsTestConfig],
   },
   ignorePrettierRulesConfig,
 ]);
