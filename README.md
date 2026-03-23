@@ -40,6 +40,8 @@ npm install --save-dev typescript eslint-plugin-jest@^29.0.0 eslint-plugin-jest-
 
 Create a `eslint.config.js` file. This "flat config" is the new configuration format as of `eslint@9`. See https://eslint.org/docs/latest/use/configure/configuration-files for more details.
 
+## JS Repo
+
 ```js
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "eslint/config";
@@ -55,6 +57,9 @@ export default defineConfig([
   includeIgnoreFile(gitignorePath), // ignore files which are gitignored
   {
     extends: [baseConfig], // for JavaScript and React code
+    files: [
+      "**/*.{js,jsx,mjs,snap}",
+    ],
   },
   {
     files: ["**/__tests__/**", "**/__mocks__/**"],
@@ -65,6 +70,44 @@ export default defineConfig([
     extends: [browserTestConfig], // for Jest browser tests
   },
   ignorePrettierRulesConfig, // include if using Prettier in your project
+]);
+```
+
+## TS Repo
+
+```js
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "eslint/config";
+import { includeIgnoreFile } from "@eslint/compat";
+import tsConfig from "eslint-config-amex/ts-config";
+import tsTestConfig from "eslint-config-amex/ts-test-config";
+import browserTestConfig from "eslint-config-amex/browser-test-config";
+import ignoreFormattingRulesConfig from "eslint-config-amex/ignore-prettier-rules-config";
+
+const gitignorePath = fileURLToPath(
+  new URL(".gitignore", import.meta.url)
+);
+
+export default defineConfig([
+  includeIgnoreFile(gitignorePath), // ignore files which are gitignored
+  {
+    extends: [tsConfig], // for JavaScript and React code
+    files: [
+      "**/*.{js,jsx,mjs,cjs,snap,ts,tsx}",
+    ],
+  },
+  {
+    extends: [tsTestConfig], // for Jest unit tests
+    files: [
+      "**/__tests__/**/*.{js,jsx,mjs,cjs,ts,tsx}",
+      "**/__mocks__/**/*.{js,jsx,mjs,cjs,ts,tsx}",
+    ],
+  },
+  {
+    files: ["**/__tests__/browser/**", "**/__tests__/a11y/**"], // for Jest browser tests
+    extends: [browserTestConfig],
+  },
+  ignoreFormattingRulesConfig, // include if using Prettier in your project
 ]);
 ```
 
