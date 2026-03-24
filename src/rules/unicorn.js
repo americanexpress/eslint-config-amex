@@ -41,10 +41,6 @@ export default {
   // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/explicit-length-check.md
   "unicorn/explicit-length-check": "error",
 
-  // Enforce importing index files with .
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/import-index.md
-  // "unicorn/import-index": "error",
-
   // Enforce the use of new for all builtins, except String, Number and Boolean
   // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/new-for-builtins.md
   "unicorn/new-for-builtins": "error",

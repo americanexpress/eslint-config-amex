@@ -54,8 +54,6 @@ export default defineConfig([
       // prop spreading is very useful in tests for specs that including variations of the same
       // props repeatedly
       "react/jsx-props-no-spreading": 0,
-      // this conflicts with co-located tests
-      "unicorn/import-index": "off",
     },
   },
 ]);

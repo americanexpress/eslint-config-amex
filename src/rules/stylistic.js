@@ -498,7 +498,7 @@ export default {
       nestedBinaryExpressions: false,
       returnAssign: false,
       ignoreJSX: "all", // delegate to eslint-plugin-react
-      enforceForArrowConditionals: false,
+      ignoredNodes: ["ArrowFunctionExpression[body.type=ConditionalExpression]"]
     },
   ],
 

@@ -21,6 +21,10 @@ export default defineConfig([
   {
     extends: [testConfig, tsConfig],
     rules: {
+      // this rule is turned off in `testConfig` 
+      // but needs to be turned off again because `tsConfig` extends `baseConfig` which has the rule turned on
+      "react/jsx-props-no-spreading": 0,
+
       // allow the use of the `any` type in tests, as its often required to type mocks simply
       "@typescript-eslint/no-explicit-any": "off",
     },

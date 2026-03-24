@@ -17,7 +17,7 @@ describe("calculated eslint config should match snapshot when linting", () => {
   it("js file", async () => {
     const DefaultESLint = await loadESLint({ useFlatConfig: true });
     const eslint = new DefaultESLint({ cwd: import.meta.dirname });
-    const config = await eslint.calculateConfigForFile("./__fixtures__/index.js");
+    const config = await eslint.calculateConfigForFile("./__fixtures__/index.input.js");
     expect(config).toMatchSnapshot();
   });
 });

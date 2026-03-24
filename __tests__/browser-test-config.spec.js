@@ -14,10 +14,10 @@
 import { loadESLint } from "eslint";
 
 describe("calculated eslint config should match snapshot when linting", () => {
-  it("ts test file", async () => {
+  it("browser test file", async () => {
     const DefaultESLint = await loadESLint({ useFlatConfig: true });
     const eslint = new DefaultESLint({ cwd: import.meta.dirname });
-    const config = await eslint.calculateConfigForFile("./__fixtures__/ts-test-config.input.ts");
+    const config = await eslint.calculateConfigForFile("./__fixtures__/browser-test-config.input.js");
     expect(config).toMatchSnapshot();
   });
 });
