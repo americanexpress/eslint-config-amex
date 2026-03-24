@@ -38,9 +38,11 @@ npm install --save-dev typescript eslint-plugin-jest@^29.0.0 eslint-plugin-jest-
 
 ### Configuration
 
-Create a `eslint.config.js` file. This "flat config" is the new configuration format as of `eslint@9`. See https://eslint.org/docs/latest/use/configure/configuration-files for more details.
+Create a `eslint.config.js` file. This Flat Config file is the new configuration format as of `eslint@9`. See https://eslint.org/docs/latest/use/configure/configuration-files for more details.
 
-## JS Repo
+#### JavaScript
+
+If working in JavaScript, your `eslint.config.js` should be:
 
 ```js
 import { fileURLToPath } from "node:url";
@@ -58,7 +60,7 @@ export default defineConfig([
   {
     extends: [baseConfig], // for JavaScript and React code
     files: [
-      "**/*.{js,jsx,mjs,snap}",
+      "**/*.{js,jsx,cjs,mjs,snap}",
     ],
   },
   {
@@ -73,7 +75,9 @@ export default defineConfig([
 ]);
 ```
 
-## TS Repo
+#### TypeScript
+
+If working in TypeScript, your `eslint.config.js` should be:
 
 ```js
 import { fileURLToPath } from "node:url";
@@ -91,7 +95,7 @@ const gitignorePath = fileURLToPath(
 export default defineConfig([
   includeIgnoreFile(gitignorePath), // ignore files which are gitignored
   {
-    extends: [tsConfig], // for JavaScript and React code
+    extends: [tsConfig], // for JavaScript, TypeScript, and React code
     files: [
       "**/*.{js,jsx,mjs,cjs,snap,ts,tsx}",
     ],
@@ -99,8 +103,8 @@ export default defineConfig([
   {
     extends: [tsTestConfig], // for Jest unit tests
     files: [
-      "**/__tests__/**/*.{js,jsx,mjs,cjs,ts,tsx}",
-      "**/__mocks__/**/*.{js,jsx,mjs,cjs,ts,tsx}",
+      "**/__tests__/**/*.{js,jsx,mjs,cjs,snap,ts,tsx}",
+      "**/__mocks__/**/*.{js,jsx,mjs,cjs,snap,ts,tsx}",
     ],
   },
   {
