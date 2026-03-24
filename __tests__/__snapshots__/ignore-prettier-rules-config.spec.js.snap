@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`calculated eslint config should match snapshot when linting browser test file 1`] = `
+exports[`amexIgnorePrettierRulesConfig calculated eslint config should match snapshot 1`] = `
 {
   "language": "@/js",
   "languageOptions": {

@@ -12,12 +12,21 @@
  * the License.
  */
 import { loadESLint } from "eslint";
+import amexTsConfig from "../src/ts-config.js";
 
-describe("calculated eslint config should match snapshot when linting", () => {
-  it("ts file", async () => {
+describe("amexTsConfig", () => {
+  it("calculated eslint config should match snapshot", async () => {
     const DefaultESLint = await loadESLint({ useFlatConfig: true });
     const eslint = new DefaultESLint({ cwd: import.meta.dirname });
     const config = await eslint.calculateConfigForFile("./__fixtures__/ts-config.input.ts");
     expect(config).toMatchSnapshot();
+  });
+
+  it("should be defined", async () => {
+    expect(amexTsConfig()).toBeDefined();
+  });
+
+  it("should accept overrides", async () => {
+    expect(amexTsConfig({ files: ["**/custom-dir/**"], ignores: ["**/ignore-dir/**"] })).toBeDefined();
   });
 });

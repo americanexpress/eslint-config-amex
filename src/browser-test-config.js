@@ -14,10 +14,13 @@
 
 // eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
 import { defineConfig } from "eslint/config";
+import { JS_AND_TS_FILES_IN_BROWSER_TEST_DIR } from "./constants/file-glob-patterns.js";
 
-export default defineConfig([
+const amexBrowserTestConfig = (overrides = {}) => defineConfig([
   {
-    name: "browser test files",
+    name: "Browser tests using Selenium WebDriver",
+    files: overrides.files ?? [JS_AND_TS_FILES_IN_BROWSER_TEST_DIR],
+    ...(overrides.ignores ? { ignores: overrides.ignores } : []),
     languageOptions: {
       globals: {
         testHost: "false",
@@ -28,3 +31,5 @@ export default defineConfig([
     },
   },
 ]);
+
+export default amexBrowserTestConfig;

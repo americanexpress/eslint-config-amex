@@ -15,18 +15,18 @@ const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 export default defineConfig([
   includeIgnoreFile(gitignorePath),
   {
-    files: ["**/*.{js,jsx,mjs,cjs,snap}"],
-    ignores: ["**/__fixtures__/**"], // dummy files for testing
-    extends: [baseConfig],
-  },
-  {
-    files: ["**/__tests__/**"],
-    ignores: ["**/__fixtures__/**"], // dummy files for testing
-    extends: [testConfig],
-    rules: {
-      "jest/no-large-snapshots": ["off"], // for snapshot of eslint config
-      "inclusive-language/use-inclusive-words": ["off"], // for snapshot of eslint config
-    },
+    extends: [
+      baseConfig({
+        ignores: ["**/__fixtures__/**"], // dummy files for testing
+      }),
+      testConfig({
+        ignores: ["**/__fixtures__/**"], // dummy files for testing
+        rules: {
+          "jest/no-large-snapshots": ["off"], // for snapshot of eslint config
+          "inclusive-language/use-inclusive-words": ["off"], // for snapshot of eslint config
+        },
+      })
+    ],
   },
   // needed for this repo but not One App module repos
   {
@@ -43,38 +43,44 @@ export default defineConfig([
     },
   },
   {
-    files: ["**/*.{js,jsx,mjs,cjs,snap}"],
-    ignores: ["**/__fixtures__/**"], // dummy files for testing
-    extends: [ignorePrettierRulesConfig],
+    extends: [ignorePrettierRulesConfig({
+      ignores: ["**/__fixtures__/**"], // dummy files for testing
+    })],
   },
   // apply to dummy file so we can take snapshot of calculated config
   {
-    files: ['__fixtures__/index.input.js'],
-    extends: [baseConfig],
+    extends: [baseConfig({
+      files: ['__fixtures__/index.input.js'],
+    })],
   },
   // apply to dummy file so we can take snapshot of calculated config
   {
-    files: ['__fixtures__/test-config.input.js'],
-    extends: [testConfig],
+    extends: [testConfig({
+      files: ['__fixtures__/test-config.input.js'],
+    })],
   },
   // apply to dummy file so we can take snapshot of calculated config
   {
-    files: ["__fixtures__/ts-config.input.ts"],
-    extends: [tsConfig],
+    extends: [tsConfig({
+      files: ["__fixtures__/ts-config.input.ts"],
+    })],
   },
   // apply to dummy file so we can take snapshot of calculated config
   {
-    files: ["__fixtures__/ts-test-config.input.ts"],
-    extends: [tsTestConfig],
+    extends: [tsTestConfig({
+      files: ["__fixtures__/ts-test-config.input.ts"],
+    })],
   },
   // apply to dummy file so we can take snapshot of calculated config
   {
-    files: ["__fixtures__/browser-test-config.input.js"],
-    extends: [browserTestConfig],
+    extends: [browserTestConfig({
+      files: ["__fixtures__/browser-test-config.input.js"],
+    })],
   },
   // apply to dummy file so we can take snapshot of calculated config
   {
-    files: ["__fixtures__/ignore-prettier-rules-config.input.js"],
-    extends: [ignorePrettierRulesConfig],
+    extends: [ignorePrettierRulesConfig({
+      files: ["__fixtures__/ignore-prettier-rules-config.input.js"],
+    })],
   },  
 ]);

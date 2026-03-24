@@ -19,10 +19,14 @@ import typescriptEslint from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginImport from "eslint-plugin-import";
 import baseConfig from "./index.js";
+import { JS_AND_TS_FILES_IN_ANY_DIR } from "./constants/file-glob-patterns.js";
 
-export default defineConfig([
+const amexTsConfig = (overrides = {}) => defineConfig([
   {
-    extends: [baseConfig, typescriptEslint.configs.recommended],
+    name: "JavaScript, TypeScript, and React files",
+    files: overrides.files ?? [JS_AND_TS_FILES_IN_ANY_DIR],
+    ...(overrides.ignores ? { ignores: overrides.ignores } : []),
+    extends: [baseConfig({ files: overrides.files ?? [JS_AND_TS_FILES_IN_ANY_DIR] }), typescriptEslint.configs.recommended],
     // these plugins need to be defined because some of their rules are overrides below
     plugins: {
       react: eslintPluginReact,
@@ -72,6 +76,8 @@ export default defineConfig([
           jsx: "never",
         },
       ],
+
+      ...overrides.rules,
     },
   },
   {
@@ -87,3 +93,5 @@ export default defineConfig([
     },
   },
 ]);
+
+export default amexTsConfig;

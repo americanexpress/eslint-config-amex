@@ -19,12 +19,15 @@ import eslintPluginJest from "eslint-plugin-jest";
 import eslintPluginJestDom from "eslint-plugin-jest-dom";
 import eslintPluginN from "eslint-plugin-n";
 import baseConfig from "./index.js";
+import { JS_FILES_IN_TEST_DIR } from "./constants/file-glob-patterns.js";
 
-export default defineConfig([
+const amexJsTestConfig = (overrides = {}) => defineConfig([
   // https://github.com/americanexpress/eslint-config-amex/blob/16.x/test.js
   {
-    name: "test files",
-    extends: [baseConfig],
+    name: "JavaScript unit tests using Jest",
+    files: overrides.files ?? [JS_FILES_IN_TEST_DIR],
+    ...(overrides.ignores ? { ignores: overrides.ignores } : []),
+    extends: [baseConfig({ files: overrides.files ?? [JS_FILES_IN_TEST_DIR] })],
     plugins: {
       jest: eslintPluginJest,
       "jest-dom": eslintPluginJestDom,
@@ -54,6 +57,10 @@ export default defineConfig([
       // prop spreading is very useful in tests for specs that including variations of the same
       // props repeatedly
       "react/jsx-props-no-spreading": 0,
+
+      ...overrides.rules,
     },
   },
 ]);
+
+export default amexJsTestConfig;
