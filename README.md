@@ -69,17 +69,15 @@ export default defineConfig([
 If working in TypeScript, your `eslint.config.js` should be:
 
 ```js
-import { fileURLToPath } from "node:url";
-import { defineConfig } from "eslint/config";
-import { includeIgnoreFile } from "@eslint/compat";
-import amexTsConfig from "eslint-config-amex/ts-config";
-import amexTsTestConfig from "eslint-config-amex/ts-test-config";
-import amexBrowserTestConfig from "eslint-config-amex/browser-test-config";
-import amexIgnorePrettierRulesConfig from "eslint-config-amex/ignore-prettier-rules-config";
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'eslint/config';
+import { includeIgnoreFile } from '@eslint/compat';
+import amexTsConfig from 'eslint-config-amex/ts-config';
+import amexTsTestConfig from 'eslint-config-amex/ts-test-config';
+import amexBrowserTestConfig from 'eslint-config-amex/browser-test-config';
+import amexIgnorePrettierRulesConfig from 'eslint-config-amex/ignore-prettier-rules-config';
 
-const gitignorePath = fileURLToPath(
-  new URL(".gitignore", import.meta.url)
-);
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
 
 export default defineConfig([
   includeIgnoreFile(gitignorePath),
@@ -92,7 +90,7 @@ export default defineConfig([
 
 ### Overrides
 
-Each of the config functions can be customized by supplying an object with the `files`, `ignores`, and `rules` properties, as defined in the [ESLint docs](https://eslint.org/docs/v9.x/use/configure/configuration-files#configuration-objects). The `files` and `ignores` properties will completely override the default values for those configs, whereas the `rules` property will be merged with the existing rules for that config. For convenience, `JS_FILES` and `JS_AND_TS_FILES` constants are exported from `eslint-config-amex/constants`. 
+Each of the config functions can be customized by supplying an object with the `files`, `ignores`, and `rules` properties, as defined in the [ESLint docs](https://eslint.org/docs/v9.x/use/configure/configuration-files#configuration-objects). The `files` and `ignores` properties will completely override the default values for those configs, whereas the `rules` property will be merged with the existing rules for that config. For convenience, `JS_FILES` and `JS_AND_TS_FILES` constants are exported from `eslint-config-amex/constants`.
 
 ```js
 import amexJsConfig from 'eslint-config-amex';
