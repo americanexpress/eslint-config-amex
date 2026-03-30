@@ -1,3 +1,10 @@
+# [17.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v17.0.0...v17.1.0) (2026-03-30)
+
+
+### Features
+
+* **config:** add TS support ([#170](https://github.com/americanexpress/eslint-config-amex/issues/170)) ([7464903](https://github.com/americanexpress/eslint-config-amex/commit/746490388f5526f540cdf246b1235f7877b40b77))
+
 # [17.0.0](https://github.com/americanexpress/eslint-config-amex/compare/v16.6.1...v17.0.0) (2026-03-17)
 
 
