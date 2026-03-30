@@ -91,6 +91,8 @@ export default {
         "mock{,s}/**", // parrot mocks
         "**/vite.config.{ts,js}", // vite config
         "**/vitest.config.{ts,js}", // vitest config
+
+        "eslint.config.{js,mjs,cjs}" // eslint config
       ],
       optionalDependencies: false,
     },

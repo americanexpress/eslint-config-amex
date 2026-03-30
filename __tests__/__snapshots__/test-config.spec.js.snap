@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
+exports[`amexJsTestConfig calculated eslint config should match snapshot 1`] = `
 {
   "language": "@/js",
   "languageOptions": {
@@ -987,9 +987,13 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       "__dirname": false,
       "__filename": false,
       "addEventListener": false,
+      "afterAll": false,
+      "afterEach": false,
       "ai": false,
       "alert": false,
       "atob": false,
+      "beforeAll": false,
+      "beforeEach": false,
       "blur": false,
       "btoa": false,
       "caches": false,
@@ -1012,6 +1016,7 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       "customElements": false,
       "decodeURI": false,
       "decodeURIComponent": false,
+      "describe": false,
       "devicePixelRatio": false,
       "dispatchEvent": false,
       "document": false,
@@ -1021,12 +1026,14 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       "escape": false,
       "eval": false,
       "event": false,
+      "expect": false,
       "exports": true,
       "external": false,
       "fence": false,
       "fetch": false,
       "fetchLater": false,
       "find": false,
+      "fit": false,
       "focus": false,
       "frameElement": false,
       "frames": false,
@@ -1042,6 +1049,8 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       "isFinite": false,
       "isNaN": false,
       "isSecureContext": false,
+      "it": false,
+      "jest": false,
       "launchQueue": false,
       "length": false,
       "localStorage": false,
@@ -1234,6 +1243,7 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       "stop": false,
       "structuredClone": false,
       "styleMedia": false,
+      "test": false,
       "toolbar": false,
       "top": false,
       "trustedTypes": false,
@@ -1243,6 +1253,9 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       "visualViewport": false,
       "when": false,
       "window": false,
+      "xdescribe": false,
+      "xit": false,
+      "xtest": false,
     },
     "parser": "@babel/eslint-parser@7.28.6",
     "parserOptions": {
@@ -1272,6 +1285,8 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
     "react-hooks:eslint-plugin-react-hooks@7.0.0",
     "unicorn:eslint-plugin-unicorn@62.0.0",
     "you-dont-need-lodash-underscore",
+    "jest:eslint-plugin-jest@29.15.0",
+    "jest-dom",
   ],
   "processor": undefined,
   "rules": {
@@ -2430,6 +2445,99 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
     "init-declarations": [
       0,
     ],
+    "jest-dom/prefer-checked": [
+      2,
+    ],
+    "jest-dom/prefer-empty": [
+      2,
+    ],
+    "jest-dom/prefer-enabled-disabled": [
+      2,
+    ],
+    "jest-dom/prefer-focus": [
+      2,
+    ],
+    "jest-dom/prefer-in-document": [
+      2,
+    ],
+    "jest-dom/prefer-required": [
+      2,
+    ],
+    "jest-dom/prefer-to-have-attribute": [
+      2,
+    ],
+    "jest-dom/prefer-to-have-class": [
+      2,
+    ],
+    "jest-dom/prefer-to-have-style": [
+      2,
+    ],
+    "jest-dom/prefer-to-have-text-content": [
+      2,
+    ],
+    "jest-dom/prefer-to-have-value": [
+      2,
+    ],
+    "jest/expect-expect": [
+      1,
+    ],
+    "jest/no-alias-methods": [
+      2,
+    ],
+    "jest/no-commented-out-tests": [
+      1,
+    ],
+    "jest/no-conditional-expect": [
+      2,
+    ],
+    "jest/no-deprecated-functions": [
+      2,
+    ],
+    "jest/no-disabled-tests": [
+      2,
+    ],
+    "jest/no-done-callback": [
+      2,
+    ],
+    "jest/no-export": [
+      2,
+    ],
+    "jest/no-focused-tests": [
+      2,
+    ],
+    "jest/no-identical-title": [
+      2,
+    ],
+    "jest/no-interpolation-in-snapshots": [
+      2,
+    ],
+    "jest/no-jasmine-globals": [
+      2,
+    ],
+    "jest/no-large-snapshots": [
+      2,
+    ],
+    "jest/no-mocks-import": [
+      2,
+    ],
+    "jest/no-standalone-expect": [
+      2,
+    ],
+    "jest/no-test-prefixes": [
+      2,
+    ],
+    "jest/valid-describe-callback": [
+      2,
+    ],
+    "jest/valid-expect": [
+      2,
+    ],
+    "jest/valid-expect-in-promise": [
+      2,
+    ],
+    "jest/valid-title": [
+      2,
+    ],
     "jsx-a11y/anchor-is-valid": [
       2,
       {
@@ -2490,7 +2598,7 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       0,
     ],
     "n/global-require": [
-      2,
+      1,
     ],
     "n/handle-callback-err": [
       0,
@@ -3645,7 +3753,7 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
       2,
     ],
     "react/jsx-props-no-spreading": [
-      2,
+      0,
       {
         "custom": "enforce",
         "exceptions": [],

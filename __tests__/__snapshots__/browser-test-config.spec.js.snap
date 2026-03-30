@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`amexBrowserTestConfig calculated eslint config should match snapshot 1`] = `
+{
+  "language": "@/js",
+  "languageOptions": {
+    "ecmaVersion": 2026,
+    "globals": {
+      "devProxyServerPort": "false",
+      "port": "false",
+      "seleniumServerPort": "false",
+      "testHost": "false",
+    },
+    "parser": "espree@10.4.0",
+    "parserOptions": {
+      "sourceType": "module",
+    },
+    "sourceType": "module",
+  },
+  "linterOptions": {
+    "reportUnusedDisableDirectives": 1,
+  },
+  "plugins": [
+    "@",
+  ],
+  "processor": undefined,
+}
+`;

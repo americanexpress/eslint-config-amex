@@ -62,12 +62,15 @@ import nRules from "./rules/n.js";
 import reactSettings from "./settings/react.js";
 import importSettings from "./settings/import.js";
 
-export default defineConfig([
+import { JS_FILES_IN_ANY_DIR } from "./constants/file-glob-patterns.js";
+
+const amexJsConfig = (overrides = {}) => defineConfig([
   {
-    name: "js, mjs, cjs, jsx, and snap files",
+    name: "JavaScript and React files",
     // js, mjs, cjs are included by default: https://eslint.org/docs/latest/use/command-line-interface#--ext
     // add jsx and snap files
-    files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.snap"],
+    files: overrides.files ?? [JS_FILES_IN_ANY_DIR],
+    ...(overrides.ignores ? { ignores: overrides.ignores } : []),
     languageOptions: {
       parser: babelParser,
       ecmaVersion: 2020,
@@ -153,6 +156,8 @@ export default defineConfig([
 
       // `you-dont-need-lodash-underscore` rules
       ...eslintPluginYouDontNeedLodashUnderscore.configs.compatible.rules,
+
+      ...overrides.rules,
     },
   },
   {
@@ -199,3 +204,5 @@ export default defineConfig([
     },
   },
 ]);
+
+export default amexJsConfig;

@@ -38,35 +38,89 @@ npm install --save-dev typescript eslint-plugin-jest@^29.0.0 eslint-plugin-jest-
 
 ### Configuration
 
-Create a `eslint.config.js` file. This "flat config" is the new configuration format as of `eslint@9`. See https://eslint.org/docs/latest/use/configure/configuration-files for more details.
+Create a `eslint.config.js` file (or `eslint.config.mjs` if your package.json does not have `"type": "module"`). This Flat Config file is the new configuration format as of `eslint@9`. See https://eslint.org/docs/v9.x/use/configure/configuration-files for more details.
+
+#### JavaScript
+
+If working in JavaScript, your `eslint.config.js` should be:
 
 ```js
-import { fileURLToPath } from "node:url";
-import { defineConfig } from "eslint/config";
-import { includeIgnoreFile } from "@eslint/compat";
-import baseConfig from "eslint-config-amex";
-import testConfig from "eslint-config-amex/test-config";
-import browserTestConfig from "eslint-config-amex/browser-test-config";
-import ignorePrettierRulesConfig from "eslint-config-amex/ignore-prettier-rules-config";
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'eslint/config';
+import { includeIgnoreFile } from '@eslint/compat';
+import amexJsConfig from 'eslint-config-amex';
+import amexJsTestConfig from 'eslint-config-amex/test-config';
+import amexBrowserTestConfig from 'eslint-config-amex/browser-test-config';
+import amexIgnorePrettierRulesConfig from 'eslint-config-amex/ignore-prettier-rules-config';
 
-const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
 
 export default defineConfig([
-  includeIgnoreFile(gitignorePath), // ignore files which are gitignored
-  {
-    extends: [baseConfig], // for JavaScript and React code
-  },
-  {
-    files: ["**/__tests__/**", "**/__mocks__/**"],
-    extends: [testConfig], // for Jest unit tests
-  },
-  {
-    files: ["__tests__/browser/**"],
-    extends: [browserTestConfig], // for Jest browser tests
-  },
-  ignorePrettierRulesConfig, // include if using Prettier in your project
+  includeIgnoreFile(gitignorePath),
+  amexJsConfig(),
+  amexJsTestConfig(),
+  amexBrowserTestConfig(),
+  amexIgnorePrettierRulesConfig(), // include if using Prettier in your project
 ]);
 ```
+
+#### TypeScript
+
+If working in TypeScript, your `eslint.config.js` should be:
+
+```js
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'eslint/config';
+import { includeIgnoreFile } from '@eslint/compat';
+import amexTsConfig from 'eslint-config-amex/ts-config';
+import amexTsTestConfig from 'eslint-config-amex/ts-test-config';
+import amexBrowserTestConfig from 'eslint-config-amex/browser-test-config';
+import amexIgnorePrettierRulesConfig from 'eslint-config-amex/ignore-prettier-rules-config';
+
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
+
+export default defineConfig([
+  includeIgnoreFile(gitignorePath),
+  amexTsConfig(),
+  amexTsTestConfig(),
+  amexBrowserTestConfig(),
+  amexIgnorePrettierRulesConfig(), // include if using Prettier in your project
+]);
+```
+
+### Overrides
+
+Each of the config functions can be customized by supplying an object with the `files`, `ignores`, and `rules` properties, as defined in the [ESLint docs](https://eslint.org/docs/v9.x/use/configure/configuration-files#configuration-objects). The `files` and `ignores` properties will completely override the default values for those configs, whereas the `rules` property will be merged with the existing rules for that config. For convenience, `JS_FILES` and `JS_AND_TS_FILES` constants are exported from `eslint-config-amex/constants`.
+
+```js
+import amexJsConfig from 'eslint-config-amex';
+import amexJsTestConfig from 'eslint-config-amex/test-config';
+import { JS_FILES } from 'eslint-config-amex/constants';
+
+export default defineConfig([
+  // other configs
+  amexJsConfig({
+    ignores: [`**/src/ignore-directory/**/${JS_FILES}`],
+  })
+  amexJsTestConfig({
+    files: [`**/custom-test-directory/**/${JS_FILES}`],
+    rules: {
+      'jest/no-large-snapshots': ['error', { maxSize: 100 }],
+    }
+  })
+]);
+```
+
+For reference, these are the default `files` for each config.
+
+| Config                                            | Default Files Applied To                                                |
+| ------------------------------------------------- | ----------------------------------------------------------------------- |
+| `eslint-config-amex`                              | `**/*.{js,jsx,mjs,cjs,snap}`                                            |
+| `eslint-config-amex/test-config`                  | `**/__{tests,mocks}__/**/*.{js,jsx,mjs,cjs,snap}`                       |
+| `eslint-config-amex/ts-config`                    | `**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,snap}`                             |
+| `eslint-config-amex/ts-test-config`               | `**/__{tests,mocks}__/**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,snap}`        |
+| `eslint-config-amex/browser-test-config`          | `**/__tests__/{browser,a11y}/**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,snap}` |
+| `eslint-config-amex/ignore-prettier-rules-config` | `**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,snap}`                             |
 
 ### Linting vs Formatting
 
@@ -77,7 +131,7 @@ export default defineConfig([
 
 Previously, formatting was done as _part of_ linting by using `eslint-plugin-prettier`. However, this is [no longer recommended](https://prettier.io/docs/integrating-with-linters#notes).
 
-If you want formatting in your repo, [install Prettier](https://prettier.io/docs/install) and use the `ignorePrettierRulesConfig` config (see above) in order to disable any ESLint rules which may conflict with Prettier.
+If you want formatting in your repo, [install Prettier](https://prettier.io/docs/install) and use the `eslint-config-amex/ignore-prettier-rules-config` config (see above) in order to disable any ESLint rules which may conflict with Prettier.
 
 ## 🏆 Contributing
 
