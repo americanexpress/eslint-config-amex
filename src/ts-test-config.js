@@ -12,7 +12,6 @@
  * the License.
  */
 
-// eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
 import { defineConfig } from "eslint/config";
 import testConfig from "./test-config.js";
 import tsConfig from "./ts-config.js";

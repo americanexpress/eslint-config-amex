@@ -12,9 +12,7 @@
  * the License.
  */
 
-// eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
 import { defineConfig } from "eslint/config";
-// eslint-disable-next-line import/no-unresolved -- see https://github.com/import-js/eslint-plugin-import/issues/1810
 import typescriptEslint from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginImport from "eslint-plugin-import";
