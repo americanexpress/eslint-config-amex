@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-amex",
-  "version": "17.1.1",
+  "version": "17.1.2",
   "type": "module",
   "description": "American Express' ESLint config",
   "main": "./src/index.js",
