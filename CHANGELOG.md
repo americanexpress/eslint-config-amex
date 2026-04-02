@@ -1,3 +1,11 @@
+## [17.1.1](https://github.com/americanexpress/eslint-config-amex/compare/v17.1.0...v17.1.1) (2026-04-02)
+
+
+### Bug Fixes
+
+* **rules:** update for import/no-unresolved ([07195ab](https://github.com/americanexpress/eslint-config-amex/commit/07195abe179126b62810dfd773d52ac241f7c992))
+* **rules:** update for import/no-unresolved ([44a975a](https://github.com/americanexpress/eslint-config-amex/commit/44a975a66dc7a79f88be117e2c31e48ff8d993b5))
+
 # [17.1.0](https://github.com/americanexpress/eslint-config-amex/compare/v17.0.0...v17.1.0) (2026-03-30)
 
 
