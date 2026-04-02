@@ -2340,6 +2340,10 @@ exports[`amexJsConfig calculated eslint config should match snapshot 1`] = `
         "caseSensitive": true,
         "caseSensitiveStrict": false,
         "commonjs": true,
+        "ignore": [
+          "eslint",
+          "eslint-config-amex",
+        ],
       },
     ],
     "import/no-unused-modules": [
