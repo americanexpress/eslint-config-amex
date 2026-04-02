@@ -25,7 +25,13 @@
 export default {
   // ensure imports point to files/modules that can be resolved
   // https://github.com/import-js/eslint-plugin-import/blob/v2.32.0/docs/rules/no-unresolved.md
-  "import/no-unresolved": ["error", { commonjs: true, caseSensitive: true }],
+  "import/no-unresolved": ["error", { 
+    commonjs: true, 
+    caseSensitive: true,
+    // this rule is not aware of subpath exports, so we need to ignore these packages that use subpath exports
+    // see https://github.com/import-js/eslint-plugin-import/issues/1810
+    ignore: ["eslint", "eslint-config-amex"]
+  }],
 
   // ensure named imports coupled with named exports
   // https://github.com/import-js/eslint-plugin-import/blob/v2.32.0/docs/rules/named.md
