@@ -28,8 +28,9 @@ export default {
   "import/no-unresolved": ["error", { 
     commonjs: true, 
     caseSensitive: true,
-    // this rule is not aware of subpath exports, so we need to ignore these packages that use subpath exports
-    // see https://github.com/import-js/eslint-plugin-import/issues/1810
+    // this rule is not aware of subpath exports: https://github.com/import-js/eslint-plugin-import/issues/1810
+    // however we need to use subpath exports from these packages in eslint.config.js file
+    // TODO: remove these exceptions once the rule supports subpath exports
     ignore: ["eslint", "eslint-config-amex"]
   }],
 
