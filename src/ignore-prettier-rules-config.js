@@ -13,7 +13,7 @@
  */
 import { defineConfig } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
-import { JS_AND_TS_FILES_IN_ANY_DIR } from "./constants/file-glob-patterns.js";
+import { JS_AND_TS_FILES_IN_ANY_DIR } from "./constants/index.js";
 
 // disable all eslint rules which would conflict with prettier formatting
 const amexPrettierIgnoreConfig = (overrides = {}) => defineConfig([{

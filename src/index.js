@@ -61,7 +61,7 @@ import nRules from "./rules/n.js";
 import reactSettings from "./settings/react.js";
 import importSettings from "./settings/import.js";
 
-import { JS_FILES_IN_ANY_DIR } from "./constants/file-glob-patterns.js";
+import { JS_FILES_IN_ANY_DIR } from "./constants/index.js";
 
 const amexJsConfig = (overrides = {}) => defineConfig([
   {

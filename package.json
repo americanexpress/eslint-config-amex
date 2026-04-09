@@ -11,7 +11,7 @@
     "./ignore-prettier-rules-config": "./src/ignore-prettier-rules-config.js",
     "./ts-config": "./src/ts-config.js",
     "./ts-test-config": "./src/ts-test-config.js",
-    "./constants": "./src/constants.js"
+    "./constants": "./src/constants/index.js"
   },
   "scripts": {
     "test:lint": "eslint .",

@@ -12,7 +12,7 @@
  * the License.
  */
 
-import { momentRestrictedModule } from "../utils/restricted-modules.js";
+import { momentRestrictedModule } from "../constants/restricted-modules.js";
 
 /**
  * This file contains all rules for the `eslint-plugin-n` plugin.
