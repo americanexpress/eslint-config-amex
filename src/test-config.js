@@ -18,7 +18,7 @@ import eslintPluginJest from "eslint-plugin-jest";
 import eslintPluginJestDom from "eslint-plugin-jest-dom";
 import eslintPluginN from "eslint-plugin-n";
 import baseConfig from "./index.js";
-import { JS_FILES_IN_TEST_DIR } from "./constants/file-glob-patterns.js";
+import { JS_FILES_IN_TEST_DIR } from "./constants/index.js";
 
 const amexJsTestConfig = (overrides = {}) => defineConfig([
   // https://github.com/americanexpress/eslint-config-amex/blob/16.x/test.js

@@ -15,7 +15,7 @@
 import { defineConfig } from "eslint/config";
 import testConfig from "./test-config.js";
 import tsConfig from "./ts-config.js";
-import { JS_AND_TS_FILES_IN_TEST_DIR } from "./constants/file-glob-patterns.js";
+import { JS_AND_TS_FILES_IN_TEST_DIR } from "./constants/index.js";
 
 const amexTsTestConfig = (overrides = {}) => defineConfig([
   {

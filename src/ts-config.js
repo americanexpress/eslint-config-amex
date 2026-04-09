@@ -17,7 +17,7 @@ import typescriptEslint from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginImport from "eslint-plugin-import";
 import baseConfig from "./index.js";
-import { JS_AND_TS_FILES_IN_ANY_DIR } from "./constants/file-glob-patterns.js";
+import { JS_AND_TS_FILES_IN_ANY_DIR } from "./constants/index.js";
 
 const amexTsConfig = (overrides = {}) => defineConfig([
   {
