@@ -2358,6 +2358,7 @@ exports[`amexJsTestConfig calculated eslint config should match snapshot 1`] = `
         "ignore": [
           "eslint",
           "eslint-config-amex",
+          "@americanexpress",
         ],
       },
     ],
@@ -3918,7 +3919,7 @@ exports[`amexJsTestConfig calculated eslint config should match snapshot 1`] = `
       {
         "customValidators": [],
         "ignore": [],
-        "skipUndeclared": false,
+        "skipUndeclared": true,
       },
     ],
     "react/react-in-jsx-scope": [

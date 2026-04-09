@@ -249,7 +249,7 @@ export default {
     {
       ignore: [],
       customValidators: [],
-      skipUndeclared: false,
+      skipUndeclared: true,
     },
   ],
 

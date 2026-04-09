@@ -1,3 +1,10 @@
+## [17.1.3](https://github.com/americanexpress/eslint-config-amex/compare/v17.1.2...v17.1.3) (2026-04-06)
+
+
+### Bug Fixes
+
+* **rules:** update for compat with react 19 ([#179](https://github.com/americanexpress/eslint-config-amex/issues/179)) ([cbf9ccb](https://github.com/americanexpress/eslint-config-amex/commit/cbf9ccb250e9cd26c1aef85b0434590246e1642e))
+
 ## [17.1.2](https://github.com/americanexpress/eslint-config-amex/compare/v17.1.1...v17.1.2) (2026-04-02)
 
 
