@@ -65,6 +65,9 @@ import { JS_FILES_IN_ANY_DIR } from "./constants/index.js";
 
 const amexJsConfig = (overrides = {}) => defineConfig([
   {
+    name: 'amex',
+  },
+  {
     name: "JavaScript and React files",
     // js, mjs, cjs are included by default: https://eslint.org/docs/latest/use/command-line-interface#--ext
     // add jsx and snap files
