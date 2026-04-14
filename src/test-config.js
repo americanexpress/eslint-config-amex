@@ -23,7 +23,7 @@ import { JS_FILES_IN_TEST_DIR } from "./constants/index.js";
 const amexJsTestConfig = (overrides = {}) => defineConfig([
   // https://github.com/americanexpress/eslint-config-amex/blob/16.x/test.js
   {
-    name: "JavaScript unit tests using Jest",
+    name: "eslint-config-amex/test-config",
     files: overrides.files ?? [JS_FILES_IN_TEST_DIR],
     ...(overrides.ignores ? { ignores: overrides.ignores } : []),
     extends: [baseConfig({ files: overrides.files ?? [JS_FILES_IN_TEST_DIR] })],
