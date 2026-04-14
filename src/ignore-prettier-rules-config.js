@@ -17,7 +17,7 @@ import { JS_AND_TS_FILES_IN_ANY_DIR } from "./constants/index.js";
 
 // disable all eslint rules which would conflict with prettier formatting
 const amexPrettierIgnoreConfig = (overrides = {}) => defineConfig([{
-    name: "Ignore Prettier formatting rules",
+    name: "eslint-config-amex/ignore-prettier-rules-config",
     files: overrides.files ?? [JS_AND_TS_FILES_IN_ANY_DIR],
     ...(overrides.ignores ? { ignores: overrides.ignores } : []),
     extends: [eslintConfigPrettier],
