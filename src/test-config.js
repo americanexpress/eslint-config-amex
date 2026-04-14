@@ -21,6 +21,9 @@ import baseConfig from "./index.js";
 import { JS_FILES_IN_TEST_DIR } from "./constants/index.js";
 
 const amexJsTestConfig = (overrides = {}) => defineConfig([
+  {
+    name: 'amex',
+  },
   // https://github.com/americanexpress/eslint-config-amex/blob/16.x/test.js
   {
     name: "JavaScript unit tests using Jest",
