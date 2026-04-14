@@ -65,7 +65,7 @@ import { JS_FILES_IN_ANY_DIR } from "./constants/index.js";
 
 const amexJsConfig = (overrides = {}) => defineConfig([
   {
-    name: "JavaScript and React files",
+    name: "eslint-config-amex",
     // js, mjs, cjs are included by default: https://eslint.org/docs/latest/use/command-line-interface#--ext
     // add jsx and snap files
     files: overrides.files ?? [JS_FILES_IN_ANY_DIR],
@@ -160,7 +160,7 @@ const amexJsConfig = (overrides = {}) => defineConfig([
     },
   },
   {
-    name: "jsx files",
+    name: "eslint-config-amex/jsx",
     files: ["**/*.jsx"],
     rules: {
       // It is common to comment JSX during normal development, so 'warn' is least disruptive
@@ -168,7 +168,7 @@ const amexJsConfig = (overrides = {}) => defineConfig([
     },
   },
   {
-    name: "markdown files",
+    name: "eslint-config-amex/md",
     files: ["**/*.{md,mkdn,mdown,markdown}"],
     plugins: {
       markdown: eslintMarkdown,
@@ -185,7 +185,7 @@ const amexJsConfig = (overrides = {}) => defineConfig([
     // Certain rules need to be disabled when we are linting markdown files,
     // since they will often be snippets in documentation that cannot be run on
     // their own.
-    name: "markdown files with fenced code blocks",
+    name: "eslint-config-amex/md/js",
     files: ["**/*.{md,mkdn,mdown,markdown}/*.{js,javascript,jsx,node}"],
     rules: {
       "no-unused-expressions": "off",
