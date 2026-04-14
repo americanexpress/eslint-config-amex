@@ -12,6 +12,9 @@ import ignorePrettierRulesConfig from "./src/ignore-prettier-rules-config.js";
 const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 
 export default defineConfig([
+  {
+    name: 'amex',
+  },
   includeIgnoreFile(gitignorePath),
   {
     extends: [
