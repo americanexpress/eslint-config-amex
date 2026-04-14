@@ -19,7 +19,7 @@ import { JS_AND_TS_FILES_IN_TEST_DIR } from "./constants/index.js";
 
 const amexTsTestConfig = (overrides = {}) => defineConfig([
   {
-    name: "TypeScript unit tests using Jest",
+    name: "eslint-config-amex/ts-test-config",
     files: overrides.files ?? [JS_AND_TS_FILES_IN_TEST_DIR],
     ...(overrides.ignores ? { ignores: overrides.ignores } : []),
     extends: [testConfig({ files: overrides.files ?? [JS_AND_TS_FILES_IN_TEST_DIR] }), tsConfig({ files: overrides.files ?? [JS_AND_TS_FILES_IN_TEST_DIR]})],
