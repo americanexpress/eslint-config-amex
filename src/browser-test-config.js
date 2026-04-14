@@ -16,7 +16,7 @@ import { JS_AND_TS_FILES_IN_BROWSER_TEST_DIR } from "./constants/index.js";
 
 const amexBrowserTestConfig = (overrides = {}) => defineConfig([
   {
-    name: "Browser tests using Selenium WebDriver",
+    name: "eslint-config-amex/browser-test-config",
     files: overrides.files ?? [JS_AND_TS_FILES_IN_BROWSER_TEST_DIR],
     ...(overrides.ignores ? { ignores: overrides.ignores } : []),
     languageOptions: {
