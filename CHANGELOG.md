@@ -1,3 +1,10 @@
+# [17.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v17.1.3...v17.2.0) (2026-04-14)
+
+
+### Features
+
+* consistent config names ([#182](https://github.com/americanexpress/eslint-config-amex/issues/182)) ([503cfe1](https://github.com/americanexpress/eslint-config-amex/commit/503cfe1349369dc08403266b691cbc1d92148643))
+
 ## [17.1.3](https://github.com/americanexpress/eslint-config-amex/compare/v17.1.2...v17.1.3) (2026-04-06)
 
 
