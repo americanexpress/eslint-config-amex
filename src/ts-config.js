@@ -21,6 +21,9 @@ import { JS_AND_TS_FILES_IN_ANY_DIR } from "./constants/index.js";
 
 const amexTsConfig = (overrides = {}) => defineConfig([
   {
+    name: 'amex',
+  },
+  {
     name: "JavaScript, TypeScript, and React files",
     files: overrides.files ?? [JS_AND_TS_FILES_IN_ANY_DIR],
     ...(overrides.ignores ? { ignores: overrides.ignores } : []),
