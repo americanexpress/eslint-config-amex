@@ -1,3 +1,10 @@
+## [17.2.1](https://github.com/americanexpress/eslint-config-amex/compare/v17.2.0...v17.2.1) (2026-05-08)
+
+
+### Bug Fixes
+
+* **deps:** remove unused dep ([#183](https://github.com/americanexpress/eslint-config-amex/issues/183)) ([00f1342](https://github.com/americanexpress/eslint-config-amex/commit/00f134295d4abed782f23978e0dcde2b25292f41))
+
 # [17.2.0](https://github.com/americanexpress/eslint-config-amex/compare/v17.1.3...v17.2.0) (2026-04-14)
 
 
