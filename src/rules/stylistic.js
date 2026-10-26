@@ -21,7 +21,7 @@
  *
  * Additionally, some rule updates were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
- * For a complete list of rules, see https://github.com/eslint-stylistic/eslint-stylistic/tree/v5.7.1/packages/eslint-plugin/rules.
+ * For a complete list of rules, see https://github.com/eslint-stylistic/eslint-stylistic/tree/v5.10.0/packages/eslint-plugin/rules.
  */
 
 export default {
