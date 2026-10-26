@@ -39,6 +39,12 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 
 #### Running tests
 
+CI installs dependencies with `npm ci` to use the versions in `package-lock.json`.
+Use `npm ci` locally to reproduce CI before running tests. Installing newer
+dependencies can change the plugin version metadata included in config snapshots.
+When intentionally updating dependencies, review snapshot differences before
+updating them with `npm run test:unit -- -u`.
+
 - `npm run test:lint`
 
 Verifies that your code matches the American Express code style defined in this config.
