@@ -2382,6 +2382,7 @@ exports[`amexTsTestConfig calculated eslint config should match snapshot 1`] = `
           "mock{,s}/**",
           "**/vite.config.{ts,js}",
           "**/vitest.config.{ts,js}",
+          "**/playwright.config.{ts,js}",
           "eslint.config.{js,mjs,cjs}",
         ],
         "optionalDependencies": false,
@@ -4252,6 +4253,9 @@ exports[`amexTsTestConfig calculated eslint config should match snapshot 1`] = `
       2,
       {},
     ],
+    "unicorn/prefer-array-flat-map": [
+      0,
+    ],
     "unicorn/prefer-dom-node-append": [
       2,
     ],
@@ -4263,9 +4267,6 @@ exports[`amexTsTestConfig calculated eslint config should match snapshot 1`] = `
     ],
     "unicorn/prefer-dom-node-text-content": [
       2,
-    ],
-    "unicorn/prefer-flat-map": [
-      0,
     ],
     "unicorn/prefer-includes": [
       0,
@@ -4292,11 +4293,11 @@ exports[`amexTsTestConfig calculated eslint config should match snapshot 1`] = `
     "unicorn/prefer-reflect-apply": [
       2,
     ],
-    "unicorn/prefer-replace-all": [
-      0,
-    ],
     "unicorn/prefer-spread": [
       2,
+    ],
+    "unicorn/prefer-string-replace-all": [
+      0,
     ],
     "unicorn/prefer-string-slice": [
       2,
