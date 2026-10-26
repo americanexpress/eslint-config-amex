@@ -17,11 +17,11 @@
  *
  * These rules were migrated from https://github.com/americanexpress/eslint-config-amex/blob/16.x/index.js.
  *
- * For a complete list of rules, see https://github.com/eslint-community/eslint-plugin-eslint-comments/tree/v4.6.0/docs/rules.
+ * For a complete list of rules, see https://github.com/eslint-community/eslint-plugin-eslint-comments/tree/v4.8.0/docs/rules.
  */
 
 export default {
-  // https://github.com/eslint-community/eslint-plugin-eslint-comments/blob/v4.6.0/docs/rules/require-description.md
+  // https://github.com/eslint-community/eslint-plugin-eslint-comments/blob/v4.8.0/docs/rules/require-description.md
   "@eslint-community/eslint-comments/require-description": [
     "error",
     {
@@ -29,6 +29,6 @@ export default {
     },
   ],
 
-  // https://github.com/eslint-community/eslint-plugin-eslint-comments/blob/main/docs/rules/no-unused-disable.md
+  // https://github.com/eslint-community/eslint-plugin-eslint-comments/blob/v4.8.0/docs/rules/no-unused-disable.md
   "@eslint-community/eslint-comments/no-unused-disable": ["error"],
 };
