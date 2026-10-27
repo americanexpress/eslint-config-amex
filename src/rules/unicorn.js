@@ -49,8 +49,8 @@ export default {
   // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/no-abusive-eslint-disable.md
   "unicorn/no-abusive-eslint-disable": "error",
 
-  // Require Array.isArray() instead of instanceof Array
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/no-array-instanceof.md
+  // Disallow instanceof with built-in objects
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/no-instanceof-builtins.md
   "unicorn/no-instanceof-builtins": "error",
 
   // Do not use leading/trailing space between console.log parameters
@@ -84,11 +84,6 @@ export default {
   // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/no-process-exit.md
   "unicorn/no-process-exit": "error",
 
-  // Uses safe-regex to disallow potentially catastrophic exponential-time
-  // regular expressions.
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/no-unsafe-regex.md
-  // "unicorn/no-unsafe-regex": "error",
-
   // Disallow number literals with zero fractions or dangling dots
   // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/no-zero-fractions.md
   "unicorn/no-zero-fractions": "error",
@@ -102,17 +97,17 @@ export default {
   "unicorn/prefer-add-event-listener": "error",
 
   // Prefer using .dataset on DOM elements over .setAttribute(…)
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-dataset.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-dom-node-dataset.md
   "unicorn/prefer-dom-node-dataset": "error",
 
   // Prefer KeyboardEvent#key over KeyboardEvent#keyCode
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-event-key.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-keyboard-event-key.md
   "unicorn/prefer-keyboard-event-key": "error",
 
   // Prefer .flatMap(…) over .map(…).flat()
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-flat-map.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-array-flat-map.md
   // TODO: Enable this by default when targeting Node.js 12.
-  "unicorn/prefer-flat-map": "off",
+  "unicorn/prefer-array-flat-map": "off",
 
   // Don't prefer .includes() over .indexOf() when checking for existence or non-existence.
   // Internet Explorer does not support .includes()
@@ -129,11 +124,11 @@ export default {
   "unicorn/prefer-negative-index": "error",
 
   // Prefer Node#append() over Node#appendChild()
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-node-append.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-dom-node-append.md
   "unicorn/prefer-dom-node-append": "error",
 
   // Prefer childNode.remove() over parentNode.removeChild(childNode)
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-node-remove.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-dom-node-remove.md
   "unicorn/prefer-dom-node-remove": "error",
 
   // Prefer Number static properties over global ones.
@@ -150,16 +145,16 @@ export default {
   "unicorn/prefer-reflect-apply": "error",
 
   // Prefer String#replaceAll() over regex searches with the global flag
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-replace-all.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-string-replace-all.md
   // TODO: Enable this by default when it's shipping in a Node.js LTS version.
-  "unicorn/prefer-replace-all": "off",
+  "unicorn/prefer-string-replace-all": "off",
 
   // Prefer the spread operator over Array.from()
   // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-spread.md
   "unicorn/prefer-spread": "error",
 
   // Prefer String#startsWith() & String#endsWith() over more complex alternatives
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-starts-ends-with.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-string-starts-ends-with.md
   "unicorn/prefer-string-starts-ends-with": "error",
 
   // Prefer String#slice() over String#substr() and String#substring()
@@ -167,11 +162,11 @@ export default {
   "unicorn/prefer-string-slice": "error",
 
   // Prefer .textContent over .innerText
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-text-content.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-dom-node-text-content.md
   "unicorn/prefer-dom-node-text-content": "error",
 
   // Prefer String#trimStart() / String#trimEnd() over String#trimLeft() / String#trimRight()
-  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-trim-start-end.md
+  // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v62.0.0/docs/rules/prefer-string-trim-start-end.md
   "unicorn/prefer-string-trim-start-end": "error",
 
   // Enforce throwing TypeError in type checking conditions
