@@ -1,3 +1,10 @@
+## [17.2.2](https://github.com/americanexpress/eslint-config-amex/compare/v17.2.1...v17.2.2) (2026-10-27)
+
+
+### Bug Fixes
+
+* **rules:** update import, unicorn rules ([#197](https://github.com/americanexpress/eslint-config-amex/issues/197)) ([f8dca0f](https://github.com/americanexpress/eslint-config-amex/commit/f8dca0f28dca49dbccf06681478c5a2ab7b15f23))
+
 ## [17.2.1](https://github.com/americanexpress/eslint-config-amex/compare/v17.2.0...v17.2.1) (2026-05-08)
 
 
